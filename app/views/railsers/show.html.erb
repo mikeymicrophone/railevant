@@ -1,0 +1,4 @@
+<h1><%= @railser.name %>~~~~</h1>
+<% @railser.concepts.reverse.each do |c| %>
+  <%= link_to c.content, c %><hr>	
+<% end %>

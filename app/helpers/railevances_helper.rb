@@ -1,0 +1,2 @@
+module RailevancesHelper
+end

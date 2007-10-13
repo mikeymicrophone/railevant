@@ -1,0 +1,23 @@
+<p>
+  <b>Rail:</b>
+  <%=h Concept.find(@railevance.rail_id).content %>
+</p>
+
+<p>
+  <b>Tie:</b>
+  <%=h Concept.find(@railevance.tie_id).content %>
+</p>
+
+<p>
+  <b>Railser:</b>
+  <%=h Railser.find(@railevance.railser_id).name %>
+</p>
+
+<p>
+  <b>Deleted at:</b>
+  <%=h @railevance.deleted_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_railevance_path(@railevance) %> |
+<%= link_to 'Back', railevances_path %>

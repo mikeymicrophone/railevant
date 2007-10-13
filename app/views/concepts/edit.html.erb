@@ -1,0 +1,42 @@
+<h1>Editing concept</h1>
+
+<%= error_messages_for :concept %>
+
+<% form_for(@concept) do |f| %>
+  <p>
+    <b>Type</b><br />
+    <%= f.text_field :type %>
+  </p>
+
+  <p>
+    <b>Content</b><br />
+    <%= f.text_area :content %>
+  </p>
+
+  <p>
+    <b>Character</b><br />
+    <%= f.text_area :character %>
+  </p>
+
+  <p>
+    <b>Bits</b><br />
+    <%= f.text_field :bits %>
+  </p>
+
+  <p>
+    <b>Railser</b><br />
+    <%= f.text_field :railser_id %>
+  </p>
+
+  <p>
+    <b>Deleted at</b><br />
+    <%= f.datetime_select :deleted_at %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @concept %> |
+<%= link_to 'Back', concepts_path %>

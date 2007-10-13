@@ -1,0 +1,32 @@
+<h1>Editing railevance</h1>
+
+<%= error_messages_for :railevance %>
+
+<% form_for(@railevance) do |f| %>
+  <p>
+    <b>Rail</b><br />
+    <%= f.text_field :rail_id %>
+  </p>
+
+  <p>
+    <b>Tie</b><br />
+    <%= f.text_field :tie_id %>
+  </p>
+
+  <p>
+    <b>Railser</b><br />
+    <%= f.text_field :railser_id %>
+  </p>
+
+  <p>
+    <b>Deleted at</b><br />
+    <%= f.datetime_select :deleted_at %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @railevance %> |
+<%= link_to 'Back', railevances_path %>

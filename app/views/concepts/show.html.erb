@@ -1,0 +1,27 @@
+<p>
+  <b>Type:</b>
+  <%=h @concept.type %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%=h @concept.content %>
+</p>
+
+<p>
+  <b>Character:</b>
+  <%=h @concept.character %>
+</p>
+
+<p>
+  <b>Bits:</b>
+  <%=h @concept.bits %>
+</p>
+
+<p>
+  <b>Railser:</b>
+  <%= link_to(@concept.railser.name, @concept.railser) %>
+</p>
+
+<%= link_to 'Edit', edit_concept_path(@concept) %> |
+<%= link_to 'Back', concepts_path %>
