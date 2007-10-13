@@ -1,10 +1,6 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
-
 class ApplicationController < ActionController::Base
-  helper :all # include all helpers, all the time
-
-  # See ActionController::RequestForgeryProtection for details
-  # Uncomment the :secret if you're not using the cookie session store
-  protect_from_forgery # :secret => 'acd5952cc6e82e173d585e656c827bac'
+  helper :all
+  filter_parameter_logging 'password'
+  include AuthenticatedSystem
+  protect_from_forgery
 end
