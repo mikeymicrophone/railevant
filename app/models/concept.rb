@@ -4,6 +4,22 @@ class Concept < ActiveRecord::Base
   has_many :rails, :through => :railevances, :source => 'rail'
   has_many :railsconcepts, :foreign_key => 'rail_id', :class_name => 'Railevance'
   has_many :ties, :through => :railsconcepts, :source => 'tie'
+  
+  def cached_rails
+    rails_ids.blank? ? [] : Concept.find(*rails_ids.split.map(&:to_i))
+  end
+  
+  def cached_ties
+    ties_ids.blank? ? [] : Concept.find(*ties_ids.split.map(&:to_i))
+  end
+  
+  def cache_tie tie_id
+    self.ties_ids = (ties_ids.nil? ? tie_id.to_s : ties_ids + " #{tie_id}")
+  end
+  
+  def cache_rail rail_id
+    self.rails_ids = (rails_ids.nil? ? rail_id.to_s : rails_ids + " #{rail_id}")
+  end
 end
 class Dependency < Concept
 end

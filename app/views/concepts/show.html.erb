@@ -1,27 +1,17 @@
-<p>
-  <b>Type:</b>
-  <%=h @concept.type %>
-</p>
+<h1><%= link_to(@concept.class.name.downcase, collection_path(@concept)) %></h1>
 
-<p>
-  <b>Content:</b>
+<div>
   <%=h @concept.content %>
-</p>
+</div>
 
-<p>
-  <b>Character:</b>
+<div>
   <%=h @concept.character %>
-</p>
+</div>
 
-<p>
-  <b>Bits:</b>
-  <%=h @concept.bits %>
-</p>
+<%= links_to_rails @concept %>
+<%= links_to_ties @concept %>
 
-<p>
-  <b>Railser:</b>
-  <%= link_to(@concept.railser.name, @concept.railser) %>
-</p>
+<b><%= link_to(@concept.railser.name, @concept.railser) %></b>
 
-<%= link_to 'Edit', edit_concept_path(@concept) %> |
-<%= link_to 'Back', concepts_path %>
+<%= link_to 'improve', send("edit_#{@concept.class.name.downcase}_path", @concept) %> |
+<%= link_to 'catalog', concepts_path %>

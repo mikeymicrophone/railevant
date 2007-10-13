@@ -1,42 +1,25 @@
-<h1>Editing concept</h1>
-
 <%= error_messages_for :concept %>
 
 <% form_for(@concept) do |f| %>
   <p>
-    <b>Type</b><br />
-    <%= f.text_field :type %>
+    <b>type</b><br />
+    <%= select :class, :name, @types, :value => @concept.class.name.downcase %>
   </p>
 
   <p>
-    <b>Content</b><br />
-    <%= f.text_area :content %>
+    <b>content</b><br />
+    <%= f.text_area :content, :size => '49x3' %>
   </p>
 
   <p>
-    <b>Character</b><br />
-    <%= f.text_area :character %>
+    <b>character</b><br />
+    <%= f.text_area :character, :size => '49x3' %>
   </p>
 
   <p>
-    <b>Bits</b><br />
-    <%= f.text_field :bits %>
-  </p>
-
-  <p>
-    <b>Railser</b><br />
-    <%= f.text_field :railser_id %>
-  </p>
-
-  <p>
-    <b>Deleted at</b><br />
-    <%= f.datetime_select :deleted_at %>
-  </p>
-
-  <p>
-    <%= f.submit "Update" %>
+    <%= f.submit "load" %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @concept %> |
-<%= link_to 'Back', concepts_path %>
+<%= link_to 'display', @concept %> |
+<%= link_to 'back', collection_path(@concept) %>
