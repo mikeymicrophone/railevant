@@ -1,5 +1,9 @@
 <h1><%= link_to(@concept.class.name.downcase, collection_path(@concept)) %></h1>
-
+<% if @concept.ambiguous? and @concepts %>
+  <% @concepts.each do |c| %>
+    <%= link_to c.class.name.downcase, c, :class => 'disambiguation' %>
+  <% end %>
+<% end %>
 <div>
   <%=h @concept.content %>
 </div>

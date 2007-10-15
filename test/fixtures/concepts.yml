@@ -1,8 +1,8 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 one:
   id: 1
-  type: MyString
-  content: MyText
+  type: Language
+  content: T
   character: MyText
   bits: 1
   railser_id: 1
@@ -11,8 +11,8 @@ one:
   updated_at: 2007-10-12 14:21:01
 two:
   id: 2
-  type: MyString
-  content: MyText
+  type: Feature
+  content: M
   character: MyText
   bits: 1
   railser_id: 1

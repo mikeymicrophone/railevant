@@ -33,6 +33,16 @@ class ActiveRecord::Base
   end
   
   def credit_creator
-    self.railser_id ||= current_railser_id
+    self.railser_id ||= current_railser_id || 1
+  end
+end
+
+class String
+  def urlize
+    gsub(/\s+/, '_').gsub(/\./, '-').gsub(/\?/, ';').gsub(/,/, '+').gsub(/\//, '~') unless blank?
+  end
+  
+  def de_urlize
+    gsub(/_/, ' ').gsub(/-/, '.').gsub(/;/, '?').gsub(/[+]/, ',').gsub(/~/, '/') unless blank?
   end
 end

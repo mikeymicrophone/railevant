@@ -1,0 +1,1634 @@
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+  [4;36;1mSQL (0.000143)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000099)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000216)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000201)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000150)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000190)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000195)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000145)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000193)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000633)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Load (0.000355)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.000165)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000099)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.028961)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mRailser Load (0.006051)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;35;1mRailser Load (0.000341)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+  [4;36;1mRailser Create (0.000318)[0m   [0;1mINSERT INTO railsers (`salt`, `activated_at`, `updated_at`, `crypted_password`, `activation_code`, `remember_token_expires_at`, `remember_token`, `login`, `created_at`, `email`) VALUES('35eadfbb4b7f73218f018be129bfdca5b0c052d3', NULL, '2007-10-15 00:07:14', 'd5d4da020f877f3002f1dc79cbd8b4493fab2249', '413e50b9e59f23122df37f4c88df0827442d0a3b', NULL, NULL, 'quire', '2007-10-15 00:07:14', 'quire@example.com')[0m
+Sent mail:
+ Date: Sun, 14 Oct 2007 20:07:14 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/413e50b9e59f23122df37f4c88df0827442d0a3b
+  [4;35;1mSQL (0.000254)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.003935)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000161)[0m   [0mBEGIN[0m
+  [4;36;1mRailser Load (0.000383)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mRailser Load (0.000544)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quentin2' AND railsers.id <> 1) LIMIT 1[0m
+  [4;36;1mRailser Load (0.000384)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quentin@example.com' AND railsers.id <> 1) LIMIT 1[0m
+  [4;35;1mRailser Update (0.000331)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-09 20:07:14', `login` = 'quentin2', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:07:14', `remember_token_expires_at` = NULL, `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:07:14' WHERE `id` = 1[0m
+  [4;36;1mRailser Load (0.000251)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'quentin2' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.000874)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000147)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000316)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Update (0.000710)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:07:14', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:07:14', `remember_token_expires_at` = '2007-10-29 00:07:14', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '9d68e0cf7a0f10a1d07e595861879cde023b1a76', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:07:14' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.000813)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000329)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Update (0.000317)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:07:14', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:07:14', `remember_token_expires_at` = '2007-10-22 00:07:14', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '15ef00d866a6cbbdf3c6c8ae0f53727bb80ee997', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:07:14' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.000790)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000152)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000338)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Update (0.000357)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:07:14', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:07:14', `remember_token_expires_at` = '2007-10-22 00:07:14', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '15ef00d866a6cbbdf3c6c8ae0f53727bb80ee997', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:07:14' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.001343)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000194)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000286)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mRailser Load (0.000292)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;35;1mRailser Load (0.000284)[0m   [0mSELECT * FROM railsers WHERE (railsers.email IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.000214)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+  [4;35;1mSQL (0.000140)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000196)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mRailser Load (0.000275)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.login IS NULL) LIMIT 1[0m
+  [4;35;1mRailser Load (0.000237)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+  [4;36;1mSQL (0.000168)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+  [4;35;1mSQL (0.000157)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000083)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000583)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mRailser Load (0.000269)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;35;1mRailser Load (0.000211)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+  [4;36;1mSQL (0.000175)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+  [4;35;1mSQL (0.000153)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000096)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000158)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mRailser Load (0.000242)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;35;1mRailser Load (0.000227)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+  [4;36;1mSQL (0.000178)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+  [4;35;1mSQL (0.000149)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000099)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000240)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Load (0.000306)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quentin' AND railsers.id <> 1) LIMIT 1[0m
+  [4;35;1mRailser Load (0.000283)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quentin@example.com' AND railsers.id <> 1) LIMIT 1[0m
+  [4;36;1mRailser Update (0.000305)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:07:14', `login` = 'quentin', `crypted_password` = '4b6dd603c64f03bc2f676658e287094878df9603', `activated_at` = '2007-10-09 20:07:14', `remember_token_expires_at` = NULL, `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:07:14' WHERE `id` = 1[0m
+  [4;35;1mRailser Load (0.000240)[0m   [0mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.000846)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000174)[0m   [0mBEGIN[0m
+  [4;36;1mRailser Load (0.000334)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mRailser Update (0.000336)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-09 20:07:14', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:07:14', `remember_token_expires_at` = '2007-10-29 00:07:14', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '9d68e0cf7a0f10a1d07e595861879cde023b1a76', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:07:14' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.000670)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000142)[0m   [0mBEGIN[0m
+  [4;36;1mRailser Load (0.000289)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mRailser Update (0.000389)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-09 20:07:14', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:07:14', `remember_token_expires_at` = '2007-10-29 00:07:14', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '9d68e0cf7a0f10a1d07e595861879cde023b1a76', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:07:14' WHERE `id` = 1[0m
+  [4;36;1mRailser Update (0.000311)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:07:14', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:07:14', `remember_token_expires_at` = NULL, `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:07:14' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.000876)[0m   [0mROLLBACK[0m
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+  [4;36;1mSQL (0.000141)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000107)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000209)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000141)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000130)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000287)[0m   [0mSELECT count(*) AS count_all FROM railevances [0m
+
+
+Processing RailevancesController#create (for 0.0.0.0 at 2007-10-14 20:07:17) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"railevances", "railevance"=>{}}
+  [4;36;1mRailevance Create (0.000277)[0m   [0;1mINSERT INTO railevances (`updated_at`, `deleted_at`, `railser_id`, `rail_id`, `created_at`, `tie_id`) VALUES('2007-10-15 00:07:17', NULL, NULL, NULL, '2007-10-15 00:07:17', NULL)[0m
+  [4;35;1mSQL (0.000654)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000094)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000203)[0m   [0mSELECT count(*) AS count_all FROM railevances [0m
+
+
+Processing RailevancesController#destroy (for 0.0.0.0 at 2007-10-14 20:07:17) [DELETE]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "id"=>"1", "controller"=>"railevances"}
+  [4;36;1mRailevance Load (0.000378)[0m   [0;1mSELECT * FROM railevances WHERE (railevances.`id` = 1) [0m
+  [4;35;1mRailevance Destroy (0.000224)[0m   [0m DELETE FROM railevances
+ WHERE `id` = 1
+[0m
+Redirected to http://test.host/railevances
+Completed in 0.00223 (448 reqs/sec) | DB: 0.00284 (127%) | 302 Found [http://test.host/railevances/1]
+  [4;36;1mSQL (0.000233)[0m   [0;1mSELECT count(*) AS count_all FROM railevances [0m
+  [4;35;1mSQL (0.000751)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000148)[0m   [0;1mBEGIN[0m
+
+
+Processing RailevancesController#edit (for 0.0.0.0 at 2007-10-14 20:07:17) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"railevances"}
+  [4;35;1mRailevance Load (0.000416)[0m   [0mSELECT * FROM railevances WHERE (railevances.`id` = 1) [0m
+Rendering template within layouts/railevances
+Rendering railevances/edit
+Completed in 0.00629 (159 reqs/sec) | Rendering: 0.00537 (85%) | DB: 0.00155 (24%) | 200 OK [http://test.host/railevances/1/edit]
+  [4;36;1mSQL (0.000201)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000103)[0m   [0mBEGIN[0m
+
+
+Processing RailevancesController#index (for 0.0.0.0 at 2007-10-14 20:07:17) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"railevances"}
+  [4;36;1mRailevance Load (0.000303)[0m   [0;1mSELECT * FROM railevances [0m
+Rendering template within layouts/railevances
+Rendering railevances/index
+Completed in 0.00355 (282 reqs/sec) | Rendering: 0.00265 (74%) | DB: 0.00061 (17%) | 200 OK [http://test.host/railevances]
+  [4;35;1mSQL (0.000177)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000103)[0m   [0;1mBEGIN[0m
+
+
+Processing RailevancesController#new (for 0.0.0.0 at 2007-10-14 20:07:17) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"railevances"}
+  [4;35;1mRailser Load (0.000301)[0m   [0mSELECT * FROM railsers [0m
+  [4;36;1mConcept Load (0.000236)[0m   [0;1mSELECT * FROM concepts [0m
+  [4;35;1mSQL (0.000549)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000165)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000131)[0m   [0mBEGIN[0m
+
+
+Processing RailevancesController#show (for 0.0.0.0 at 2007-10-14 20:07:17) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"railevances"}
+  [4;36;1mRailevance Load (0.000337)[0m   [0;1mSELECT * FROM railevances WHERE (railevances.`id` = 1) [0m
+Rendering template within layouts/railevances
+Rendering railevances/show
+  [4;35;1mConcept Load (0.000310)[0m   [0mSELECT * FROM concepts WHERE (concepts.`id` = 1) [0m
+  [4;36;1mSQL (0.000694)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000145)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000096)[0m   [0;1mBEGIN[0m
+
+
+Processing RailevancesController#update (for 0.0.0.0 at 2007-10-14 20:07:17) [PUT]
+  Session ID: 
+  Parameters: {"action"=>"update", "id"=>"1", "controller"=>"railevances", "railevance"=>{}}
+  [4;35;1mRailevance Load (0.000299)[0m   [0mSELECT * FROM railevances WHERE (railevances.`id` = 1) [0m
+  [4;36;1mRailevance Update (0.000225)[0m   [0;1mUPDATE railevances SET `created_at` = '2007-10-12 15:58:03', `rail_id` = 1, `railser_id` = 1, `tie_id` = 1, `deleted_at` = '2007-10-12 15:58:03', `updated_at` = '2007-10-15 00:07:17' WHERE `id` = 1[0m
+Redirected to http://test.host/railevances/1
+Completed in 0.00204 (490 reqs/sec) | DB: 0.00177 (86%) | 302 Found [http://test.host/railevances/1?]
+  [4;35;1mSQL (0.000659)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000098)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000289)[0m   [0mSELECT * FROM railsers WHERE (login = 'aaron' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mRailser Load (0.000203)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 2) [0m
+
+
+Processing RailsersController#activate (for 0.0.0.0 at 2007-10-14 20:07:17) [GET]
+  Session ID: 
+  Parameters: {"activation_code"=>"8f24789ae988411ccf33ab0c30fe9106fab32e9a", "action"=>"activate", "controller"=>"railsers"}
+  [4;35;1mRailser Load (0.000327)[0m   [0mSELECT * FROM railsers WHERE (railsers.`activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9a') LIMIT 1[0m
+  [4;36;1mRailser Load (0.000202)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 2) LIMIT 1[0m
+  [4;35;1mRailser Update (0.000326)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-13 20:07:17', `login` = 'aaron', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-15 00:07:17', `remember_token_expires_at` = NULL, `activation_code` = NULL, `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'aaron@example.com', `updated_at` = '2007-10-15 00:07:17' WHERE `id` = 2[0m
+Sent mail:
+ Date: Sun, 14 Oct 2007 20:07:17 -0400
+From: ADMINEMAIL
+To: aaron@example.com
+Subject: [YOURSITE] Your account has been activated!
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+aaron, your account has been activated.  You may now start adding your plugins:
+
+  http://YOURSITE/
+Redirected to http://test.host/concepts
+Completed in 0.12706 (7 reqs/sec) | DB: 0.00210 (1%) | 302 Found [http://test.host/activate/8f24789ae988411ccf33ab0c30fe9106fab32e9a]
+  [4;36;1mRailser Load (0.000362)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'aaron' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.001587)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000161)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000338)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+
+
+Processing RailsersController#create (for 0.0.0.0 at 2007-10-14 20:07:18) [POST]
+  Session ID: 
+  Parameters: {"railser"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"railsers"}
+  [4;36;1mRailser Load (0.000365)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;35;1mRailser Load (0.000233)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+  [4;36;1mRailser Create (0.000271)[0m   [0;1mINSERT INTO railsers (`salt`, `activated_at`, `updated_at`, `crypted_password`, `activation_code`, `remember_token_expires_at`, `remember_token`, `login`, `created_at`, `email`) VALUES('d08777f4a2f6e5be3530b200277d40bc7b4477cb', NULL, '2007-10-15 00:07:18', 'cc7c54ad351abb12ed7b4cf2f453eaaabca40e3c', '295abbb82d45702013af456a2535132128fa69b4', NULL, NULL, 'quire', '2007-10-15 00:07:18', 'quire@example.com')[0m
+Sent mail:
+ Date: Sun, 14 Oct 2007 20:07:18 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/295abbb82d45702013af456a2535132128fa69b4
+Redirected to http://test.host/concepts
+Completed in 0.00721 (138 reqs/sec) | DB: 0.00332 (46%) | 302 Found [http://test.host/railsers?railser%5Bemail%5D=quire%40example.com&railser%5Blogin%5D=quire&railser%5Bpassword%5D=quire&railser%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000331)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.001214)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000103)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000213)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+
+
+Processing RailsersController#create (for 0.0.0.0 at 2007-10-14 20:07:18) [POST]
+  Session ID: 
+  Parameters: {"railser"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"quire", "email"=>nil}, "action"=>"create", "controller"=>"railsers"}
+  [4;35;1mRailser Load (0.000517)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;36;1mRailser Load (0.000225)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.email IS NULL) LIMIT 1[0m
+Rendering railsers/new
+Completed in 0.00475 (210 reqs/sec) | Rendering: 0.00238 (50%) | DB: 0.00260 (54%) | 200 OK [http://test.host/railsers?railser%5Bemail%5D=&railser%5Blogin%5D=quire&railser%5Bpassword%5D=quire&railser%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000243)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000159)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000099)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000178)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+
+
+Processing RailsersController#create (for 0.0.0.0 at 2007-10-14 20:07:18) [POST]
+  Session ID: 
+  Parameters: {"railser"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>nil, "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"railsers"}
+  [4;35;1mRailser Load (0.000268)[0m   [0mSELECT * FROM railsers WHERE (railsers.login IS NULL) LIMIT 1[0m
+  [4;36;1mRailser Load (0.000227)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+Rendering railsers/new
+Completed in 0.00339 (294 reqs/sec) | Rendering: 0.00146 (42%) | DB: 0.00117 (34%) | 200 OK [http://test.host/railsers?railser%5Bemail%5D=quire%40example.com&railser%5Blogin%5D=&railser%5Bpassword%5D=quire&railser%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000291)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000135)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000086)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000210)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+
+
+Processing RailsersController#create (for 0.0.0.0 at 2007-10-14 20:07:18) [POST]
+  Session ID: 
+  Parameters: {"railser"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"railsers"}
+  [4;35;1mRailser Load (0.000299)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;36;1mRailser Load (0.000241)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+Rendering railsers/new
+Completed in 0.00380 (263 reqs/sec) | Rendering: 0.00126 (33%) | DB: 0.00126 (33%) | 200 OK [http://test.host/railsers?railser%5Bemail%5D=quire%40example.com&railser%5Blogin%5D=quire&railser%5Bpassword%5D=quire&railser%5Bpassword_confirmation%5D=]
+  [4;35;1mSQL (0.000243)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000159)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000099)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000193)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+
+
+Processing RailsersController#create (for 0.0.0.0 at 2007-10-14 20:07:18) [POST]
+  Session ID: 
+  Parameters: {"railser"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"railsers"}
+  [4;35;1mRailser Load (0.000264)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;36;1mRailser Load (0.000224)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+Rendering railsers/new
+Completed in 0.00312 (320 reqs/sec) | Rendering: 0.00126 (40%) | DB: 0.00118 (37%) | 200 OK [http://test.host/railsers?railser%5Bemail%5D=quire%40example.com&railser%5Blogin%5D=quire&railser%5Bpassword%5D=&railser%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000206)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000153)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000093)[0m   [0mBEGIN[0m
+  [4;36;1mRailser Load (0.000254)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2007-10-14 20:07:18) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+  [4;35;1mRailser Load (0.000323)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) LIMIT 1[0m
+  [4;36;1mRailser Update (0.000357)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:07:17', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:07:17', `remember_token_expires_at` = NULL, `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:07:18' WHERE `id` = 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.00882 (113 reqs/sec) | DB: 0.00139 (15%) | 302 Found [http://test.host/session]
+  [4;35;1mSQL (0.000869)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000081)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000250)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Update (0.000504)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:07:17', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:07:17', `remember_token_expires_at` = '2007-10-29 00:07:18', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '2aef9519eeeeffbaece92eb4b611d1c19b5e8ac3', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:07:18' WHERE `id` = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2007-10-14 20:07:18) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+Completed in 0.00227 (441 reqs/sec) | Rendering: 0.00211 (93%) | DB: 0.00170 (75%) | 200 OK [http://test.host/session/new]
+  [4;35;1mRailser Load (0.000371)[0m   [0mSELECT * FROM railsers WHERE (railsers.`remember_token` = 'invalid_auth_token') LIMIT 1[0m
+  [4;36;1mSQL (0.001068)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000156)[0m   [0mBEGIN[0m
+  [4;36;1mRailser Load (0.000370)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mRailser Update (0.000449)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-09 20:07:17', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:07:17', `remember_token_expires_at` = '2007-10-29 00:07:18', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '2aef9519eeeeffbaece92eb4b611d1c19b5e8ac3', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:07:18' WHERE `id` = 1[0m
+  [4;36;1mRailser Update (0.000288)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:07:17', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:07:17', `remember_token_expires_at` = '2007-10-14 20:02:18', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '2aef9519eeeeffbaece92eb4b611d1c19b5e8ac3', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:07:18' WHERE `id` = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2007-10-14 20:07:18) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+Completed in 0.00092 (1092 reqs/sec) | Rendering: 0.00077 (83%) | DB: 0.00270 (295%) | 200 OK [http://test.host/session/new]
+  [4;35;1mRailser Load (0.000267)[0m   [0mSELECT * FROM railsers WHERE (railsers.`remember_token` = '2aef9519eeeeffbaece92eb4b611d1c19b5e8ac3') LIMIT 1[0m
+  [4;36;1mSQL (0.001455)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000156)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2007-10-14 20:07:18) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"[FILTERED]", "login"=>"quentin"}
+  [4;36;1mRailser Load (0.000378)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+Rendering sessions/new
+Completed in 0.00196 (509 reqs/sec) | Rendering: 0.00102 (52%) | DB: 0.00226 (114%) | 200 OK [http://test.host/session?login=quentin&password=bad+password]
+  [4;35;1mSQL (0.000179)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000098)[0m   [0;1mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2007-10-14 20:07:18) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"[FILTERED]", "login"=>"quentin"}
+  [4;35;1mRailser Load (0.000290)[0m   [0mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mRailser Load (0.000212)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00133 (752 reqs/sec) | DB: 0.00078 (58%) | 302 Found [http://test.host/session?login=quentin&password=test]
+  [4;35;1mSQL (0.000159)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000141)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000243)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Update (0.000375)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:07:17', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:07:17', `remember_token_expires_at` = '2007-10-29 00:07:18', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '2aef9519eeeeffbaece92eb4b611d1c19b5e8ac3', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:07:18' WHERE `id` = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2007-10-14 20:07:18) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+Completed in 0.00112 (892 reqs/sec) | Rendering: 0.00097 (86%) | DB: 0.00092 (81%) | 200 OK [http://test.host/session/new]
+  [4;35;1mRailser Load (0.000302)[0m   [0mSELECT * FROM railsers WHERE (railsers.`remember_token` = '2aef9519eeeeffbaece92eb4b611d1c19b5e8ac3') LIMIT 1[0m
+  [4;36;1mRailser Update (0.000274)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:07:17', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:07:17', `remember_token_expires_at` = '2007-10-29 00:07:18', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '2aef9519eeeeffbaece92eb4b611d1c19b5e8ac3', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:07:18' WHERE `id` = 1[0m
+Cookie set: auth_token=2aef9519eeeeffbaece92eb4b611d1c19b5e8ac3; path=/; expires=Mon, 29 Oct 2007 00:07:18 GMT
+  [4;35;1mSQL (0.001389)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000184)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000401)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2007-10-14 20:07:18) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+  [4;36;1mRailser Load (0.000297)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) LIMIT 1[0m
+  [4;35;1mRailser Update (0.000356)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-09 20:07:17', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:07:17', `remember_token_expires_at` = NULL, `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:07:18' WHERE `id` = 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.00294 (340 reqs/sec) | DB: 0.00320 (109%) | 302 Found [http://test.host/session]
+  [4;36;1mSQL (0.000866)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000149)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2007-10-14 20:07:18) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"[FILTERED]", "login"=>"quentin", "remember_me"=>"0"}
+  [4;36;1mRailser Load (0.000401)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mRailser Load (0.000239)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00154 (649 reqs/sec) | DB: 0.00165 (107%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=0]
+  [4;36;1mSQL (0.000168)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000098)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2007-10-14 20:07:18) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"[FILTERED]", "login"=>"quentin", "remember_me"=>"1"}
+  [4;36;1mRailser Load (0.000277)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mRailser Load (0.000233)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) LIMIT 1[0m
+  [4;36;1mRailser Update (0.000362)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:07:17', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:07:17', `remember_token_expires_at` = '2007-10-29 00:07:18', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '2aef9519eeeeffbaece92eb4b611d1c19b5e8ac3', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:07:18' WHERE `id` = 1[0m
+Cookie set: auth_token=2aef9519eeeeffbaece92eb4b611d1c19b5e8ac3; path=/; expires=Mon, 29 Oct 2007 00:07:18 GMT
+Redirected to http://test.host/
+Completed in 0.00346 (288 reqs/sec) | DB: 0.00114 (32%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=1]
+  [4;35;1mSQL (0.000832)[0m   [0mROLLBACK[0m
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+  [4;36;1mSQL (0.000137)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000212)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000191)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000185)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000150)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000182)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000148)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000187)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000192)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000375)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Load (0.000368)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.000161)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000114)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000228)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mRailser Load (0.000272)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;35;1mRailser Load (0.000251)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+  [4;36;1mRailser Create (0.000248)[0m   [0;1mINSERT INTO railsers (`salt`, `activated_at`, `updated_at`, `crypted_password`, `activation_code`, `remember_token_expires_at`, `remember_token`, `login`, `created_at`, `email`) VALUES('7f9da23aea3e99d96ae16847e01a6bc4e0d1e2c1', NULL, '2007-10-15 00:08:51', '029c3da8fb11633e7dfef97d2239f2cb3783c6e0', '08789f7f3312a136488489294ff2e0fa03659f79', NULL, NULL, 'quire', '2007-10-15 00:08:51', 'quire@example.com')[0m
+Sent mail:
+ Date: Sun, 14 Oct 2007 20:08:51 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/08789f7f3312a136488489294ff2e0fa03659f79
+  [4;35;1mSQL (0.000242)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000727)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000135)[0m   [0mBEGIN[0m
+  [4;36;1mRailser Load (0.000288)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mRailser Load (0.000325)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quentin2' AND railsers.id <> 1) LIMIT 1[0m
+  [4;36;1mRailser Load (0.000272)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quentin@example.com' AND railsers.id <> 1) LIMIT 1[0m
+  [4;35;1mRailser Update (0.000317)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-09 20:08:51', `login` = 'quentin2', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:08:51', `remember_token_expires_at` = NULL, `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:08:51' WHERE `id` = 1[0m
+  [4;36;1mRailser Load (0.000248)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'quentin2' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.000975)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000197)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000365)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Update (0.000374)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:08:51', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:08:51', `remember_token_expires_at` = '2007-10-29 00:08:51', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = 'df986c3856833a44f6b6668878aacb879343188a', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:08:51' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.000897)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000157)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000338)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Update (0.000349)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:08:51', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:08:51', `remember_token_expires_at` = '2007-10-22 00:08:51', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = 'd40d0df10e00abf35e4745f14afeb5374b86485e', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:08:51' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.001517)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000197)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000375)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Update (0.000467)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:08:51', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:08:51', `remember_token_expires_at` = '2007-10-22 00:08:51', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = 'd40d0df10e00abf35e4745f14afeb5374b86485e', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:08:51' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.000759)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000094)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000246)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mRailser Load (0.000239)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;35;1mRailser Load (0.000421)[0m   [0mSELECT * FROM railsers WHERE (railsers.email IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.000188)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+  [4;35;1mSQL (0.000157)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000100)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000192)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mRailser Load (0.000234)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.login IS NULL) LIMIT 1[0m
+  [4;35;1mRailser Load (0.000207)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+  [4;36;1mSQL (0.000174)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+  [4;35;1mSQL (0.000149)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000097)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000186)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mRailser Load (0.000234)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;35;1mRailser Load (0.000227)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+  [4;36;1mSQL (0.000179)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+  [4;35;1mSQL (0.000147)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000095)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000185)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mRailser Load (0.000229)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;35;1mRailser Load (0.000224)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+  [4;36;1mSQL (0.000179)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+  [4;35;1mSQL (0.000147)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000095)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000236)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Load (0.000303)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quentin' AND railsers.id <> 1) LIMIT 1[0m
+  [4;35;1mRailser Load (0.000284)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quentin@example.com' AND railsers.id <> 1) LIMIT 1[0m
+  [4;36;1mRailser Update (0.000285)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:08:51', `login` = 'quentin', `crypted_password` = '4b6dd603c64f03bc2f676658e287094878df9603', `activated_at` = '2007-10-09 20:08:51', `remember_token_expires_at` = NULL, `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:08:51' WHERE `id` = 1[0m
+  [4;35;1mRailser Load (0.000239)[0m   [0mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.001027)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000162)[0m   [0mBEGIN[0m
+  [4;36;1mRailser Load (0.000368)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mRailser Update (0.000368)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-09 20:08:51', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:08:51', `remember_token_expires_at` = '2007-10-29 00:08:51', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = 'df986c3856833a44f6b6668878aacb879343188a', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:08:51' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.000794)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000126)[0m   [0mBEGIN[0m
+  [4;36;1mRailser Load (0.000290)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mRailser Update (0.000359)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-09 20:08:51', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:08:51', `remember_token_expires_at` = '2007-10-29 00:08:51', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = 'df986c3856833a44f6b6668878aacb879343188a', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:08:51' WHERE `id` = 1[0m
+  [4;36;1mRailser Update (0.000395)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:08:51', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:08:51', `remember_token_expires_at` = NULL, `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:08:51' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.001508)[0m   [0mROLLBACK[0m
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+  [4;36;1mSQL (0.000136)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000118)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000094)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000084)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000212)[0m   [0mSELECT count(*) AS count_all FROM railevances [0m
+
+
+Processing RailevancesController#create (for 0.0.0.0 at 2007-10-14 20:08:55) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"railevances", "railevance"=>{}}
+  [4;36;1mRailevance Create (0.000314)[0m   [0;1mINSERT INTO railevances (`updated_at`, `deleted_at`, `railser_id`, `rail_id`, `created_at`, `tie_id`) VALUES('2007-10-15 00:08:55', NULL, NULL, NULL, '2007-10-15 00:08:55', NULL)[0m
+  [4;35;1mSQL (0.000674)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000098)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000319)[0m   [0mSELECT count(*) AS count_all FROM railevances [0m
+
+
+Processing RailevancesController#destroy (for 0.0.0.0 at 2007-10-14 20:08:55) [DELETE]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "id"=>"1", "controller"=>"railevances"}
+  [4;36;1mRailevance Load (0.000274)[0m   [0;1mSELECT * FROM railevances WHERE (railevances.`id` = 1) [0m
+  [4;35;1mRailevance Destroy (0.000194)[0m   [0m DELETE FROM railevances
+ WHERE `id` = 1
+[0m
+Redirected to http://test.host/railevances
+Completed in 0.00125 (803 reqs/sec) | DB: 0.00259 (208%) | 302 Found [http://test.host/railevances/1]
+  [4;36;1mSQL (0.000172)[0m   [0;1mSELECT count(*) AS count_all FROM railevances [0m
+  [4;35;1mSQL (0.000616)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mBEGIN[0m
+
+
+Processing RailevancesController#edit (for 0.0.0.0 at 2007-10-14 20:08:55) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"railevances"}
+  [4;35;1mRailevance Load (0.000306)[0m   [0mSELECT * FROM railevances WHERE (railevances.`id` = 1) [0m
+Rendering template within layouts/railevances
+Rendering railevances/edit
+Completed in 0.00455 (219 reqs/sec) | Rendering: 0.00385 (84%) | DB: 0.00117 (25%) | 200 OK [http://test.host/railevances/1/edit]
+  [4;36;1mSQL (0.000143)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000076)[0m   [0mBEGIN[0m
+
+
+Processing RailevancesController#index (for 0.0.0.0 at 2007-10-14 20:08:55) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"railevances"}
+  [4;36;1mRailevance Load (0.000291)[0m   [0;1mSELECT * FROM railevances [0m
+Rendering template within layouts/railevances
+Rendering railevances/index
+Completed in 0.00309 (323 reqs/sec) | Rendering: 0.00222 (71%) | DB: 0.00051 (16%) | 200 OK [http://test.host/railevances]
+  [4;35;1mSQL (0.000174)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000076)[0m   [0;1mBEGIN[0m
+
+
+Processing RailevancesController#new (for 0.0.0.0 at 2007-10-14 20:08:55) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"railevances"}
+  [4;35;1mRailser Load (0.000275)[0m   [0mSELECT * FROM railsers [0m
+  [4;36;1mConcept Load (0.000189)[0m   [0;1mSELECT * FROM concepts [0m
+  [4;35;1mLanguage Columns (0.001730)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mFeature Columns (0.001533)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+Rendering template within layouts/railevances
+Rendering railevances/new
+Completed in 0.01166 (85 reqs/sec) | Rendering: 0.00255 (21%) | DB: 0.00398 (34%) | 200 OK [http://test.host/railevances/new]
+  [4;35;1mSQL (0.000174)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mBEGIN[0m
+
+
+Processing RailevancesController#show (for 0.0.0.0 at 2007-10-14 20:08:55) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"railevances"}
+  [4;35;1mRailevance Load (0.000292)[0m   [0mSELECT * FROM railevances WHERE (railevances.`id` = 1) [0m
+Rendering template within layouts/railevances
+Rendering railevances/show
+  [4;36;1mConcept Load (0.000215)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM concepts WHERE (concepts.`id` = 1) [0m
+  [4;36;1mRailser Load (0.000162)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+Completed in 0.00319 (313 reqs/sec) | Rendering: 0.00201 (62%) | DB: 0.00092 (28%) | 200 OK [http://test.host/railevances/1]
+  [4;35;1mSQL (0.000111)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000086)[0m   [0;1mBEGIN[0m
+
+
+Processing RailevancesController#update (for 0.0.0.0 at 2007-10-14 20:08:55) [PUT]
+  Session ID: 
+  Parameters: {"action"=>"update", "id"=>"1", "controller"=>"railevances", "railevance"=>{}}
+  [4;35;1mRailevance Load (0.000297)[0m   [0mSELECT * FROM railevances WHERE (railevances.`id` = 1) [0m
+  [4;36;1mRailevance Update (0.000239)[0m   [0;1mUPDATE railevances SET `created_at` = '2007-10-12 15:58:03', `rail_id` = 1, `railser_id` = 1, `tie_id` = 1, `deleted_at` = '2007-10-12 15:58:03', `updated_at` = '2007-10-15 00:08:55' WHERE `id` = 1[0m
+Redirected to http://test.host/railevances/1
+Completed in 0.00194 (516 reqs/sec) | DB: 0.00073 (37%) | 302 Found [http://test.host/railevances/1?]
+  [4;35;1mSQL (0.000658)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000082)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000247)[0m   [0mSELECT * FROM railsers WHERE (login = 'aaron' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mRailser Load (0.000185)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 2) [0m
+
+
+Processing RailsersController#activate (for 0.0.0.0 at 2007-10-14 20:08:55) [GET]
+  Session ID: 
+  Parameters: {"activation_code"=>"8f24789ae988411ccf33ab0c30fe9106fab32e9a", "action"=>"activate", "controller"=>"railsers"}
+  [4;35;1mRailser Load (0.000319)[0m   [0mSELECT * FROM railsers WHERE (railsers.`activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9a') LIMIT 1[0m
+  [4;36;1mRailser Load (0.000195)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 2) LIMIT 1[0m
+  [4;35;1mRailser Update (0.000271)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-13 20:08:55', `login` = 'aaron', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-15 00:08:55', `remember_token_expires_at` = NULL, `activation_code` = NULL, `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'aaron@example.com', `updated_at` = '2007-10-15 00:08:55' WHERE `id` = 2[0m
+Sent mail:
+ Date: Sun, 14 Oct 2007 20:08:55 -0400
+From: ADMINEMAIL
+To: aaron@example.com
+Subject: [YOURSITE] Your account has been activated!
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+aaron, your account has been activated.  You may now start adding your plugins:
+
+  http://YOURSITE/
+Redirected to http://test.host/concepts
+Completed in 0.03590 (27 reqs/sec) | DB: 0.00196 (5%) | 302 Found [http://test.host/activate/8f24789ae988411ccf33ab0c30fe9106fab32e9a]
+  [4;36;1mRailser Load (0.000365)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'aaron' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.001464)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000161)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000404)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+
+
+Processing RailsersController#create (for 0.0.0.0 at 2007-10-14 20:08:56) [POST]
+  Session ID: 
+  Parameters: {"railser"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"railsers"}
+  [4;36;1mRailser Load (0.000337)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;35;1mRailser Load (0.000211)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+  [4;36;1mRailser Create (0.000245)[0m   [0;1mINSERT INTO railsers (`salt`, `activated_at`, `updated_at`, `crypted_password`, `activation_code`, `remember_token_expires_at`, `remember_token`, `login`, `created_at`, `email`) VALUES('4317ccdbb9165681894864e5c46a0bf255a90686', NULL, '2007-10-15 00:08:56', 'd2fa0ddb9363573750dc80772e9412e15f7bea63', 'cb6fd21fbeed7b6efedb3aae81c850f0659f2d5f', NULL, NULL, 'quire', '2007-10-15 00:08:56', 'quire@example.com')[0m
+Sent mail:
+ Date: Sun, 14 Oct 2007 20:08:56 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/cb6fd21fbeed7b6efedb3aae81c850f0659f2d5f
+Redirected to http://test.host/concepts
+Completed in 0.00627 (159 reqs/sec) | DB: 0.00319 (50%) | 302 Found [http://test.host/railsers?railser%5Bemail%5D=quire%40example.com&railser%5Blogin%5D=quire&railser%5Bpassword%5D=quire&railser%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000239)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000774)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000092)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000204)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+
+
+Processing RailsersController#create (for 0.0.0.0 at 2007-10-14 20:08:56) [POST]
+  Session ID: 
+  Parameters: {"railser"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"quire", "email"=>nil}, "action"=>"create", "controller"=>"railsers"}
+  [4;35;1mRailser Load (0.000257)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;36;1mRailser Load (0.000188)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.email IS NULL) LIMIT 1[0m
+Rendering railsers/new
+Completed in 0.00373 (268 reqs/sec) | Rendering: 0.00205 (55%) | DB: 0.00175 (47%) | 200 OK [http://test.host/railsers?railser%5Bemail%5D=&railser%5Blogin%5D=quire&railser%5Bpassword%5D=quire&railser%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000195)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000093)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000075)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000123)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+
+
+Processing RailsersController#create (for 0.0.0.0 at 2007-10-14 20:08:56) [POST]
+  Session ID: 
+  Parameters: {"railser"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>nil, "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"railsers"}
+  [4;35;1mRailser Load (0.000231)[0m   [0mSELECT * FROM railsers WHERE (railsers.login IS NULL) LIMIT 1[0m
+  [4;36;1mRailser Load (0.000191)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+Rendering railsers/new
+Completed in 0.00257 (389 reqs/sec) | Rendering: 0.00102 (39%) | DB: 0.00091 (35%) | 200 OK [http://test.host/railsers?railser%5Bemail%5D=quire%40example.com&railser%5Blogin%5D=&railser%5Bpassword%5D=quire&railser%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000182)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000127)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000063)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000150)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+
+
+Processing RailsersController#create (for 0.0.0.0 at 2007-10-14 20:08:56) [POST]
+  Session ID: 
+  Parameters: {"railser"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"railsers"}
+  [4;35;1mRailser Load (0.000251)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;36;1mRailser Load (0.000186)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+Rendering railsers/new
+Completed in 0.00294 (339 reqs/sec) | Rendering: 0.00119 (40%) | DB: 0.00096 (32%) | 200 OK [http://test.host/railsers?railser%5Bemail%5D=quire%40example.com&railser%5Blogin%5D=quire&railser%5Bpassword%5D=quire&railser%5Bpassword_confirmation%5D=]
+  [4;35;1mSQL (0.000225)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000139)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000063)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000158)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+
+
+Processing RailsersController#create (for 0.0.0.0 at 2007-10-14 20:08:56) [POST]
+  Session ID: 
+  Parameters: {"railser"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"railsers"}
+  [4;35;1mRailser Load (0.000271)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;36;1mRailser Load (0.000166)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+Rendering railsers/new
+Completed in 0.00275 (364 reqs/sec) | Rendering: 0.00107 (38%) | DB: 0.00102 (37%) | 200 OK [http://test.host/railsers?railser%5Bemail%5D=quire%40example.com&railser%5Blogin%5D=quire&railser%5Bpassword%5D=&railser%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000171)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000083)[0m   [0mBEGIN[0m
+  [4;36;1mRailser Load (0.000209)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2007-10-14 20:08:56) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+  [4;35;1mRailser Load (0.000299)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) LIMIT 1[0m
+  [4;36;1mRailser Update (0.000292)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:08:55', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:08:55', `remember_token_expires_at` = NULL, `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:08:56' WHERE `id` = 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.00881 (113 reqs/sec) | DB: 0.00113 (12%) | 302 Found [http://test.host/session]
+  [4;35;1mSQL (0.001493)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000170)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000346)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Update (0.000351)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:08:55', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:08:55', `remember_token_expires_at` = '2007-10-29 00:08:56', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = 'fe10dbe035bf185dc1ef6484a402eeba028cd4fc', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:08:56' WHERE `id` = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2007-10-14 20:08:56) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+Completed in 0.00174 (573 reqs/sec) | Rendering: 0.00162 (92%) | DB: 0.00236 (135%) | 200 OK [http://test.host/session/new]
+  [4;35;1mRailser Load (0.000322)[0m   [0mSELECT * FROM railsers WHERE (railsers.`remember_token` = 'invalid_auth_token') LIMIT 1[0m
+  [4;36;1mSQL (0.001051)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000167)[0m   [0mBEGIN[0m
+  [4;36;1mRailser Load (0.000337)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mRailser Update (0.000354)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-09 20:08:55', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:08:55', `remember_token_expires_at` = '2007-10-29 00:08:56', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = 'fe10dbe035bf185dc1ef6484a402eeba028cd4fc', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:08:56' WHERE `id` = 1[0m
+  [4;36;1mRailser Update (0.000254)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:08:55', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:08:55', `remember_token_expires_at` = '2007-10-14 20:03:56', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = 'fe10dbe035bf185dc1ef6484a402eeba028cd4fc', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:08:56' WHERE `id` = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2007-10-14 20:08:56) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+Completed in 0.00090 (1116 reqs/sec) | Rendering: 0.00077 (85%) | DB: 0.00248 (277%) | 200 OK [http://test.host/session/new]
+  [4;35;1mRailser Load (0.000277)[0m   [0mSELECT * FROM railsers WHERE (railsers.`remember_token` = 'fe10dbe035bf185dc1ef6484a402eeba028cd4fc') LIMIT 1[0m
+  [4;36;1mSQL (0.001025)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000161)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2007-10-14 20:08:56) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"[FILTERED]", "login"=>"quentin"}
+  [4;36;1mRailser Load (0.000384)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+Rendering sessions/new
+Completed in 0.00182 (548 reqs/sec) | Rendering: 0.00085 (46%) | DB: 0.00185 (101%) | 200 OK [http://test.host/session?login=quentin&password=bad+password]
+  [4;35;1mSQL (0.000162)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000083)[0m   [0;1mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2007-10-14 20:08:56) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"[FILTERED]", "login"=>"quentin"}
+  [4;35;1mRailser Load (0.000219)[0m   [0mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mRailser Load (0.000197)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00111 (897 reqs/sec) | DB: 0.00066 (59%) | 302 Found [http://test.host/session?login=quentin&password=test]
+  [4;35;1mSQL (0.000110)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000089)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000222)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Update (0.000277)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:08:55', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:08:55', `remember_token_expires_at` = '2007-10-29 00:08:56', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = 'fe10dbe035bf185dc1ef6484a402eeba028cd4fc', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:08:56' WHERE `id` = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2007-10-14 20:08:56) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+Completed in 0.00074 (1347 reqs/sec) | Rendering: 0.00064 (85%) | DB: 0.00070 (94%) | 200 OK [http://test.host/session/new]
+  [4;35;1mRailser Load (0.000219)[0m   [0mSELECT * FROM railsers WHERE (railsers.`remember_token` = 'fe10dbe035bf185dc1ef6484a402eeba028cd4fc') LIMIT 1[0m
+  [4;36;1mRailser Update (0.000201)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:08:55', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:08:55', `remember_token_expires_at` = '2007-10-29 00:08:56', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = 'fe10dbe035bf185dc1ef6484a402eeba028cd4fc', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:08:56' WHERE `id` = 1[0m
+Cookie set: auth_token=fe10dbe035bf185dc1ef6484a402eeba028cd4fc; path=/; expires=Mon, 29 Oct 2007 00:08:56 GMT
+  [4;35;1mSQL (0.000994)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000196)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000370)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2007-10-14 20:08:56) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+  [4;36;1mRailser Load (0.000290)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) LIMIT 1[0m
+  [4;35;1mRailser Update (0.000311)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-09 20:08:55', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:08:55', `remember_token_expires_at` = NULL, `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:08:56' WHERE `id` = 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.00267 (373 reqs/sec) | DB: 0.00258 (96%) | 302 Found [http://test.host/session]
+  [4;36;1mSQL (0.000929)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000154)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2007-10-14 20:08:56) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"[FILTERED]", "login"=>"quentin", "remember_me"=>"0"}
+  [4;36;1mRailser Load (0.000372)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mRailser Load (0.000238)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00149 (672 reqs/sec) | DB: 0.00169 (113%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=0]
+  [4;36;1mSQL (0.000162)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000101)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2007-10-14 20:08:56) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"[FILTERED]", "login"=>"quentin", "remember_me"=>"1"}
+  [4;36;1mRailser Load (0.000265)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mRailser Load (0.000225)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) LIMIT 1[0m
+  [4;36;1mRailser Update (0.000324)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:08:55', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:08:55', `remember_token_expires_at` = '2007-10-29 00:08:56', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = 'fe10dbe035bf185dc1ef6484a402eeba028cd4fc', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:08:56' WHERE `id` = 1[0m
+Cookie set: auth_token=fe10dbe035bf185dc1ef6484a402eeba028cd4fc; path=/; expires=Mon, 29 Oct 2007 00:08:56 GMT
+Redirected to http://test.host/
+Completed in 0.00317 (315 reqs/sec) | DB: 0.00108 (33%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=1]
+  [4;35;1mSQL (0.001128)[0m   [0mROLLBACK[0m
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+  [4;36;1mSQL (0.000154)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000117)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000133)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000132)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000093)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000133)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000134)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000130)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000087)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000301)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Load (0.000256)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.000165)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000126)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000231)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mRailser Load (0.000308)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;35;1mRailser Load (0.000234)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+  [4;36;1mRailser Create (0.000324)[0m   [0;1mINSERT INTO railsers (`salt`, `activated_at`, `updated_at`, `crypted_password`, `activation_code`, `remember_token_expires_at`, `remember_token`, `login`, `created_at`, `email`) VALUES('d45332dc2a2bfc8179498baa42d8e7d4de013090', NULL, '2007-10-15 00:15:33', '90f15bdf64d61e4a5e8020e3fba7667f17276e65', '8f03ea11f6fc1b4860b45a3f748e3aa423c17df4', NULL, NULL, 'quire', '2007-10-15 00:15:33', 'quire@example.com')[0m
+Sent mail:
+ Date: Sun, 14 Oct 2007 20:15:33 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/8f03ea11f6fc1b4860b45a3f748e3aa423c17df4
+  [4;35;1mSQL (0.000250)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000818)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000150)[0m   [0mBEGIN[0m
+  [4;36;1mRailser Load (0.000376)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mRailser Load (0.000431)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quentin2' AND railsers.id <> 1) LIMIT 1[0m
+  [4;36;1mRailser Load (0.000356)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quentin@example.com' AND railsers.id <> 1) LIMIT 1[0m
+  [4;35;1mRailser Update (0.000356)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-09 20:15:32', `login` = 'quentin2', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:15:32', `remember_token_expires_at` = NULL, `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:15:33' WHERE `id` = 1[0m
+  [4;36;1mRailser Load (0.000270)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'quentin2' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.000838)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000149)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000315)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Update (0.000405)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:15:32', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:15:32', `remember_token_expires_at` = '2007-10-29 00:15:33', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = 'a31286b18d0c6288598d9dc708cad9b83356b742', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:15:33' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.001637)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000179)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000340)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Update (0.000421)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:15:32', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:15:32', `remember_token_expires_at` = '2007-10-22 00:15:33', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '4f1078fc34de0511789e5daaab6fdc51ade4564c', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:15:33' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.000833)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000183)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000379)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Update (0.000316)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:15:32', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:15:32', `remember_token_expires_at` = '2007-10-22 00:15:33', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '4f1078fc34de0511789e5daaab6fdc51ade4564c', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:15:33' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.000754)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000232)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mRailser Load (0.000275)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;35;1mRailser Load (0.000238)[0m   [0mSELECT * FROM railsers WHERE (railsers.email IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.000196)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+  [4;35;1mSQL (0.000159)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000085)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000657)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mRailser Load (0.000268)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.login IS NULL) LIMIT 1[0m
+  [4;35;1mRailser Load (0.000236)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+  [4;36;1mSQL (0.000192)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+  [4;35;1mSQL (0.000150)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000099)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000177)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mRailser Load (0.000272)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;35;1mRailser Load (0.000228)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+  [4;36;1mSQL (0.000187)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+  [4;35;1mSQL (0.000151)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000097)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000170)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mRailser Load (0.000236)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;35;1mRailser Load (0.000227)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+  [4;36;1mSQL (0.000180)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+  [4;35;1mSQL (0.000103)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000096)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000240)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Load (0.000286)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quentin' AND railsers.id <> 1) LIMIT 1[0m
+  [4;35;1mRailser Load (0.000282)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quentin@example.com' AND railsers.id <> 1) LIMIT 1[0m
+  [4;36;1mRailser Update (0.000341)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:15:32', `login` = 'quentin', `crypted_password` = '4b6dd603c64f03bc2f676658e287094878df9603', `activated_at` = '2007-10-09 20:15:32', `remember_token_expires_at` = NULL, `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:15:33' WHERE `id` = 1[0m
+  [4;35;1mRailser Load (0.000327)[0m   [0mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.000862)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000111)[0m   [0mBEGIN[0m
+  [4;36;1mRailser Load (0.000295)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mRailser Update (0.000315)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-09 20:15:32', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:15:32', `remember_token_expires_at` = '2007-10-29 00:15:33', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = 'a31286b18d0c6288598d9dc708cad9b83356b742', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:15:33' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.001350)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000191)[0m   [0mBEGIN[0m
+  [4;36;1mRailser Load (0.000396)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mRailser Update (0.000586)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-09 20:15:32', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:15:32', `remember_token_expires_at` = '2007-10-29 00:15:33', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = 'a31286b18d0c6288598d9dc708cad9b83356b742', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:15:33' WHERE `id` = 1[0m
+  [4;36;1mRailser Update (0.000302)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:15:32', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:15:32', `remember_token_expires_at` = NULL, `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:15:33' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.000874)[0m   [0mROLLBACK[0m
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+  [4;36;1mSQL (0.000141)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000129)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000189)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000185)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000151)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000289)[0m   [0mSELECT count(*) AS count_all FROM railevances [0m
+
+
+Processing RailevancesController#create (for 0.0.0.0 at 2007-10-14 20:15:36) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"railevances", "railevance"=>{}}
+  [4;36;1mRailevance Create (0.000280)[0m   [0;1mINSERT INTO railevances (`updated_at`, `deleted_at`, `railser_id`, `rail_id`, `created_at`, `tie_id`) VALUES('2007-10-15 00:15:36', NULL, NULL, NULL, '2007-10-15 00:15:36', NULL)[0m
+  [4;35;1mSQL (0.000600)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000087)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000202)[0m   [0mSELECT count(*) AS count_all FROM railevances [0m
+
+
+Processing RailevancesController#destroy (for 0.0.0.0 at 2007-10-14 20:15:36) [DELETE]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "id"=>"1", "controller"=>"railevances"}
+  [4;36;1mRailevance Load (0.000355)[0m   [0;1mSELECT * FROM railevances WHERE (railevances.`id` = 1) [0m
+  [4;35;1mRailevance Destroy (0.000262)[0m   [0m DELETE FROM railevances
+ WHERE `id` = 1
+[0m
+Redirected to http://test.host/railevances
+Completed in 0.00211 (474 reqs/sec) | DB: 0.00287 (136%) | 302 Found [http://test.host/railevances/1]
+  [4;36;1mSQL (0.000229)[0m   [0;1mSELECT count(*) AS count_all FROM railevances [0m
+  [4;35;1mSQL (0.000691)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000103)[0m   [0;1mBEGIN[0m
+
+
+Processing RailevancesController#edit (for 0.0.0.0 at 2007-10-14 20:15:36) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"railevances"}
+  [4;35;1mRailevance Load (0.000368)[0m   [0mSELECT * FROM railevances WHERE (railevances.`id` = 1) [0m
+Rendering template within layouts/railevances
+Rendering railevances/edit
+Completed in 0.00549 (182 reqs/sec) | Rendering: 0.00458 (83%) | DB: 0.00139 (25%) | 200 OK [http://test.host/railevances/1/edit]
+  [4;36;1mSQL (0.000175)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000083)[0m   [0mBEGIN[0m
+
+
+Processing RailevancesController#index (for 0.0.0.0 at 2007-10-14 20:15:36) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"railevances"}
+  [4;36;1mRailevance Load (0.000257)[0m   [0;1mSELECT * FROM railevances [0m
+Rendering template within layouts/railevances
+Rendering railevances/index
+Completed in 0.00276 (362 reqs/sec) | Rendering: 0.00203 (73%) | DB: 0.00051 (18%) | 200 OK [http://test.host/railevances]
+  [4;35;1mSQL (0.000148)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000075)[0m   [0;1mBEGIN[0m
+
+
+Processing RailevancesController#new (for 0.0.0.0 at 2007-10-14 20:15:36) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"railevances"}
+  [4;35;1mRailser Load (0.000400)[0m   [0mSELECT * FROM railsers [0m
+  [4;36;1mConcept Load (0.000243)[0m   [0;1mSELECT * FROM concepts [0m
+  [4;35;1mLanguage Columns (0.001700)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mFeature Columns (0.001596)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+Rendering template within layouts/railevances
+Rendering railevances/new
+Completed in 0.01177 (84 reqs/sec) | Rendering: 0.00241 (20%) | DB: 0.00416 (35%) | 200 OK [http://test.host/railevances/new]
+  [4;35;1mSQL (0.000204)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000085)[0m   [0;1mBEGIN[0m
+
+
+Processing RailevancesController#show (for 0.0.0.0 at 2007-10-14 20:15:36) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"railevances"}
+  [4;35;1mRailevance Load (0.000297)[0m   [0mSELECT * FROM railevances WHERE (railevances.`id` = 1) [0m
+Rendering template within layouts/railevances
+Rendering railevances/show
+  [4;36;1mConcept Load (0.000223)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`id` = 1) [0m
+  [4;35;1mConcept Load (0.000183)[0m   [0mSELECT * FROM concepts WHERE (concepts.`id` = 2) [0m
+  [4;36;1mRailser Load (0.000181)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+Completed in 0.00354 (282 reqs/sec) | Rendering: 0.00214 (60%) | DB: 0.00117 (33%) | 200 OK [http://test.host/railevances/1]
+  [4;35;1mSQL (0.000134)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mBEGIN[0m
+
+
+Processing RailevancesController#update (for 0.0.0.0 at 2007-10-14 20:15:36) [PUT]
+  Session ID: 
+  Parameters: {"action"=>"update", "id"=>"1", "controller"=>"railevances", "railevance"=>{}}
+  [4;35;1mRailevance Load (0.000300)[0m   [0mSELECT * FROM railevances WHERE (railevances.`id` = 1) [0m
+  [4;36;1mRailevance Update (0.000222)[0m   [0;1mUPDATE railevances SET `created_at` = '2007-10-12 15:58:03', `rail_id` = 1, `railser_id` = 1, `tie_id` = 2, `deleted_at` = '2007-10-12 15:58:03', `updated_at` = '2007-10-15 00:15:36' WHERE `id` = 1[0m
+Redirected to http://test.host/railevances/1
+Completed in 0.00194 (516 reqs/sec) | DB: 0.00073 (37%) | 302 Found [http://test.host/railevances/1?]
+  [4;35;1mSQL (0.000661)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000082)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000226)[0m   [0mSELECT * FROM railsers WHERE (login = 'aaron' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mRailser Load (0.000169)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 2) [0m
+
+
+Processing RailsersController#activate (for 0.0.0.0 at 2007-10-14 20:15:36) [GET]
+  Session ID: 
+  Parameters: {"activation_code"=>"8f24789ae988411ccf33ab0c30fe9106fab32e9a", "action"=>"activate", "controller"=>"railsers"}
+  [4;35;1mRailser Load (0.000320)[0m   [0mSELECT * FROM railsers WHERE (railsers.`activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9a') LIMIT 1[0m
+  [4;36;1mRailser Load (0.000194)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 2) LIMIT 1[0m
+  [4;35;1mRailser Update (0.000266)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-13 20:15:36', `login` = 'aaron', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-15 00:15:36', `remember_token_expires_at` = NULL, `activation_code` = NULL, `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'aaron@example.com', `updated_at` = '2007-10-15 00:15:36' WHERE `id` = 2[0m
+Sent mail:
+ Date: Sun, 14 Oct 2007 20:15:36 -0400
+From: ADMINEMAIL
+To: aaron@example.com
+Subject: [YOURSITE] Your account has been activated!
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+aaron, your account has been activated.  You may now start adding your plugins:
+
+  http://YOURSITE/
+Redirected to http://test.host/concepts
+Completed in 0.03645 (27 reqs/sec) | DB: 0.00192 (5%) | 302 Found [http://test.host/activate/8f24789ae988411ccf33ab0c30fe9106fab32e9a]
+  [4;36;1mRailser Load (0.000322)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'aaron' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.001944)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000258)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000302)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+
+
+Processing RailsersController#create (for 0.0.0.0 at 2007-10-14 20:15:37) [POST]
+  Session ID: 
+  Parameters: {"railser"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"railsers"}
+  [4;36;1mRailser Load (0.000332)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;35;1mRailser Load (0.000196)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+  [4;36;1mRailser Create (0.000246)[0m   [0;1mINSERT INTO railsers (`salt`, `activated_at`, `updated_at`, `crypted_password`, `activation_code`, `remember_token_expires_at`, `remember_token`, `login`, `created_at`, `email`) VALUES('c3293274ee0f32a857110022fbe9cbb1bae04a17', NULL, '2007-10-15 00:15:37', '73c5bcd6fe5f49e6051638ac12a5f7ddcd83ee81', '69628435be6597aa4daea451f85b4a986076aca3', NULL, NULL, 'quire', '2007-10-15 00:15:37', 'quire@example.com')[0m
+Sent mail:
+ Date: Sun, 14 Oct 2007 20:15:37 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/69628435be6597aa4daea451f85b4a986076aca3
+Redirected to http://test.host/concepts
+Completed in 0.00606 (164 reqs/sec) | DB: 0.00360 (59%) | 302 Found [http://test.host/railsers?railser%5Bemail%5D=quire%40example.com&railser%5Blogin%5D=quire&railser%5Bpassword%5D=quire&railser%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000238)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000948)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000159)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000246)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+
+
+Processing RailsersController#create (for 0.0.0.0 at 2007-10-14 20:15:37) [POST]
+  Session ID: 
+  Parameters: {"railser"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"quire", "email"=>nil}, "action"=>"create", "controller"=>"railsers"}
+  [4;35;1mRailser Load (0.000392)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;36;1mRailser Load (0.000199)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.email IS NULL) LIMIT 1[0m
+Rendering railsers/new
+Completed in 0.00473 (211 reqs/sec) | Rendering: 0.00239 (50%) | DB: 0.00218 (46%) | 200 OK [http://test.host/railsers?railser%5Bemail%5D=&railser%5Blogin%5D=quire&railser%5Bpassword%5D=quire&railser%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000247)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000159)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000261)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000201)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+
+
+Processing RailsersController#create (for 0.0.0.0 at 2007-10-14 20:15:37) [POST]
+  Session ID: 
+  Parameters: {"railser"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>nil, "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"railsers"}
+  [4;35;1mRailser Load (0.000257)[0m   [0mSELECT * FROM railsers WHERE (railsers.login IS NULL) LIMIT 1[0m
+  [4;36;1mRailser Load (0.000236)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+Rendering railsers/new
+Completed in 0.00330 (303 reqs/sec) | Rendering: 0.00139 (42%) | DB: 0.00136 (41%) | 200 OK [http://test.host/railsers?railser%5Bemail%5D=quire%40example.com&railser%5Blogin%5D=&railser%5Bpassword%5D=quire&railser%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000262)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000133)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000099)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000201)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+
+
+Processing RailsersController#create (for 0.0.0.0 at 2007-10-14 20:15:37) [POST]
+  Session ID: 
+  Parameters: {"railser"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"railsers"}
+  [4;35;1mRailser Load (0.000283)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;36;1mRailser Load (0.000206)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+Rendering railsers/new
+Completed in 0.00339 (295 reqs/sec) | Rendering: 0.00142 (41%) | DB: 0.00118 (34%) | 200 OK [http://test.host/railsers?railser%5Bemail%5D=quire%40example.com&railser%5Blogin%5D=quire&railser%5Bpassword%5D=quire&railser%5Bpassword_confirmation%5D=]
+  [4;35;1mSQL (0.000286)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000265)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000143)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000209)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+
+
+Processing RailsersController#create (for 0.0.0.0 at 2007-10-14 20:15:37) [POST]
+  Session ID: 
+  Parameters: {"railser"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"railsers"}
+  [4;35;1mRailser Load (0.000314)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;36;1mRailser Load (0.000240)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+Rendering railsers/new
+Completed in 0.00355 (282 reqs/sec) | Rendering: 0.00143 (40%) | DB: 0.00146 (41%) | 200 OK [http://test.host/railsers?railser%5Bemail%5D=quire%40example.com&railser%5Blogin%5D=quire&railser%5Bpassword%5D=&railser%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000236)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000157)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000092)[0m   [0mBEGIN[0m
+  [4;36;1mRailser Load (0.000253)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2007-10-14 20:15:37) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+  [4;35;1mRailser Load (0.000311)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) LIMIT 1[0m
+  [4;36;1mRailser Update (0.000323)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:15:36', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:15:36', `remember_token_expires_at` = NULL, `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:15:37' WHERE `id` = 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.00874 (114 reqs/sec) | DB: 0.00137 (15%) | 302 Found [http://test.host/session]
+  [4;35;1mSQL (0.000992)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000165)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000390)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Update (0.000450)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:15:36', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:15:36', `remember_token_expires_at` = '2007-10-29 00:15:37', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = 'c3f317d38b887ca233694a1238015edf103467fc', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:15:37' WHERE `id` = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2007-10-14 20:15:37) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+Completed in 0.00185 (540 reqs/sec) | Rendering: 0.00172 (93%) | DB: 0.00200 (107%) | 200 OK [http://test.host/session/new]
+  [4;35;1mRailser Load (0.000301)[0m   [0mSELECT * FROM railsers WHERE (railsers.`remember_token` = 'invalid_auth_token') LIMIT 1[0m
+  [4;36;1mSQL (0.000982)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000187)[0m   [0mBEGIN[0m
+  [4;36;1mRailser Load (0.000333)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mRailser Update (0.000339)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-09 20:15:36', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:15:36', `remember_token_expires_at` = '2007-10-29 00:15:37', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = 'c3f317d38b887ca233694a1238015edf103467fc', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:15:37' WHERE `id` = 1[0m
+  [4;36;1mRailser Update (0.000246)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:15:36', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:15:36', `remember_token_expires_at` = '2007-10-14 20:10:37', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = 'c3f317d38b887ca233694a1238015edf103467fc', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:15:37' WHERE `id` = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2007-10-14 20:15:37) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+Completed in 0.00092 (1082 reqs/sec) | Rendering: 0.00079 (85%) | DB: 0.00239 (258%) | 200 OK [http://test.host/session/new]
+  [4;35;1mRailser Load (0.000322)[0m   [0mSELECT * FROM railsers WHERE (railsers.`remember_token` = 'c3f317d38b887ca233694a1238015edf103467fc') LIMIT 1[0m
+  [4;36;1mSQL (0.000887)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000160)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2007-10-14 20:15:37) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"[FILTERED]", "login"=>"quentin"}
+  [4;36;1mRailser Load (0.000361)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+Rendering sessions/new
+Completed in 0.00163 (612 reqs/sec) | Rendering: 0.00077 (46%) | DB: 0.00173 (105%) | 200 OK [http://test.host/session?login=quentin&password=bad+password]
+  [4;35;1mSQL (0.000165)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000092)[0m   [0;1mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2007-10-14 20:15:37) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"[FILTERED]", "login"=>"quentin"}
+  [4;35;1mRailser Load (0.000291)[0m   [0mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mRailser Load (0.000237)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00136 (735 reqs/sec) | DB: 0.00078 (57%) | 302 Found [http://test.host/session?login=quentin&password=test]
+  [4;35;1mSQL (0.000109)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000087)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000238)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Update (0.000323)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:15:36', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:15:36', `remember_token_expires_at` = '2007-10-29 00:15:37', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = 'c3f317d38b887ca233694a1238015edf103467fc', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:15:37' WHERE `id` = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2007-10-14 20:15:37) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+Completed in 0.00082 (1216 reqs/sec) | Rendering: 0.00070 (85%) | DB: 0.00076 (92%) | 200 OK [http://test.host/session/new]
+  [4;35;1mRailser Load (0.000265)[0m   [0mSELECT * FROM railsers WHERE (railsers.`remember_token` = 'c3f317d38b887ca233694a1238015edf103467fc') LIMIT 1[0m
+  [4;36;1mRailser Update (0.000233)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:15:36', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:15:36', `remember_token_expires_at` = '2007-10-29 00:15:37', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = 'c3f317d38b887ca233694a1238015edf103467fc', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:15:37' WHERE `id` = 1[0m
+Cookie set: auth_token=c3f317d38b887ca233694a1238015edf103467fc; path=/; expires=Mon, 29 Oct 2007 00:15:37 GMT
+  [4;35;1mSQL (0.000855)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000157)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000323)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2007-10-14 20:15:37) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+  [4;36;1mRailser Load (0.000325)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) LIMIT 1[0m
+  [4;35;1mRailser Update (0.000341)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-09 20:15:36', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:15:36', `remember_token_expires_at` = NULL, `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:15:37' WHERE `id` = 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.00256 (391 reqs/sec) | DB: 0.00250 (97%) | 302 Found [http://test.host/session]
+  [4;36;1mSQL (0.001338)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000112)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2007-10-14 20:15:37) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"[FILTERED]", "login"=>"quentin", "remember_me"=>"0"}
+  [4;36;1mRailser Load (0.000391)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mRailser Load (0.000307)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00171 (584 reqs/sec) | DB: 0.00215 (125%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=0]
+  [4;36;1mSQL (0.000169)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000102)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2007-10-14 20:15:37) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"[FILTERED]", "login"=>"quentin", "remember_me"=>"1"}
+  [4;36;1mRailser Load (0.000278)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mRailser Load (0.000231)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) LIMIT 1[0m
+  [4;36;1mRailser Update (0.000331)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:15:36', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:15:36', `remember_token_expires_at` = '2007-10-29 00:15:37', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = 'c3f317d38b887ca233694a1238015edf103467fc', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:15:37' WHERE `id` = 1[0m
+Cookie set: auth_token=c3f317d38b887ca233694a1238015edf103467fc; path=/; expires=Mon, 29 Oct 2007 00:15:37 GMT
+Redirected to http://test.host/
+Completed in 0.00340 (294 reqs/sec) | DB: 0.00111 (32%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=1]
+  [4;35;1mSQL (0.001000)[0m   [0mROLLBACK[0m
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+  [4;36;1mSQL (0.000153)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000124)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000197)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000171)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000154)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000160)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000167)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000183)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000151)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000369)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Load (0.000320)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.000166)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000085)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000206)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mRailser Load (0.000242)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;35;1mRailser Load (0.000222)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+  [4;36;1mRailser Create (0.000252)[0m   [0;1mINSERT INTO railsers (`salt`, `activated_at`, `updated_at`, `crypted_password`, `activation_code`, `remember_token_expires_at`, `remember_token`, `login`, `created_at`, `email`) VALUES('47e65c6a1201188dfc5b254340031596288f397d', NULL, '2007-10-15 00:18:55', 'be64d2c75b6a56c68e2eeae21c289f0bf69db2c3', '9e127ba1af70e44cd838702ace95e272597e35ca', NULL, NULL, 'quire', '2007-10-15 00:18:55', 'quire@example.com')[0m
+Sent mail:
+ Date: Sun, 14 Oct 2007 20:18:55 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/9e127ba1af70e44cd838702ace95e272597e35ca
+  [4;35;1mSQL (0.000240)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000814)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000188)[0m   [0mBEGIN[0m
+  [4;36;1mRailser Load (0.000346)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mRailser Load (0.000443)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quentin2' AND railsers.id <> 1) LIMIT 1[0m
+  [4;36;1mRailser Load (0.000410)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quentin@example.com' AND railsers.id <> 1) LIMIT 1[0m
+  [4;35;1mRailser Update (0.000410)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-09 20:18:55', `login` = 'quentin2', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:18:55', `remember_token_expires_at` = NULL, `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:18:55' WHERE `id` = 1[0m
+  [4;36;1mRailser Load (0.000278)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'quentin2' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.001522)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000210)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000372)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Update (0.000360)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:18:55', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:18:55', `remember_token_expires_at` = '2007-10-29 00:18:55', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '0a0056e7c3a70644edaf6ad3785e6e921ea90a1a', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:18:55' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.000882)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000148)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000305)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Update (0.000307)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:18:55', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:18:55', `remember_token_expires_at` = '2007-10-22 00:18:55', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '2c3e5ee7c3d41cdb28d4d9e0292b3af06b1829aa', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:18:55' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.000845)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000173)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000350)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Update (0.000409)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:18:55', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:18:55', `remember_token_expires_at` = '2007-10-22 00:18:55', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '2c3e5ee7c3d41cdb28d4d9e0292b3af06b1829aa', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:18:55' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.000972)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000170)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000300)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mRailser Load (0.000303)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;35;1mRailser Load (0.000252)[0m   [0mSELECT * FROM railsers WHERE (railsers.email IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.000221)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+  [4;35;1mSQL (0.000178)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000127)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000236)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mRailser Load (0.000281)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.login IS NULL) LIMIT 1[0m
+  [4;35;1mRailser Load (0.000252)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+  [4;36;1mSQL (0.000174)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+  [4;35;1mSQL (0.000162)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000202)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mRailser Load (0.000255)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;35;1mRailser Load (0.000244)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+  [4;36;1mSQL (0.000193)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+  [4;35;1mSQL (0.000161)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000096)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000203)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mRailser Load (0.000255)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;35;1mRailser Load (0.000247)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+  [4;36;1mSQL (0.000194)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+  [4;35;1mSQL (0.000156)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000110)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000257)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Load (0.000318)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quentin' AND railsers.id <> 1) LIMIT 1[0m
+  [4;35;1mRailser Load (0.000310)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quentin@example.com' AND railsers.id <> 1) LIMIT 1[0m
+  [4;36;1mRailser Update (0.000394)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:18:55', `login` = 'quentin', `crypted_password` = '4b6dd603c64f03bc2f676658e287094878df9603', `activated_at` = '2007-10-09 20:18:55', `remember_token_expires_at` = NULL, `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:18:55' WHERE `id` = 1[0m
+  [4;35;1mRailser Load (0.000269)[0m   [0mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.000776)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000174)[0m   [0mBEGIN[0m
+  [4;36;1mRailser Load (0.000334)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mRailser Update (0.000368)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-09 20:18:55', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:18:55', `remember_token_expires_at` = '2007-10-29 00:18:55', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '0a0056e7c3a70644edaf6ad3785e6e921ea90a1a', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:18:55' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.001324)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000181)[0m   [0mBEGIN[0m
+  [4;36;1mRailser Load (0.000369)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mRailser Update (0.000367)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-09 20:18:55', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:18:55', `remember_token_expires_at` = '2007-10-29 00:18:55', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '0a0056e7c3a70644edaf6ad3785e6e921ea90a1a', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:18:55' WHERE `id` = 1[0m
+  [4;36;1mRailser Update (0.000291)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:18:55', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:18:55', `remember_token_expires_at` = NULL, `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:18:55' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.000997)[0m   [0mROLLBACK[0m
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+  [4;36;1mSQL (0.000156)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000128)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000186)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000184)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000159)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000262)[0m   [0mSELECT count(*) AS count_all FROM railevances [0m
+
+
+Processing RailevancesController#create (for 0.0.0.0 at 2007-10-14 20:18:58) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"railevances", "railevance"=>{}}
+  [4;36;1mRailevance Create (0.000278)[0m   [0;1mINSERT INTO railevances (`updated_at`, `deleted_at`, `railser_id`, `rail_id`, `created_at`, `tie_id`) VALUES('2007-10-15 00:18:58', NULL, NULL, NULL, '2007-10-15 00:18:58', NULL)[0m
+  [4;35;1mSQL (0.000945)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000205)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000333)[0m   [0mSELECT count(*) AS count_all FROM railevances [0m
+
+
+Processing RailevancesController#destroy (for 0.0.0.0 at 2007-10-14 20:18:58) [DELETE]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "id"=>"1", "controller"=>"railevances"}
+  [4;36;1mRailevance Load (0.000322)[0m   [0;1mSELECT * FROM railevances WHERE (railevances.`id` = 1) [0m
+  [4;35;1mRailevance Destroy (0.000203)[0m   [0m DELETE FROM railevances
+ WHERE `id` = 1
+[0m
+Redirected to http://test.host/railevances
+Completed in 0.00145 (688 reqs/sec) | DB: 0.00336 (231%) | 302 Found [http://test.host/railevances/1]
+  [4;36;1mSQL (0.000199)[0m   [0;1mSELECT count(*) AS count_all FROM railevances [0m
+  [4;35;1mSQL (0.000839)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000154)[0m   [0;1mBEGIN[0m
+
+
+Processing RailevancesController#edit (for 0.0.0.0 at 2007-10-14 20:18:58) [GET]
+  Session ID: 
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"railevances"}
+  [4;35;1mRailevance Load (0.000441)[0m   [0mSELECT * FROM railevances WHERE (railevances.`id` = 1) [0m
+Rendering template within layouts/railevances
+Rendering railevances/edit
+Completed in 0.00612 (163 reqs/sec) | Rendering: 0.00500 (81%) | DB: 0.00163 (26%) | 200 OK [http://test.host/railevances/1/edit]
+  [4;36;1mSQL (0.000192)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000107)[0m   [0mBEGIN[0m
+
+
+Processing RailevancesController#index (for 0.0.0.0 at 2007-10-14 20:18:58) [GET]
+  Session ID: 
+  Parameters: {"action"=>"index", "controller"=>"railevances"}
+  [4;36;1mRailevance Load (0.000268)[0m   [0;1mSELECT * FROM railevances [0m
+Rendering template within layouts/railevances
+Rendering railevances/index
+Completed in 0.00346 (289 reqs/sec) | Rendering: 0.00260 (75%) | DB: 0.00057 (16%) | 200 OK [http://test.host/railevances]
+  [4;35;1mSQL (0.000171)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000081)[0m   [0;1mBEGIN[0m
+
+
+Processing RailevancesController#new (for 0.0.0.0 at 2007-10-14 20:18:58) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"railevances"}
+  [4;35;1mRailser Load (0.000275)[0m   [0mSELECT * FROM railsers [0m
+  [4;36;1mConcept Load (0.000191)[0m   [0;1mSELECT * FROM concepts [0m
+  [4;35;1mLanguage Columns (0.002660)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mFeature Columns (0.002123)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+Rendering template within layouts/railevances
+Rendering railevances/new
+Completed in 0.01449 (69 reqs/sec) | Rendering: 0.00266 (18%) | DB: 0.00550 (37%) | 200 OK [http://test.host/railevances/new]
+  [4;35;1mSQL (0.000196)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000104)[0m   [0;1mBEGIN[0m
+
+
+Processing RailevancesController#show (for 0.0.0.0 at 2007-10-14 20:18:58) [GET]
+  Session ID: 
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"railevances"}
+  [4;35;1mRailevance Load (0.000315)[0m   [0mSELECT * FROM railevances WHERE (railevances.`id` = 1) [0m
+Rendering template within layouts/railevances
+Rendering railevances/show
+  [4;36;1mConcept Load (0.000238)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`id` = 1) [0m
+  [4;35;1mConcept Load (0.000188)[0m   [0mSELECT * FROM concepts WHERE (concepts.`id` = 2) [0m
+  [4;36;1mRailser Load (0.000224)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+Completed in 0.00403 (248 reqs/sec) | Rendering: 0.00245 (60%) | DB: 0.00126 (31%) | 200 OK [http://test.host/railevances/1]
+  [4;35;1mSQL (0.000152)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000085)[0m   [0;1mBEGIN[0m
+
+
+Processing RailevancesController#update (for 0.0.0.0 at 2007-10-14 20:18:58) [PUT]
+  Session ID: 
+  Parameters: {"action"=>"update", "id"=>"1", "controller"=>"railevances", "railevance"=>{}}
+  [4;35;1mRailevance Load (0.000289)[0m   [0mSELECT * FROM railevances WHERE (railevances.`id` = 1) [0m
+  [4;36;1mRailevance Update (0.000234)[0m   [0;1mUPDATE railevances SET `created_at` = '2007-10-12 15:58:03', `rail_id` = 1, `railser_id` = 1, `tie_id` = 2, `deleted_at` = '2007-10-12 15:58:03', `updated_at` = '2007-10-15 00:18:58' WHERE `id` = 1[0m
+Redirected to http://test.host/railevances/1
+Completed in 0.00198 (505 reqs/sec) | DB: 0.00076 (38%) | 302 Found [http://test.host/railevances/1?]
+  [4;35;1mSQL (0.001466)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000183)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000412)[0m   [0mSELECT * FROM railsers WHERE (login = 'aaron' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mRailser Load (0.000335)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 2) [0m
+
+
+Processing RailsersController#activate (for 0.0.0.0 at 2007-10-14 20:18:58) [GET]
+  Session ID: 
+  Parameters: {"activation_code"=>"8f24789ae988411ccf33ab0c30fe9106fab32e9a", "action"=>"activate", "controller"=>"railsers"}
+  [4;35;1mRailser Load (0.000313)[0m   [0mSELECT * FROM railsers WHERE (railsers.`activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9a') LIMIT 1[0m
+  [4;36;1mRailser Load (0.000196)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 2) LIMIT 1[0m
+  [4;35;1mRailser Update (0.000259)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-13 20:18:58', `login` = 'aaron', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-15 00:18:58', `remember_token_expires_at` = NULL, `activation_code` = NULL, `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'aaron@example.com', `updated_at` = '2007-10-15 00:18:58' WHERE `id` = 2[0m
+Sent mail:
+ Date: Sun, 14 Oct 2007 20:18:58 -0400
+From: ADMINEMAIL
+To: aaron@example.com
+Subject: [YOURSITE] Your account has been activated!
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+aaron, your account has been activated.  You may now start adding your plugins:
+
+  http://YOURSITE/
+Redirected to http://test.host/concepts
+Completed in 0.03515 (28 reqs/sec) | DB: 0.00316 (9%) | 302 Found [http://test.host/activate/8f24789ae988411ccf33ab0c30fe9106fab32e9a]
+  [4;36;1mRailser Load (0.000365)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'aaron' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.001507)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000161)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000329)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+
+
+Processing RailsersController#create (for 0.0.0.0 at 2007-10-14 20:18:59) [POST]
+  Session ID: 
+  Parameters: {"railser"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"railsers"}
+  [4;36;1mRailser Load (0.000552)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;35;1mRailser Load (0.000222)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+  [4;36;1mRailser Create (0.000249)[0m   [0;1mINSERT INTO railsers (`salt`, `activated_at`, `updated_at`, `crypted_password`, `activation_code`, `remember_token_expires_at`, `remember_token`, `login`, `created_at`, `email`) VALUES('7e9a28f9538d98dae41ca74e74709252f13866f8', NULL, '2007-10-15 00:18:59', '7612010ff43876f7453d75052ebdb8a0264e174a', 'd9f7d00ab7e6b5d49ed66251f2c41765914c405b', NULL, NULL, 'quire', '2007-10-15 00:18:59', 'quire@example.com')[0m
+Sent mail:
+ Date: Sun, 14 Oct 2007 20:18:59 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/d9f7d00ab7e6b5d49ed66251f2c41765914c405b
+Redirected to http://test.host/concepts
+Completed in 0.00679 (147 reqs/sec) | DB: 0.00339 (49%) | 302 Found [http://test.host/railsers?railser%5Bemail%5D=quire%40example.com&railser%5Blogin%5D=quire&railser%5Bpassword%5D=quire&railser%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000393)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000743)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000152)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000288)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+
+
+Processing RailsersController#create (for 0.0.0.0 at 2007-10-14 20:18:59) [POST]
+  Session ID: 
+  Parameters: {"railser"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"quire", "email"=>nil}, "action"=>"create", "controller"=>"railsers"}
+  [4;35;1mRailser Load (0.000353)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;36;1mRailser Load (0.000262)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.email IS NULL) LIMIT 1[0m
+Rendering railsers/new
+Completed in 0.00507 (197 reqs/sec) | Rendering: 0.00259 (51%) | DB: 0.00219 (43%) | 200 OK [http://test.host/railsers?railser%5Bemail%5D=&railser%5Blogin%5D=quire&railser%5Bpassword%5D=quire&railser%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000244)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000135)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000102)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000209)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+
+
+Processing RailsersController#create (for 0.0.0.0 at 2007-10-14 20:18:59) [POST]
+  Session ID: 
+  Parameters: {"railser"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>nil, "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"railsers"}
+  [4;35;1mRailser Load (0.000310)[0m   [0mSELECT * FROM railsers WHERE (railsers.login IS NULL) LIMIT 1[0m
+  [4;36;1mRailser Load (0.000233)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+Rendering railsers/new
+Completed in 0.00439 (227 reqs/sec) | Rendering: 0.00137 (31%) | DB: 0.00123 (28%) | 200 OK [http://test.host/railsers?railser%5Bemail%5D=quire%40example.com&railser%5Blogin%5D=&railser%5Bpassword%5D=quire&railser%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000223)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000127)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000097)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000202)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+
+
+Processing RailsersController#create (for 0.0.0.0 at 2007-10-14 20:18:59) [POST]
+  Session ID: 
+  Parameters: {"railser"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"railsers"}
+  [4;35;1mRailser Load (0.000243)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;36;1mRailser Load (0.000255)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+Rendering railsers/new
+Completed in 0.00320 (312 reqs/sec) | Rendering: 0.00124 (38%) | DB: 0.00115 (35%) | 200 OK [http://test.host/railsers?railser%5Bemail%5D=quire%40example.com&railser%5Blogin%5D=quire&railser%5Bpassword%5D=quire&railser%5Bpassword_confirmation%5D=]
+  [4;35;1mSQL (0.000218)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000154)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000083)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.000187)[0m   [0;1mSELECT count(*) AS count_all FROM railsers [0m
+
+
+Processing RailsersController#create (for 0.0.0.0 at 2007-10-14 20:18:59) [POST]
+  Session ID: 
+  Parameters: {"railser"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"railsers"}
+  [4;35;1mRailser Load (0.000255)[0m   [0mSELECT * FROM railsers WHERE (LOWER(railsers.login) = 'quire') LIMIT 1[0m
+  [4;36;1mRailser Load (0.000214)[0m   [0;1mSELECT * FROM railsers WHERE (LOWER(railsers.email) = 'quire@example.com') LIMIT 1[0m
+Rendering railsers/new
+Completed in 0.00347 (288 reqs/sec) | Rendering: 0.00159 (45%) | DB: 0.00111 (31%) | 200 OK [http://test.host/railsers?railser%5Bemail%5D=quire%40example.com&railser%5Blogin%5D=quire&railser%5Bpassword%5D=&railser%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000369)[0m   [0mSELECT count(*) AS count_all FROM railsers [0m
+  [4;36;1mSQL (0.000134)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000107)[0m   [0mBEGIN[0m
+  [4;36;1mRailser Load (0.000288)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2007-10-14 20:18:59) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+  [4;35;1mRailser Load (0.000314)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) LIMIT 1[0m
+  [4;36;1mRailser Update (0.000341)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:18:58', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:18:58', `remember_token_expires_at` = NULL, `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:18:59' WHERE `id` = 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.00835 (119 reqs/sec) | DB: 0.00155 (18%) | 302 Found [http://test.host/session]
+  [4;35;1mSQL (0.000814)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000153)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000352)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Update (0.000355)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:18:58', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:18:58', `remember_token_expires_at` = '2007-10-29 00:18:59', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '1f5d4065a50d9a16e6c2eae97f9a3f401a972977', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:18:59' WHERE `id` = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2007-10-14 20:18:59) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+Completed in 0.00180 (554 reqs/sec) | Rendering: 0.00168 (93%) | DB: 0.00167 (92%) | 200 OK [http://test.host/session/new]
+  [4;35;1mRailser Load (0.000308)[0m   [0mSELECT * FROM railsers WHERE (railsers.`remember_token` = 'invalid_auth_token') LIMIT 1[0m
+  [4;36;1mSQL (0.000853)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000176)[0m   [0mBEGIN[0m
+  [4;36;1mRailser Load (0.000351)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mRailser Update (0.000361)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-09 20:18:58', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:18:58', `remember_token_expires_at` = '2007-10-29 00:18:59', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '1f5d4065a50d9a16e6c2eae97f9a3f401a972977', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:18:59' WHERE `id` = 1[0m
+  [4;36;1mRailser Update (0.000289)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:18:58', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:18:58', `remember_token_expires_at` = '2007-10-14 20:13:59', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '1f5d4065a50d9a16e6c2eae97f9a3f401a972977', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:18:59' WHERE `id` = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2007-10-14 20:18:59) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+Completed in 0.00089 (1117 reqs/sec) | Rendering: 0.00076 (84%) | DB: 0.00234 (261%) | 200 OK [http://test.host/session/new]
+  [4;35;1mRailser Load (0.000274)[0m   [0mSELECT * FROM railsers WHERE (railsers.`remember_token` = '1f5d4065a50d9a16e6c2eae97f9a3f401a972977') LIMIT 1[0m
+  [4;36;1mSQL (0.001405)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000161)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2007-10-14 20:18:59) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"[FILTERED]", "login"=>"quentin"}
+  [4;36;1mRailser Load (0.000351)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+Rendering sessions/new
+Completed in 0.00161 (620 reqs/sec) | Rendering: 0.00076 (47%) | DB: 0.00219 (135%) | 200 OK [http://test.host/session?login=quentin&password=bad+password]
+  [4;35;1mSQL (0.000160)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000091)[0m   [0;1mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2007-10-14 20:18:59) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"[FILTERED]", "login"=>"quentin"}
+  [4;35;1mRailser Load (0.000264)[0m   [0mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mRailser Load (0.000220)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00123 (813 reqs/sec) | DB: 0.00074 (59%) | 302 Found [http://test.host/session?login=quentin&password=test]
+  [4;35;1mSQL (0.000152)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000218)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mRailser Update (0.000538)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:18:58', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:18:58', `remember_token_expires_at` = '2007-10-29 00:18:59', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '1f5d4065a50d9a16e6c2eae97f9a3f401a972977', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:18:59' WHERE `id` = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2007-10-14 20:18:59) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+Completed in 0.00087 (1153 reqs/sec) | Rendering: 0.00075 (86%) | DB: 0.00098 (113%) | 200 OK [http://test.host/session/new]
+  [4;35;1mRailser Load (0.000281)[0m   [0mSELECT * FROM railsers WHERE (railsers.`remember_token` = '1f5d4065a50d9a16e6c2eae97f9a3f401a972977') LIMIT 1[0m
+  [4;36;1mRailser Update (0.000225)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:18:58', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:18:58', `remember_token_expires_at` = '2007-10-29 00:18:59', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '1f5d4065a50d9a16e6c2eae97f9a3f401a972977', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:18:59' WHERE `id` = 1[0m
+Cookie set: auth_token=1f5d4065a50d9a16e6c2eae97f9a3f401a972977; path=/; expires=Mon, 29 Oct 2007 00:18:59 GMT
+  [4;35;1mSQL (0.000963)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000435)[0m   [0;1mBEGIN[0m
+  [4;35;1mRailser Load (0.000384)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2007-10-14 20:18:59) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+  [4;36;1mRailser Load (0.000292)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) LIMIT 1[0m
+  [4;35;1mRailser Update (0.000333)[0m   [0mUPDATE railsers SET `created_at` = '2007-10-09 20:18:58', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:18:58', `remember_token_expires_at` = NULL, `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = NULL, `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:18:59' WHERE `id` = 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.00268 (373 reqs/sec) | DB: 0.00291 (108%) | 302 Found [http://test.host/session]
+  [4;36;1mSQL (0.000875)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000174)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2007-10-14 20:18:59) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"[FILTERED]", "login"=>"quentin", "remember_me"=>"0"}
+  [4;36;1mRailser Load (0.000341)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mRailser Load (0.000236)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0.00147 (682 reqs/sec) | DB: 0.00163 (110%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=0]
+  [4;36;1mSQL (0.000162)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.000102)[0m   [0mBEGIN[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2007-10-14 20:18:59) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"[FILTERED]", "login"=>"quentin", "remember_me"=>"1"}
+  [4;36;1mRailser Load (0.000268)[0m   [0;1mSELECT * FROM railsers WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mRailser Load (0.000204)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) LIMIT 1[0m
+  [4;36;1mRailser Update (0.000330)[0m   [0;1mUPDATE railsers SET `created_at` = '2007-10-09 20:18:58', `login` = 'quentin', `crypted_password` = '00742970dc9e6319f8019fd54864d3ea740f04b1', `activated_at` = '2007-10-09 20:18:58', `remember_token_expires_at` = '2007-10-29 00:18:59', `activation_code` = '8f24789ae988411ccf33ab0c30fe9106fab32e9b', `salt` = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd', `remember_token` = '1f5d4065a50d9a16e6c2eae97f9a3f401a972977', `email` = 'quentin@example.com', `updated_at` = '2007-10-15 00:18:59' WHERE `id` = 1[0m
+Cookie set: auth_token=1f5d4065a50d9a16e6c2eae97f9a3f401a972977; path=/; expires=Mon, 29 Oct 2007 00:18:59 GMT
+Redirected to http://test.host/
+Completed in 0.00319 (313 reqs/sec) | DB: 0.00107 (33%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=1]
+  [4;35;1mSQL (0.000788)[0m   [0mROLLBACK[0m

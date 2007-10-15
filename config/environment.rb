@@ -58,8 +58,8 @@ Rails::Initializer.run do |config|
 
 RESOURCES =  %w[ dependency combination trait compatibility directory library api feature release version license script file klass project revision
   incompatibility block line mojule keyword tool command recipe routine methid variable constant expression strin statement join snippet example 
-  argument structure symbl alias query output route word dataset datapoint assignment return interaction debate history convention syntax 
-  language regularexpression title capability behavior bounty bug tracker spec log report duration outofdate answer question goal prediction 
+  argument structure symbl alias query output route word dataset datapoint assignment return interaction debate history convention sintax 
+  language regularexpression title capability behavior bounty bug tracker speck log report duration outofdate answer question goal prediction 
   expertise group event vehicle place plan moment day year gig company offer picture audio vid series presentation refactor critique compliment 
   opinion strategy aggregator blog post comment site link resource search correction optimization contribution suggestion recommendation 
   reference book topic pattern course chapter page tip thought idea summary extension tesst decision conclusion reason disagreement experiment 

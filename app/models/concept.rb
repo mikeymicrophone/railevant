@@ -4,13 +4,34 @@ class Concept < ActiveRecord::Base
   has_many :rails, :through => :railevances, :source => 'rail'
   has_many :railsconcepts, :foreign_key => 'rail_id', :class_name => 'Railevance'
   has_many :ties, :through => :railsconcepts, :source => 'tie'
+  validates_presence_of :content
+  
+  # marks all entries with identical spellings as ambiguous
+  def self.disambiguate
+    (c = Concept.all).remove(&:ambiguous?).each do |t|
+      c.each do |s|
+        t.disambiguate_with s if t.content == s.content
+      end
+    end
+  end
+  
+  def disambiguate_with(concept)
+    self.ambiguous = '' if ambiguous.nil?; concept.ambiguous = '' if concept.ambiguous.nil?
+    self.ambiguous.concat "#{concept.id} "
+    concept.ambiguous.concat "#{self.id} "
+  end
+  
+  def remove_duplicate_ambiguities # not sure but i think disambiguate_with might make duplicate entries and I don't want to check before every insert
+    # maybe I should though, that method is meant to be slow anyway and i might as well keep the data clean and remove the need for this extra maintenance method
+    raise NotImplemented
+  end
   
   def cached_rails
-    rails_ids.blank? ? [] : Concept.find(*rails_ids.split.map(&:to_i))
+    rails_ids.blank? ? [] : ((r = Concept.find(*rails_ids.split.map(&:to_i))).is_a?(ActiveRecord::Base) ? [r] : r)
   end
   
   def cached_ties
-    ties_ids.blank? ? [] : Concept.find(*ties_ids.split.map(&:to_i))
+    ties_ids.blank? ? [] : ((r = Concept.find(*ties_ids.split.map(&:to_i))).is_a?(ActiveRecord::Base) ? [r] : r)
   end
   
   def cache_tie tie_id
@@ -19,6 +40,10 @@ class Concept < ActiveRecord::Base
   
   def cache_rail rail_id
     self.rails_ids = (rails_ids.nil? ? rail_id.to_s : rails_ids + " #{rail_id}")
+  end
+  
+  def to_param
+    content[0..75].urlize
   end
 end
 class Dependency < Concept
@@ -123,7 +148,7 @@ class History < Concept
 end
 class Convention < Concept
 end
-class Syntax < Concept
+class Sintax < Concept
 end
 class Language < Concept
 end
@@ -141,7 +166,7 @@ class Bug < Concept
 end
 class Tracker < Concept
 end
-class Spec < Concept
+class Speck < Concept
 end
 class Log < Concept
 end

@@ -2,11 +2,16 @@ class ConceptsController < ApplicationController
   def index
     Concept
     @concepts = request.request_uri[1..-1].singularize.capitalize.constantize.send(:all)
-    @concepts = Concept.all if @concepts.empty?
+    rescue NameError
+      []
+    @concepts = Concept.all if @concepts.blank?
   end
   
   def show
-    @concept = Concept.find params[:id]
+    params[:id] = params[:id].de_urlize
+    @concept = Concept.find_by_content params[:id]
+    @concept = Concept.find params[:id] unless @concept
+    @concepts = Concept.find *@concept.ambiguous.split.map(&:to_i) if @concept.ambiguous?
   end
   
   def new

@@ -11,7 +11,7 @@ module ConceptsHelper
   end
   
   def links_to_rails(concept)
-    concept.cached_rails.map { |r| link_to r.content, r }
+    concept.cached_rails.map { |r| link_to r.content, r }.join('*~._.~*')
   end
   
   def links_to_ties(concept)
