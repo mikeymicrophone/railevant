@@ -10082,3 +10082,997 @@ Rendering concepts/show
   [4;35;1mRailser Columns (0.002269)[0m   [0mSHOW FIELDS FROM railsers[0m
   [4;36;1mRailser Load (0.000582)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
 Completed in 0.03512 (28 reqs/sec) | Rendering: 0.00491 (13%) | DB: 0.00923 (26%) | 200 OK [http://localhost/blogs/loud_thinking]
+
+
+Processing ConceptsController#new (for 127.0.0.1 at 2007-10-14 21:40:50) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"new", "controller"=>"concepts"}
+  [4;35;1mConcept Columns (0.003191)[0m   [0mSHOW FIELDS FROM concepts[0m
+Rendering template within layouts/application
+Rendering concepts/new
+Completed in 0.02603 (38 reqs/sec) | Rendering: 0.00549 (21%) | DB: 0.00319 (12%) | 200 OK [http://localhost/concepts/new]
+
+
+Processing ConceptsController#create (for 127.0.0.1 at 2007-10-14 21:41:11) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"commit"=>"ready", "concept"=>{"content"=>"ActiveRecord"}, "class"=>{"name"=>"Mojule"}, "action"=>"create", "authenticity_token"=>"213afe0a51b455ab7debda0e435f0b7fca809fa6", "controller"=>"concepts"}
+  [4;36;1mConcept Columns (0.003244)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mSQL (0.000161)[0m   [0mBEGIN[0m
+  [4;36;1mConcept Create (0.000318)[0m   [0;1mINSERT INTO concepts (`ambiguous`, `updated_at`, `character`, `deleted_at`, `type`, `railser_id`, `bits`, `ties_ids`, `content`, `rails_ids`, `created_at`) VALUES(NULL, '2007-10-15 01:41:11', NULL, NULL, 'Mojule', 1, NULL, NULL, 'ActiveRecord', NULL, '2007-10-15 01:41:11')[0m
+  [4;35;1mSQL (0.000774)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/concepts/ActiveRecord
+Completed in 0.02787 (35 reqs/sec) | DB: 0.00450 (16%) | 302 Found [http://localhost/concepts]
+
+
+Processing ConceptsController#show (for 127.0.0.1 at 2007-10-14 21:41:11) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"show", "id"=>"ActiveRecord", "controller"=>"concepts"}
+  [4;36;1mConcept Columns (0.001893)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mConcept Load (0.000666)[0m   [0mSELECT * FROM concepts WHERE (concepts.`content` = 'ActiveRecord') LIMIT 1[0m
+  [4;36;1mLibrary Columns (0.001815)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+Rendering template within layouts/application
+Rendering concepts/show
+  [4;35;1mConcept Load (0.000281)[0m   [0mSELECT * FROM concepts WHERE (concepts.`id` IN (2,5)) [0m
+  [4;36;1mDirectory Columns (0.002353)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mRailser Columns (0.002386)[0m   [0mSHOW FIELDS FROM railsers[0m
+  [4;36;1mRailser Load (0.000705)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+Completed in 0.03702 (27 reqs/sec) | Rendering: 0.00745 (20%) | DB: 0.01010 (27%) | 200 OK [http://localhost/concepts/ActiveRecord]
+
+
+Processing ConceptsController#show (for 127.0.0.1 at 2007-10-14 21:41:31) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"show", "id"=>"ActiveRecord", "controller"=>"concepts"}
+  [4;35;1mConcept Columns (0.003318)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mConcept Load (0.000370)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`content` = 'ActiveRecord') LIMIT 1[0m
+  [4;35;1mLibrary Columns (0.002305)[0m   [0mSHOW FIELDS FROM concepts[0m
+Rendering template within layouts/application
+Rendering concepts/show
+  [4;36;1mConcept Load (0.000344)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`id` IN (2,5)) [0m
+  [4;35;1mDirectory Columns (0.001924)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mRailser Columns (0.002406)[0m   [0;1mSHOW FIELDS FROM railsers[0m
+  [4;35;1mRailser Load (0.000525)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+Completed in 0.04083 (24 reqs/sec) | Rendering: 0.00772 (18%) | DB: 0.01119 (27%) | 200 OK [http://localhost/concepts/ActiveRecord]
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+  [4;36;1mSQL (0.000154)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000128)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mConcept Load (0.000320)[0m   [0;1mSELECT * FROM concepts [0m
+  [4;35;1mConcept Columns (0.034455)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mLibrary Columns (0.003875)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mFeature Columns (0.024676)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mDirectory Columns (0.003534)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mTool Columns (0.276513)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mLanguage Columns (0.003542)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mBlog Columns (0.017307)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mMojule Columns (0.003931)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+
+
+Processing ConceptsController#show (for 127.0.0.1 at 2007-10-14 21:42:42) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"show", "id"=>"ActiveRecord", "controller"=>"concepts"}
+  [4;36;1mConcept Columns (0.058885)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mConcept Load (0.219329)[0m   [0mSELECT * FROM concepts WHERE (concepts.`content` = 'ActiveRecord') LIMIT 1[0m
+  [4;36;1mLibrary Columns (0.029221)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+Rendering template within layouts/application
+Rendering concepts/show
+  [4;35;1mConcept Load (0.000639)[0m   [0mSELECT * FROM concepts WHERE (concepts.`id` IN (2,5)) [0m
+  [4;36;1mDirectory Columns (0.002104)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mRailser Columns (0.007159)[0m   [0mSHOW FIELDS FROM railsers[0m
+  [4;36;1mRailser Load (0.001315)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+Completed in 0.35156 (2 reqs/sec) | Rendering: 0.00764 (2%) | DB: 0.31865 (90%) | 200 OK [http://localhost/concepts/ActiveRecord]
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+  [4;36;1mSQL (0.000204)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000115)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mConcept Load (0.000338)[0m   [0;1mSELECT * FROM concepts [0m
+  [4;35;1mConcept Columns (0.019269)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mLibrary Columns (0.002417)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mFeature Columns (0.013247)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mDirectory Columns (0.003796)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mTool Columns (0.026294)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mLanguage Columns (0.082818)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mBlog Columns (0.002238)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mMojule Columns (0.011810)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+
+
+Processing ConceptsController#show (for 127.0.0.1 at 2007-10-14 21:43:24) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"show", "id"=>"ActiveRecord", "controller"=>"concepts"}
+  [4;35;1mConcept Columns (0.002169)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mConcept Load (0.000717)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`content` = 'ActiveRecord') LIMIT 1[0m
+  [4;35;1mLibrary Columns (0.003893)[0m   [0mSHOW FIELDS FROM concepts[0m
+Rendering template within layouts/application
+Rendering concepts/show
+  [4;36;1mConcept Load (0.001466)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`id` IN (2,5)) [0m
+  [4;35;1mDirectory Columns (0.002077)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mRailser Columns (0.004377)[0m   [0;1mSHOW FIELDS FROM railsers[0m
+  [4;35;1mRailser Load (0.001816)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+Completed in 0.05375 (18 reqs/sec) | Rendering: 0.01280 (23%) | DB: 0.01652 (30%) | 200 OK [http://localhost/concepts/ActiveRecord]
+
+
+Processing ConceptsController#show (for 127.0.0.1 at 2007-10-14 21:43:26) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"show", "id"=>"ActiveRecord", "controller"=>"concepts"}
+  [4;36;1mConcept Columns (0.019770)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mConcept Load (0.001928)[0m   [0mSELECT * FROM concepts WHERE (concepts.`content` = 'ActiveRecord') LIMIT 1[0m
+  [4;36;1mLibrary Columns (0.002100)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+Rendering template within layouts/application
+Rendering concepts/show
+  [4;35;1mConcept Load (0.005425)[0m   [0mSELECT * FROM concepts WHERE (concepts.`id` IN (2,5)) [0m
+  [4;36;1mDirectory Columns (0.004223)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mRailser Columns (0.010298)[0m   [0mSHOW FIELDS FROM railsers[0m
+  [4;36;1mRailser Load (0.001421)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+Completed in 0.07240 (13 reqs/sec) | Rendering: 0.00799 (11%) | DB: 0.04517 (62%) | 200 OK [http://localhost/concepts/ActiveRecord]
+
+
+Processing ConceptsController#new (for 127.0.0.1 at 2007-10-15 00:43:40) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"new", "controller"=>"concepts"}
+  [4;35;1mConcept Columns (0.003128)[0m   [0mSHOW FIELDS FROM concepts[0m
+Rendering template within layouts/application
+Rendering concepts/new
+Completed in 0.04465 (22 reqs/sec) | Rendering: 0.00569 (12%) | DB: 0.00313 (7%) | 200 OK [http://localhost/concepts/new]
+
+
+Processing ConceptsController#show (for 127.0.0.1 at 2007-10-15 00:44:03) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"show", "id"=>"ActiveRecord", "controller"=>"concepts"}
+  [4;36;1mConcept Columns (0.003384)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mConcept Load (0.141201)[0m   [0mSELECT * FROM concepts WHERE (concepts.`content` = 'ActiveRecord') LIMIT 1[0m
+  [4;36;1mLibrary Columns (0.002823)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+Rendering template within layouts/application
+Rendering concepts/show
+  [4;35;1mConcept Load (0.001492)[0m   [0mSELECT * FROM concepts WHERE (concepts.`id` IN (2,5)) [0m
+  [4;36;1mDirectory Columns (0.002565)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mRailser Columns (0.002102)[0m   [0mSHOW FIELDS FROM railsers[0m
+  [4;36;1mRailser Load (0.000599)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+Completed in 0.18242 (5 reqs/sec) | Rendering: 0.00822 (4%) | DB: 0.15417 (84%) | 200 OK [http://localhost/concepts/ActiveRecord]
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+
+
+Processing ConceptsController#show (for 127.0.0.1 at 2007-10-15 21:49:52) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"show", "id"=>"ActiveRecord", "controller"=>"concepts"}
+  [4;35;1mConcept Columns (0.002581)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mConcept Load (0.087345)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`content` = 'ActiveRecord') LIMIT 1[0m
+  [4;35;1mLibrary Columns (0.003108)[0m   [0mSHOW FIELDS FROM concepts[0m
+Rendering template within layouts/application
+Rendering concepts/show
+  [4;36;1mConcept Load (0.000361)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`id` IN (2,5)) [0m
+
+
+ActionView::TemplateError (undefined local variable or method `uri' for #<Library:0x3252738>) on line #16 of app/views/concepts/show.html.erb:
+13: </div>
+14: 
+15: <%= links_to_rails @concept %>
+16: <%= links_to_ties @concept %>
+17: 
+18: <b><%= link_to(@concept.railser.name, @concept.railser) %></b>
+19: 
+
+    vendor/rails/activerecord/lib/active_record/attribute_methods.rb:205:in `method_missing'
+    app/models/concept.rb:52:in `to_param'
+    (eval):2:in `library_path'
+    vendor/rails/actionpack/lib/action_controller/polymorphic_routes.rb:27:in `send!'
+    vendor/rails/actionpack/lib/action_controller/polymorphic_routes.rb:27:in `polymorphic_url'
+    vendor/rails/actionpack/lib/action_controller/polymorphic_routes.rb:31:in `polymorphic_path'
+    vendor/rails/actionpack/lib/action_view/helpers/url_helper.rb:79:in `url_for'
+    vendor/rails/actionpack/lib/action_view/helpers/url_helper.rb:144:in `link_to'
+    app/helpers/concepts_helper.rb:18:in `links_to_ties'
+    app/helpers/concepts_helper.rb:18:in `map'
+    app/helpers/concepts_helper.rb:18:in `links_to_ties'
+    app/views/concepts/show.html.erb:16:in `_run_erb_47app47views47concepts47show46html46erb'
+    vendor/rails/actionpack/lib/action_view/base.rb:377:in `send'
+    vendor/rails/actionpack/lib/action_view/base.rb:377:in `compile_and_render_template'
+    vendor/plugins/markaby/lib/markaby/rails.rb:8:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:303:in `render_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1070:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:797:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/layout.rb:261:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1125:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:697:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:175:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:670:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:669:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:517:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:517:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:377:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:114:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/railties/lib/commands/server.rb:39
+    script/server:3:in `require'
+    script/server:3
+
+Rendering /Users/mschwab/projects/railevant/trunk/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+  [4;36;1mSQL (0.000189)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000150)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000276)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000144)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000132)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000096)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000135)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000095)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CacheUrl (7)
+  [4;35;1mSQL (0.128828)[0m   [0mALTER TABLE concepts ADD `uri` varchar(255)[0m
+  [4;36;1mSQL (0.000430)[0m   [0;1mUPDATE schema_info SET version = 7[0m
+  [4;35;1mSQL (0.000380)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000601)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.002617)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mSQL (0.000340)[0m   [0;1mSHOW KEYS FROM concepts[0m
+  [4;35;1mSQL (0.001905)[0m   [0mSHOW FIELDS FROM open_id_authentication_associations[0m
+  [4;36;1mSQL (0.000693)[0m   [0;1mSHOW KEYS FROM open_id_authentication_associations[0m
+  [4;35;1mSQL (0.001877)[0m   [0mSHOW FIELDS FROM open_id_authentication_nonces[0m
+  [4;36;1mSQL (0.000764)[0m   [0;1mSHOW KEYS FROM open_id_authentication_nonces[0m
+  [4;35;1mSQL (0.001694)[0m   [0mSHOW FIELDS FROM open_id_authentication_settings[0m
+  [4;36;1mSQL (0.001533)[0m   [0;1mSHOW KEYS FROM open_id_authentication_settings[0m
+  [4;35;1mSQL (0.001919)[0m   [0mSHOW FIELDS FROM railevances[0m
+  [4;36;1mSQL (0.002218)[0m   [0;1mSHOW KEYS FROM railevances[0m
+  [4;35;1mSQL (0.002157)[0m   [0mSHOW FIELDS FROM railsers[0m
+  [4;36;1mSQL (0.000779)[0m   [0;1mSHOW KEYS FROM railsers[0m
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+  [4;36;1mSQL (0.000145)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000092)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mConcept Load (0.000292)[0m   [0;1mSELECT * FROM concepts [0m
+  [4;35;1mConcept Columns (0.003169)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mLibrary Columns (0.002676)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mSQL (0.001520)[0m   [0mBEGIN[0m
+  [4;36;1mLibrary Update (0.000464)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-12 14:40:46', `content` = 'ActiveRecord', `railser_id` = 1, `uri` = 'ActiveRecord', `character` = '', `rails_ids` = NULL, `type` = 'Library', `deleted_at` = NULL, `ties_ids` = ' 2, 5', `bits` = NULL, `updated_at` = '2007-10-16 01:51:45', `ambiguous` = '' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.000713)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000094)[0m   [0;1mBEGIN[0m
+  [4;35;1mLibrary Update (0.000320)[0m   [0mUPDATE concepts SET `created_at` = '2007-10-12 14:45:03', `content` = 'ActiveResource', `railser_id` = 1, `uri` = 'ActiveResource', `character` = '', `rails_ids` = ' 1', `type` = 'Library', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:51:45', `ambiguous` = NULL WHERE `id` = 2[0m
+  [4;36;1mSQL (0.000733)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000191)[0m   [0mBEGIN[0m
+  [4;36;1mLibrary Update (0.000347)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-12 14:46:26', `content` = 'rubygems', `railser_id` = 1, `uri` = 'rubygems', `character` = '', `rails_ids` = NULL, `type` = 'Library', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:51:45', `ambiguous` = NULL WHERE `id` = 3[0m
+  [4;35;1mSQL (0.000612)[0m   [0mCOMMIT[0m
+  [4;36;1mFeature Columns (0.003441)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mSQL (0.000157)[0m   [0mBEGIN[0m
+  [4;36;1mFeature Update (0.000340)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-12 19:53:42', `content` = 'scaffolding', `railser_id` = 1, `uri` = 'scaffolding', `character` = '', `rails_ids` = NULL, `type` = 'Feature', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:51:45', `ambiguous` = NULL WHERE `id` = 4[0m
+  [4;35;1mSQL (0.000936)[0m   [0mCOMMIT[0m
+  [4;36;1mDirectory Columns (0.003017)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mSQL (0.000156)[0m   [0mBEGIN[0m
+  [4;36;1mDirectory Update (0.000353)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-13 01:08:56', `content` = 'config', `railser_id` = 1, `uri` = 'config', `character` = 'library_id:28843\r\nfile_id:284993\r\nlanguage_id:ruby\r\n\r\n', `rails_ids` = ' 1', `type` = 'Directory', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:51:45', `ambiguous` = NULL WHERE `id` = 5[0m
+  [4;35;1mSQL (0.024337)[0m   [0mCOMMIT[0m
+  [4;36;1mTool Columns (0.002767)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mSQL (0.000155)[0m   [0mBEGIN[0m
+  [4;36;1mTool Update (0.000350)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-13 01:21:10', `content` = 'irb', `railser_id` = 1, `uri` = 'irb', `character` = '', `rails_ids` = NULL, `type` = 'Tool', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:51:45', `ambiguous` = NULL WHERE `id` = 6[0m
+  [4;35;1mSQL (0.000618)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000128)[0m   [0;1mBEGIN[0m
+  [4;35;1mTool Update (0.000381)[0m   [0mUPDATE concepts SET `created_at` = '2007-10-13 22:46:06', `content` = 'osx', `railser_id` = 1, `uri` = 'osx', `character` = NULL, `rails_ids` = NULL, `type` = 'Tool', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:51:45', `ambiguous` = NULL WHERE `id` = 7[0m
+  [4;36;1mSQL (0.000631)[0m   [0;1mCOMMIT[0m
+  [4;35;1mLanguage Columns (0.002695)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mSQL (0.000149)[0m   [0;1mBEGIN[0m
+  [4;35;1mLanguage Update (0.000340)[0m   [0mUPDATE concepts SET `created_at` = '2007-10-15 01:13:21', `content` = 'ruby', `railser_id` = 1, `uri` = 'ruby', `character` = NULL, `rails_ids` = NULL, `type` = 'Language', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:51:45', `ambiguous` = NULL WHERE `id` = 8[0m
+  [4;36;1mSQL (0.000670)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000141)[0m   [0mBEGIN[0m
+  [4;36;1mTool Update (0.000301)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-15 01:15:47', `content` = 'svn', `railser_id` = 1, `uri` = 'svn', `character` = NULL, `rails_ids` = NULL, `type` = 'Tool', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:51:45', `ambiguous` = NULL WHERE `id` = 9[0m
+  [4;35;1mSQL (0.000627)[0m   [0mCOMMIT[0m
+  [4;36;1mBlog Columns (0.002778)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mSQL (0.000157)[0m   [0mBEGIN[0m
+  [4;36;1mBlog Update (0.000343)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-15 01:17:01', `content` = 'loud thinking', `railser_id` = 1, `uri` = 'loud_thinking', `character` = NULL, `rails_ids` = NULL, `type` = 'Blog', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:51:45', `ambiguous` = NULL WHERE `id` = 10[0m
+  [4;35;1mSQL (0.000567)[0m   [0mCOMMIT[0m
+  [4;36;1mMojule Columns (0.002281)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mSQL (0.000157)[0m   [0mBEGIN[0m
+  [4;36;1mMojule Update (0.000322)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-15 01:41:11', `content` = 'ActiveRecord', `railser_id` = 1, `uri` = 'ActiveRecord', `character` = NULL, `rails_ids` = NULL, `type` = 'Mojule', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:51:45', `ambiguous` = NULL WHERE `id` = 11[0m
+  [4;35;1mSQL (0.000737)[0m   [0mCOMMIT[0m
+
+
+Processing ConceptsController#show (for 127.0.0.1 at 2007-10-15 21:56:28) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"show", "id"=>"ActiveRecord", "controller"=>"concepts"}
+  [4;35;1mConcept Columns (0.003281)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mConcept Load (0.000438)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`content` = 'ActiveRecord') LIMIT 1[0m
+  [4;35;1mLibrary Columns (0.002229)[0m   [0mSHOW FIELDS FROM concepts[0m
+Rendering template within layouts/application
+Rendering concepts/show
+  [4;36;1mConcept Load (0.000368)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`id` IN (2,5)) [0m
+  [4;35;1mDirectory Columns (0.002100)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mRailser Columns (0.002226)[0m   [0;1mSHOW FIELDS FROM railsers[0m
+  [4;35;1mRailser Load (0.000921)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+Completed in 0.04204 (23 reqs/sec) | Rendering: 0.00838 (19%) | DB: 0.01192 (28%) | 200 OK [http://localhost/concepts/ActiveRecord]
+
+
+Processing ConceptsController#index (for 127.0.0.1 at 2007-10-15 21:56:34) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"index", "controller"=>"concepts"}
+  [4;36;1mLibrary Columns (0.003371)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mLibrary Load (0.000945)[0m   [0mSELECT * FROM concepts WHERE ( (concepts.`type` = 'Library' ) ) [0m
+Rendering template within layouts/application
+Rendering concepts/index
+  [4;36;1mRailser Columns (0.002031)[0m   [0;1mSHOW FIELDS FROM railsers[0m
+  [4;35;1mRailser Load (0.000385)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+Completed in 0.03206 (31 reqs/sec) | Rendering: 0.00765 (23%) | DB: 0.00673 (20%) | 200 OK [http://localhost/libraries]
+
+
+Processing ConceptsController#index (for 127.0.0.1 at 2007-10-15 21:56:37) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"index", "controller"=>"concepts"}
+  [4;36;1mConcept Load (0.000362)[0m   [0;1mSELECT * FROM concepts [0m
+  [4;35;1mConcept Columns (0.003448)[0m   [0mSHOW FIELDS FROM concepts[0m
+Rendering template within layouts/application
+Rendering concepts/index
+  [4;36;1mLibrary Columns (0.002131)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mRailser Columns (0.001627)[0m   [0mSHOW FIELDS FROM railsers[0m
+  [4;36;1mRailser Load (0.000657)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mFeature Columns (0.002926)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mDirectory Columns (0.002456)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mTool Columns (0.002716)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mLanguage Columns (0.002442)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mBlog Columns (0.002141)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mMojule Columns (0.002752)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+Completed in 0.07449 (13 reqs/sec) | Rendering: 0.02995 (40%) | DB: 0.02366 (31%) | 200 OK [http://localhost/concepts]
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+  [4;36;1mSQL (0.000155)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000124)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mConcept Load (0.000295)[0m   [0;1mSELECT * FROM concepts [0m
+  [4;35;1mConcept Columns (0.003165)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mLibrary Columns (0.002323)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mSQL (0.000158)[0m   [0mBEGIN[0m
+  [4;36;1mLibrary Update (0.000355)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-12 14:40:46', `content` = 'ActiveRecord', `railser_id` = 1, `uri` = NULL, `character` = '', `rails_ids` = NULL, `type` = 'Library', `deleted_at` = NULL, `ties_ids` = ' 2, 5', `bits` = NULL, `updated_at` = '2007-10-16 01:58:00', `ambiguous` = '' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.000840)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000189)[0m   [0;1mBEGIN[0m
+  [4;35;1mLibrary Update (0.000369)[0m   [0mUPDATE concepts SET `created_at` = '2007-10-12 14:45:03', `content` = 'ActiveResource', `railser_id` = 1, `uri` = NULL, `character` = '', `rails_ids` = ' 1', `type` = 'Library', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:00', `ambiguous` = NULL WHERE `id` = 2[0m
+  [4;36;1mSQL (0.000599)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000165)[0m   [0mBEGIN[0m
+  [4;36;1mLibrary Update (0.000349)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-12 14:46:26', `content` = 'rubygems', `railser_id` = 1, `uri` = NULL, `character` = '', `rails_ids` = NULL, `type` = 'Library', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:00', `ambiguous` = NULL WHERE `id` = 3[0m
+  [4;35;1mSQL (0.000791)[0m   [0mCOMMIT[0m
+  [4;36;1mFeature Columns (0.002625)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mSQL (0.000151)[0m   [0mBEGIN[0m
+  [4;36;1mFeature Update (0.000337)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-12 19:53:42', `content` = 'scaffolding', `railser_id` = 1, `uri` = NULL, `character` = '', `rails_ids` = NULL, `type` = 'Feature', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:00', `ambiguous` = NULL WHERE `id` = 4[0m
+  [4;35;1mSQL (0.000760)[0m   [0mCOMMIT[0m
+  [4;36;1mDirectory Columns (0.002676)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mSQL (0.000150)[0m   [0mBEGIN[0m
+  [4;36;1mDirectory Update (0.000338)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-13 01:08:56', `content` = 'config', `railser_id` = 1, `uri` = NULL, `character` = 'library_id:28843\r\nfile_id:284993\r\nlanguage_id:ruby\r\n\r\n', `rails_ids` = ' 1', `type` = 'Directory', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:00', `ambiguous` = NULL WHERE `id` = 5[0m
+  [4;35;1mSQL (0.000748)[0m   [0mCOMMIT[0m
+  [4;36;1mTool Columns (0.002904)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mSQL (0.000156)[0m   [0mBEGIN[0m
+  [4;36;1mTool Update (0.000346)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-13 01:21:10', `content` = 'irb', `railser_id` = 1, `uri` = NULL, `character` = '', `rails_ids` = NULL, `type` = 'Tool', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:00', `ambiguous` = NULL WHERE `id` = 6[0m
+  [4;35;1mSQL (0.000605)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000129)[0m   [0;1mBEGIN[0m
+  [4;35;1mTool Update (0.000281)[0m   [0mUPDATE concepts SET `created_at` = '2007-10-13 22:46:06', `content` = 'osx', `railser_id` = 1, `uri` = NULL, `character` = NULL, `rails_ids` = NULL, `type` = 'Tool', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:00', `ambiguous` = NULL WHERE `id` = 7[0m
+  [4;36;1mSQL (0.000656)[0m   [0;1mCOMMIT[0m
+  [4;35;1mLanguage Columns (0.002897)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mSQL (0.000124)[0m   [0;1mBEGIN[0m
+  [4;35;1mLanguage Update (0.000329)[0m   [0mUPDATE concepts SET `created_at` = '2007-10-15 01:13:21', `content` = 'ruby', `railser_id` = 1, `uri` = NULL, `character` = NULL, `rails_ids` = NULL, `type` = 'Language', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:00', `ambiguous` = NULL WHERE `id` = 8[0m
+  [4;36;1mSQL (0.033987)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000213)[0m   [0mBEGIN[0m
+  [4;36;1mTool Update (0.000437)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-15 01:15:47', `content` = 'svn', `railser_id` = 1, `uri` = NULL, `character` = NULL, `rails_ids` = NULL, `type` = 'Tool', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:00', `ambiguous` = NULL WHERE `id` = 9[0m
+  [4;35;1mSQL (0.000790)[0m   [0mCOMMIT[0m
+  [4;36;1mBlog Columns (0.002754)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mSQL (0.000158)[0m   [0mBEGIN[0m
+  [4;36;1mBlog Update (0.000334)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-15 01:17:01', `content` = 'loud thinking', `railser_id` = 1, `uri` = NULL, `character` = NULL, `rails_ids` = NULL, `type` = 'Blog', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:00', `ambiguous` = NULL WHERE `id` = 10[0m
+  [4;35;1mSQL (0.000527)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000142)[0m   [0;1mBEGIN[0m
+  [4;35;1mBlog Update (0.000311)[0m   [0mUPDATE concepts SET `created_at` = '2007-10-15 01:17:01', `content` = 'loud thinking', `railser_id` = 1, `uri` = 'loud_thinking', `character` = NULL, `rails_ids` = NULL, `type` = 'Blog', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:00', `ambiguous` = NULL WHERE `id` = 10[0m
+  [4;36;1mSQL (0.000655)[0m   [0;1mCOMMIT[0m
+  [4;35;1mMojule Columns (0.002689)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mSQL (0.000152)[0m   [0;1mBEGIN[0m
+  [4;35;1mMojule Update (0.000341)[0m   [0mUPDATE concepts SET `created_at` = '2007-10-15 01:41:11', `content` = 'ActiveRecord', `railser_id` = 1, `uri` = NULL, `character` = NULL, `rails_ids` = NULL, `type` = 'Mojule', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:00', `ambiguous` = NULL WHERE `id` = 11[0m
+  [4;36;1mSQL (0.000740)[0m   [0;1mCOMMIT[0m
+
+
+Processing ConceptsController#index (for 127.0.0.1 at 2007-10-15 21:58:07) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"index", "controller"=>"concepts"}
+  [4;35;1mConcept Load (0.000340)[0m   [0mSELECT * FROM concepts [0m
+  [4;36;1mConcept Columns (0.001349)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+Rendering template within layouts/application
+Rendering concepts/index
+  [4;35;1mLibrary Columns (0.002361)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mRailser Columns (0.003361)[0m   [0;1mSHOW FIELDS FROM railsers[0m
+  [4;35;1mRailser Load (0.001614)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mFeature Columns (0.002662)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mDirectory Columns (0.002013)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mTool Columns (0.002204)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mLanguage Columns (0.002587)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mBlog Columns (0.002348)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+  [4;36;1mMojule Columns (0.002277)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+Completed in 0.07051 (14 reqs/sec) | Rendering: 0.02781 (39%) | DB: 0.02312 (32%) | 200 OK [http://localhost/concepts]
+
+
+Processing ConceptsController#show (for 127.0.0.1 at 2007-10-15 21:58:36) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"show", "id"=>"ActiveRecord", "controller"=>"concepts"}
+  [4;36;1mConcept Columns (0.003361)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mConcept Load (0.000353)[0m   [0mSELECT * FROM concepts WHERE (concepts.`content` = 'ActiveRecord') LIMIT 1[0m
+  [4;36;1mLibrary Columns (0.002206)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+Rendering template within layouts/application
+Rendering concepts/show
+  [4;35;1mConcept Load (0.000364)[0m   [0mSELECT * FROM concepts WHERE (concepts.`id` IN (2,5)) [0m
+  [4;36;1mDirectory Columns (0.002330)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mRailser Columns (0.002771)[0m   [0mSHOW FIELDS FROM railsers[0m
+  [4;36;1mRailser Load (0.001377)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+Completed in 0.04443 (22 reqs/sec) | Rendering: 0.00918 (20%) | DB: 0.01276 (28%) | 200 OK [http://localhost/libraries/ActiveRecord]
+  [4;35;1mConcept Load (0.000492)[0m   [0mSELECT * FROM concepts [0m
+  [4;36;1mSQL (0.000402)[0m   [0;1mBEGIN[0m
+  [4;35;1mLibrary Update (0.000352)[0m   [0mUPDATE concepts SET `created_at` = '2007-10-12 14:40:46', `content` = 'ActiveRecord', `railser_id` = 1, `uri` = NULL, `character` = '', `rails_ids` = NULL, `type` = 'Library', `deleted_at` = NULL, `ties_ids` = ' 2, 5', `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '1 1 ' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.001238)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000103)[0m   [0mBEGIN[0m
+  [4;36;1mLibrary Update (0.000259)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-12 14:40:46', `content` = 'ActiveRecord', `railser_id` = 1, `uri` = NULL, `character` = '', `rails_ids` = NULL, `type` = 'Library', `deleted_at` = NULL, `ties_ids` = ' 2, 5', `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '1 1 ' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.000117)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000103)[0m   [0;1mBEGIN[0m
+  [4;35;1mLibrary Update (0.000362)[0m   [0mUPDATE concepts SET `created_at` = '2007-10-12 14:40:46', `content` = 'ActiveRecord', `railser_id` = 1, `uri` = NULL, `character` = '', `rails_ids` = NULL, `type` = 'Library', `deleted_at` = NULL, `ties_ids` = ' 2, 5', `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '1 1 11 ' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.000688)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000127)[0m   [0mBEGIN[0m
+  [4;36;1mMojule Update (0.000336)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-15 01:41:11', `content` = 'ActiveRecord', `railser_id` = 1, `uri` = NULL, `character` = NULL, `rails_ids` = NULL, `type` = 'Mojule', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '1 ' WHERE `id` = 11[0m
+  [4;35;1mSQL (0.000506)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000139)[0m   [0;1mBEGIN[0m
+  [4;35;1mLibrary Update (0.000292)[0m   [0mUPDATE concepts SET `created_at` = '2007-10-12 14:45:03', `content` = 'ActiveResource', `railser_id` = 1, `uri` = NULL, `character` = '', `rails_ids` = ' 1', `type` = 'Library', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '2 2 ' WHERE `id` = 2[0m
+  [4;36;1mSQL (0.000543)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000127)[0m   [0mBEGIN[0m
+  [4;36;1mLibrary Update (0.000231)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-12 14:45:03', `content` = 'ActiveResource', `railser_id` = 1, `uri` = NULL, `character` = '', `rails_ids` = ' 1', `type` = 'Library', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '2 2 ' WHERE `id` = 2[0m
+  [4;35;1mSQL (0.000121)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000105)[0m   [0;1mBEGIN[0m
+  [4;35;1mLibrary Update (0.000377)[0m   [0mUPDATE concepts SET `created_at` = '2007-10-12 14:46:26', `content` = 'rubygems', `railser_id` = 1, `uri` = NULL, `character` = '', `rails_ids` = NULL, `type` = 'Library', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '3 3 ' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.000656)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000115)[0m   [0mBEGIN[0m
+  [4;36;1mLibrary Update (0.000322)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-12 14:46:26', `content` = 'rubygems', `railser_id` = 1, `uri` = NULL, `character` = '', `rails_ids` = NULL, `type` = 'Library', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '3 3 ' WHERE `id` = 3[0m
+  [4;35;1mSQL (0.000115)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000097)[0m   [0;1mBEGIN[0m
+  [4;35;1mFeature Update (0.000318)[0m   [0mUPDATE concepts SET `created_at` = '2007-10-12 19:53:42', `content` = 'scaffolding', `railser_id` = 1, `uri` = NULL, `character` = '', `rails_ids` = NULL, `type` = 'Feature', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '4 4 ' WHERE `id` = 4[0m
+  [4;36;1mSQL (0.000615)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000080)[0m   [0mBEGIN[0m
+  [4;36;1mFeature Update (0.000268)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-12 19:53:42', `content` = 'scaffolding', `railser_id` = 1, `uri` = NULL, `character` = '', `rails_ids` = NULL, `type` = 'Feature', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '4 4 ' WHERE `id` = 4[0m
+  [4;35;1mSQL (0.000143)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000131)[0m   [0;1mBEGIN[0m
+  [4;35;1mDirectory Update (0.000293)[0m   [0mUPDATE concepts SET `created_at` = '2007-10-13 01:08:56', `content` = 'config', `railser_id` = 1, `uri` = NULL, `character` = 'library_id:28843\r\nfile_id:284993\r\nlanguage_id:ruby\r\n\r\n', `rails_ids` = ' 1', `type` = 'Directory', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '5 5 ' WHERE `id` = 5[0m
+  [4;36;1mSQL (0.000713)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000191)[0m   [0mBEGIN[0m
+  [4;36;1mDirectory Update (0.000304)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-13 01:08:56', `content` = 'config', `railser_id` = 1, `uri` = NULL, `character` = 'library_id:28843\r\nfile_id:284993\r\nlanguage_id:ruby\r\n\r\n', `rails_ids` = ' 1', `type` = 'Directory', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '5 5 ' WHERE `id` = 5[0m
+  [4;35;1mSQL (0.000131)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000143)[0m   [0;1mBEGIN[0m
+  [4;35;1mTool Update (0.000302)[0m   [0mUPDATE concepts SET `created_at` = '2007-10-13 01:21:10', `content` = 'irb', `railser_id` = 1, `uri` = NULL, `character` = '', `rails_ids` = NULL, `type` = 'Tool', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '6 6 ' WHERE `id` = 6[0m
+  [4;36;1mSQL (0.001243)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000202)[0m   [0mBEGIN[0m
+  [4;36;1mTool Update (0.000315)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-13 01:21:10', `content` = 'irb', `railser_id` = 1, `uri` = NULL, `character` = '', `rails_ids` = NULL, `type` = 'Tool', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '6 6 ' WHERE `id` = 6[0m
+  [4;35;1mSQL (0.000160)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000141)[0m   [0;1mBEGIN[0m
+  [4;35;1mTool Update (0.000383)[0m   [0mUPDATE concepts SET `created_at` = '2007-10-13 22:46:06', `content` = 'osx', `railser_id` = 1, `uri` = NULL, `character` = NULL, `rails_ids` = NULL, `type` = 'Tool', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '7 7 ' WHERE `id` = 7[0m
+  [4;36;1mSQL (0.000675)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000188)[0m   [0mBEGIN[0m
+  [4;36;1mTool Update (0.000485)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-13 22:46:06', `content` = 'osx', `railser_id` = 1, `uri` = NULL, `character` = NULL, `rails_ids` = NULL, `type` = 'Tool', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '7 7 ' WHERE `id` = 7[0m
+  [4;35;1mSQL (0.000167)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000142)[0m   [0;1mBEGIN[0m
+  [4;35;1mLanguage Update (0.000321)[0m   [0mUPDATE concepts SET `created_at` = '2007-10-15 01:13:21', `content` = 'ruby', `railser_id` = 1, `uri` = NULL, `character` = NULL, `rails_ids` = NULL, `type` = 'Language', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '8 8 ' WHERE `id` = 8[0m
+  [4;36;1mSQL (0.000651)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000190)[0m   [0mBEGIN[0m
+  [4;36;1mLanguage Update (0.000304)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-15 01:13:21', `content` = 'ruby', `railser_id` = 1, `uri` = NULL, `character` = NULL, `rails_ids` = NULL, `type` = 'Language', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '8 8 ' WHERE `id` = 8[0m
+  [4;35;1mSQL (0.000144)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000123)[0m   [0;1mBEGIN[0m
+  [4;35;1mTool Update (0.000307)[0m   [0mUPDATE concepts SET `created_at` = '2007-10-15 01:15:47', `content` = 'svn', `railser_id` = 1, `uri` = NULL, `character` = NULL, `rails_ids` = NULL, `type` = 'Tool', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '9 9 ' WHERE `id` = 9[0m
+  [4;36;1mSQL (0.000667)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000183)[0m   [0mBEGIN[0m
+  [4;36;1mTool Update (0.000289)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-15 01:15:47', `content` = 'svn', `railser_id` = 1, `uri` = NULL, `character` = NULL, `rails_ids` = NULL, `type` = 'Tool', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '9 9 ' WHERE `id` = 9[0m
+  [4;35;1mSQL (0.000168)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000159)[0m   [0;1mBEGIN[0m
+  [4;35;1mBlog Update (0.000311)[0m   [0mUPDATE concepts SET `created_at` = '2007-10-15 01:17:01', `content` = 'loud thinking', `railser_id` = 1, `uri` = 'loud_thinking', `character` = NULL, `rails_ids` = NULL, `type` = 'Blog', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '10 10 ' WHERE `id` = 10[0m
+  [4;36;1mSQL (0.000668)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000172)[0m   [0mBEGIN[0m
+  [4;36;1mBlog Update (0.000299)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-15 01:17:01', `content` = 'loud thinking', `railser_id` = 1, `uri` = 'loud_thinking', `character` = NULL, `rails_ids` = NULL, `type` = 'Blog', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '10 10 ' WHERE `id` = 10[0m
+  [4;35;1mSQL (0.000144)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000162)[0m   [0;1mBEGIN[0m
+  [4;35;1mMojule Update (0.000320)[0m   [0mUPDATE concepts SET `created_at` = '2007-10-15 01:41:11', `content` = 'ActiveRecord', `railser_id` = 1, `uri` = NULL, `character` = NULL, `rails_ids` = NULL, `type` = 'Mojule', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '1 1 ' WHERE `id` = 11[0m
+  [4;36;1mSQL (0.000742)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000186)[0m   [0mBEGIN[0m
+  [4;36;1mLibrary Update (0.000356)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-12 14:40:46', `content` = 'ActiveRecord', `railser_id` = 1, `uri` = NULL, `character` = '', `rails_ids` = NULL, `type` = 'Library', `deleted_at` = NULL, `ties_ids` = ' 2, 5', `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '1 1 11 11 ' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.000721)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000185)[0m   [0;1mBEGIN[0m
+  [4;35;1mMojule Update (0.000336)[0m   [0mUPDATE concepts SET `created_at` = '2007-10-15 01:41:11', `content` = 'ActiveRecord', `railser_id` = 1, `uri` = NULL, `character` = NULL, `rails_ids` = NULL, `type` = 'Mojule', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '1 1 11 11 ' WHERE `id` = 11[0m
+  [4;36;1mSQL (0.000611)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000169)[0m   [0mBEGIN[0m
+  [4;36;1mMojule Update (0.000276)[0m   [0;1mUPDATE concepts SET `created_at` = '2007-10-15 01:41:11', `content` = 'ActiveRecord', `railser_id` = 1, `uri` = NULL, `character` = NULL, `rails_ids` = NULL, `type` = 'Mojule', `deleted_at` = NULL, `ties_ids` = NULL, `bits` = NULL, `updated_at` = '2007-10-16 01:58:53', `ambiguous` = '1 1 11 11 ' WHERE `id` = 11[0m
+  [4;35;1mSQL (0.000153)[0m   [0mCOMMIT[0m
+
+
+Processing ConceptsController#show (for 127.0.0.1 at 2007-10-15 21:59:02) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"show", "id"=>"ActiveRecord", "controller"=>"concepts"}
+  [4;35;1mConcept Columns (0.003317)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mConcept Load (0.001137)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`content` = 'ActiveRecord') LIMIT 1[0m
+  [4;35;1mLibrary Columns (0.002582)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mConcept Load (0.000307)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`id` IN (1,11)) [0m
+Rendering template within layouts/application
+Rendering concepts/show
+  [4;35;1mMojule Columns (0.002827)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mConcept Load (0.000367)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`id` IN (2,5)) [0m
+  [4;35;1mDirectory Columns (0.002780)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mRailser Columns (0.002038)[0m   [0;1mSHOW FIELDS FROM railsers[0m
+  [4;35;1mRailser Load (0.001463)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+Completed in 0.04791 (20 reqs/sec) | Rendering: 0.01084 (22%) | DB: 0.01682 (35%) | 200 OK [http://localhost/libraries/ActiveRecord]
+
+
+Processing ConceptsController#show (for 127.0.0.1 at 2007-10-15 21:59:09) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"show", "id"=>"ActiveRecord", "controller"=>"concepts"}
+  [4;36;1mConcept Columns (0.001442)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mConcept Load (0.001287)[0m   [0mSELECT * FROM concepts WHERE (concepts.`content` = 'ActiveRecord') LIMIT 1[0m
+  [4;36;1mLibrary Columns (0.001737)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mConcept Load (0.000341)[0m   [0mSELECT * FROM concepts WHERE (concepts.`id` IN (1,11)) [0m
+Rendering template within layouts/application
+Rendering concepts/show
+  [4;36;1mMojule Columns (0.002091)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mConcept Load (0.000426)[0m   [0mSELECT * FROM concepts WHERE (concepts.`id` IN (2,5)) [0m
+  [4;36;1mDirectory Columns (0.002270)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mRailser Columns (0.002470)[0m   [0mSHOW FIELDS FROM railsers[0m
+  [4;36;1mRailser Load (0.000410)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+Completed in 0.04601 (21 reqs/sec) | Rendering: 0.01098 (23%) | DB: 0.01247 (27%) | 200 OK [http://localhost/mojules/ActiveRecord]
+
+
+Processing ConceptsController#show (for 127.0.0.1 at 2007-10-15 21:59:13) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"show", "id"=>"ActiveRecord", "controller"=>"concepts"}
+  [4;35;1mConcept Columns (0.003156)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mConcept Load (0.000332)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`content` = 'ActiveRecord') LIMIT 1[0m
+  [4;35;1mLibrary Columns (0.001972)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mConcept Load (0.000339)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`id` IN (1,11)) [0m
+Rendering template within layouts/application
+Rendering concepts/show
+  [4;35;1mMojule Columns (0.002011)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mConcept Load (0.000339)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`id` IN (2,5)) [0m
+  [4;35;1mDirectory Columns (0.002111)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mRailser Columns (0.002444)[0m   [0;1mSHOW FIELDS FROM railsers[0m
+  [4;35;1mRailser Load (0.000539)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+Completed in 0.04369 (22 reqs/sec) | Rendering: 0.01024 (23%) | DB: 0.01324 (30%) | 200 OK [http://localhost/libraries/ActiveRecord]
+
+
+Processing ConceptsController#show (for 127.0.0.1 at 2007-10-15 21:59:14) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"show", "id"=>"ActiveRecord", "controller"=>"concepts"}
+  [4;36;1mConcept Columns (0.003396)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mConcept Load (0.000378)[0m   [0mSELECT * FROM concepts WHERE (concepts.`content` = 'ActiveRecord') LIMIT 1[0m
+  [4;36;1mLibrary Columns (0.002653)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mConcept Load (0.000337)[0m   [0mSELECT * FROM concepts WHERE (concepts.`id` IN (1,11)) [0m
+Rendering template within layouts/application
+Rendering concepts/show
+  [4;36;1mMojule Columns (0.002433)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mConcept Load (0.000386)[0m   [0mSELECT * FROM concepts WHERE (concepts.`id` IN (2,5)) [0m
+  [4;36;1mDirectory Columns (0.002713)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mRailser Columns (0.002479)[0m   [0mSHOW FIELDS FROM railsers[0m
+  [4;36;1mRailser Load (0.000772)[0m   [0;1mSELECT * FROM railsers WHERE (railsers.`id` = 1) [0m
+Completed in 0.04992 (20 reqs/sec) | Rendering: 0.01147 (22%) | DB: 0.01555 (31%) | 200 OK [http://localhost/mojules/ActiveRecord]
+
+
+Processing ConceptsController#edit (for 127.0.0.1 at 2007-10-15 21:59:28) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"edit", "id"=>"ActiveRecord", "controller"=>"concepts"}
+  [4;35;1mConcept Columns (0.003362)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mConcept Load (0.001359)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`id` = 0) [0m
+
+
+ActiveRecord::RecordNotFound (Couldn't find Concept with ID=ActiveRecord):
+    /vendor/rails/activerecord/lib/active_record/base.rb:1044:in `find_one'
+    /vendor/rails/activerecord/lib/active_record/base.rb:1027:in `find_from_ids'
+    /vendor/rails/activerecord/lib/active_record/base.rb:437:in `find'
+    /app/controllers/concepts_controller.rb:30:in `edit'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1124:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1124:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:697:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:175:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching.rb:670:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching.rb:669:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:517:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:517:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:377:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:114:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    script/server:3:in `require'
+    script/server:3
+
+Rendering /Users/mschwab/projects/railevant/trunk/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ConceptsController#edit (for 127.0.0.1 at 2007-10-15 22:03:31) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"edit", "id"=>"ActiveRecord", "controller"=>"concepts"}
+  [4;35;1mConcept Columns (0.003340)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mConcept Load (0.110550)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`id` = 0) [0m
+
+
+ActiveRecord::RecordNotFound (Couldn't find Concept with ID=ActiveRecord):
+    /vendor/rails/activerecord/lib/active_record/base.rb:1044:in `find_one'
+    /vendor/rails/activerecord/lib/active_record/base.rb:1027:in `find_from_ids'
+    /vendor/rails/activerecord/lib/active_record/base.rb:437:in `find'
+    /app/controllers/concepts_controller.rb:29:in `edit'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1124:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1124:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:697:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:175:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching.rb:670:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching.rb:669:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:517:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:517:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:377:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:114:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    script/server:3:in `require'
+    script/server:3
+
+Rendering /Users/mschwab/projects/railevant/trunk/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ConceptsController#edit (for 127.0.0.1 at 2007-10-15 22:03:34) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"edit", "id"=>"ActiveRecord", "controller"=>"concepts"}
+  [4;35;1mConcept Columns (0.003266)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mConcept Load (0.001156)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`id` = 0) [0m
+
+
+ActiveRecord::RecordNotFound (Couldn't find Concept with ID=ActiveRecord):
+    /vendor/rails/activerecord/lib/active_record/base.rb:1044:in `find_one'
+    /vendor/rails/activerecord/lib/active_record/base.rb:1027:in `find_from_ids'
+    /vendor/rails/activerecord/lib/active_record/base.rb:437:in `find'
+    /app/controllers/concepts_controller.rb:29:in `edit'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1124:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1124:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:697:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:175:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching.rb:670:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching.rb:669:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:517:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:517:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:377:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:114:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    script/server:3:in `require'
+    script/server:3
+
+Rendering /Users/mschwab/projects/railevant/trunk/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ConceptsController#edit (for 127.0.0.1 at 2007-10-15 22:10:14) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"edit", "id"=>"ActiveRecord", "controller"=>"concepts"}
+
+
+SyntaxError (/Users/mschwab/projects/railevant/trunk/app/models/concept.rb:60: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+    find_by_content e_uri || find_by_uri e_uri || find e_uri
+                                              ^
+/Users/mschwab/projects/railevant/trunk/app/models/concept.rb:60: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('):
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:203:in `load_without_new_constant_marking'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:203:in `load_file'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in_without_injection'
+    /vendor/plugins/has_many_polymorphs/lib/has_many_polymorphs/dependencies.rb:29:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:202:in `load_file'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:94:in `require_or_load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:248:in `load_missing_constant'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:453:in `const_missing'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:465:in `const_missing'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:260:in `load_missing_constant'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:469:in `const_missing'
+    /app/controllers/concepts_controller.rb:28:in `edit'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1124:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1124:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:697:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:175:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching.rb:670:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching.rb:669:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:517:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:517:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:377:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:114:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    script/server:3:in `require'
+    script/server:3
+
+Rendering /Users/mschwab/projects/railevant/trunk/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing ConceptsController#edit (for 127.0.0.1 at 2007-10-15 22:10:36) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"edit", "id"=>"ActiveRecord", "controller"=>"concepts"}
+  [4;35;1mConcept Columns (0.003256)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mConcept Load (0.001095)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`id` = 0) [0m
+
+
+ActiveRecord::RecordNotFound (Couldn't find Concept with ID=ActiveRecord):
+    /vendor/rails/activerecord/lib/active_record/base.rb:1044:in `find_one'
+    /vendor/rails/activerecord/lib/active_record/base.rb:1027:in `find_from_ids'
+    /vendor/rails/activerecord/lib/active_record/base.rb:437:in `find'
+    /app/controllers/concepts_controller.rb:28:in `edit'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1124:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1124:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:697:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:175:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching.rb:670:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching.rb:669:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:517:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:517:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:377:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:114:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    script/server:3:in `require'
+    script/server:3
+
+Rendering /Users/mschwab/projects/railevant/trunk/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ConceptsController#edit (for 127.0.0.1 at 2007-10-15 22:11:02) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTMzNjQ1YTRmMmJjMDI1NmM0NmYwNDVjMjU5MmI3%0AYjciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--2d3c67d36effc5dee7bd8d83b4af76e15bdb17fc
+  Parameters: {"action"=>"edit", "id"=>"ActiveRecord", "controller"=>"concepts"}
+  [4;35;1mConcept Columns (0.003581)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mConcept Load (0.000421)[0m   [0;1mSELECT * FROM concepts WHERE (concepts.`content` = 'ActiveRecord') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering concepts/edit
+  [4;35;1mLibrary Columns (0.002363)[0m   [0mSHOW FIELDS FROM concepts[0m
+Completed in 0.03412 (29 reqs/sec) | Rendering: 0.00722 (21%) | DB: 0.13375 (392%) | 200 OK [http://localhost/libraries/ActiveRecord/edit]
+  [4;36;1mConcept Load (0.000384)[0m   [0;1mSELECT * FROM concepts LIMIT 1[0m

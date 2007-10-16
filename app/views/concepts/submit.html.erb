@@ -1,0 +1,20 @@
+<% if @existing %>
+	this <%= link_to 'concept', @existing %> already exists 
+	<% if @existing.ambiguous? %> in the following forms:
+	  <%= @existing.ambiguities.map { |a| link_to a.class.name.downcase, a }.join('*~.') %>
+	<% end %>
+  <%= link_to_function 'add one', "$('add_ambiguity').show(); $('add_link').hide()", :id => 'add_link' %>
+	<div id="add_ambiguity" style='display:none;'>
+		<%= select_tag :class, :name, @types %>
+		<%= link_to_remote 'reconceptualize', :url => reconceptualize_concept_path(@existing), :with => "'class=' + $F('class_name')" %>
+	</div>
+<% elsif @concept %>
+  <% form_for @concept do |f| %>
+    <%= f.text_area :content, :size => '39x3' %>
+    <%= f.text_area :character, :size => '39x3' %>
+		<%= select :class, :name, @types %>
+    <%= f.submit :complete %>
+  <% end %>
+<% else %>
+it appears that your submission wasn't valid.. <%= params[:concept][:content] %>
+<% end %>

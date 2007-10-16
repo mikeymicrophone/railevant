@@ -5,20 +5,35 @@ class Concept < ActiveRecord::Base
   has_many :railsconcepts, :foreign_key => 'rail_id', :class_name => 'Railevance'
   has_many :ties, :through => :railsconcepts, :source => 'tie'
   validates_presence_of :content
+  before_create :cache_uri
   
   # marks all entries with identical spellings as ambiguous
   def self.disambiguate
-    (c = Concept.all).remove(&:ambiguous?).each do |t|
+    (c = Concept.all).reject(&:ambiguous?).each do |t|
       c.each do |s|
-        t.disambiguate_with s if t.content == s.content
+        t.disambiguate_with s if t.effective_uri == s.effective_uri
       end
     end
   end
   
-  def disambiguate_with(concept)
+  def disambiguate_with concept
     self.ambiguous = '' if ambiguous.nil?; concept.ambiguous = '' if concept.ambiguous.nil?
-    self.ambiguous.concat "#{concept.id} "
-    concept.ambiguous.concat "#{self.id} "
+    concept.ambiguities.push(concept).each do |c|
+      self.is_ambiguous_with c
+      c.is_ambiguous_with self
+    end
+  end
+  
+  def is_ambiguous_with concept
+    update_attribute :ambiguous, ambiguous.concat "#{concept.id} " unless ambiguity_ids.include? concept.id
+  end
+  
+  def ambiguity_ids
+    self.ambiguous.split.map(&:to_i)
+  end
+  
+  def ambiguities
+    ambiguous? ? Concept.find(*ambiguity_ids) : []
   end
   
   def remove_duplicate_ambiguities # not sure but i think disambiguate_with might make duplicate entries and I don't want to check before every insert
@@ -42,8 +57,24 @@ class Concept < ActiveRecord::Base
     self.rails_ids = (rails_ids.nil? ? rail_id.to_s : rails_ids + " #{rail_id}")
   end
   
+  def cache_uri
+    self.update_attribute :uri, content[0..75].urlize if uri_distinct_from_content?
+  end
+  
+  def uri_distinct_from_content?
+    content != content[0..75].urlize
+  end
+  
+  def effective_uri
+    uri || content
+  end
+  
+  def self.find_by_effective_uri(e_uri)
+    find_by_content(e_uri) || find_by_uri(e_uri) || find(e_uri)
+  end
+  
   def to_param
-    content[0..75].urlize
+    effective_uri
   end
 end
 class Dependency < Concept

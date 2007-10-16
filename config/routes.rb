@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :railevances
 
-  map.resources :concepts
+  map.resources :concepts, :member => {:reconceptualize => :post}, :collection => {:submit => :post}
 
   map.resources :railsers
   map.resource :session

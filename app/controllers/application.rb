@@ -39,10 +39,6 @@ end
 
 class String
   def urlize
-    gsub(/\s+/, '_').gsub(/\./, '-').gsub(/\?/, ';').gsub(/,/, '+').gsub(/\//, '~') unless blank?
-  end
-  
-  def de_urlize
-    gsub(/_/, ' ').gsub(/-/, '.').gsub(/;/, '?').gsub(/[+]/, ',').gsub(/~/, '/') unless blank?
+    gsub(/\s+/, '_').gsub(/\.\?,\//, '~') unless blank?
   end
 end
