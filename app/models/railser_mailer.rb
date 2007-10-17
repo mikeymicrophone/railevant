@@ -1,4 +1,13 @@
 class RailserMailer < ActionMailer::Base
+  def verify_identity identity, address, railser, code
+    @recipients = railser.email
+    @from       = 'identitfier@railevant.com'
+    @subject    = "identity of #{identity.content}"
+    @sent_on    = Time.now
+    @body[:code] = code
+    @body[:address] = address
+  end
+  
   def signup_notification railser
     setup_email railser
     @subject    += 'promotion to railevance'
@@ -14,7 +23,7 @@ class RailserMailer < ActionMailer::Base
   protected
     def setup_email railser
       @recipients  = "#{railser.email}"
-      @from        = "the_vortexx"
+      @from        = "the_vortexx@railevant.com"
       @subject     = "railevant.stuff.."
       @sent_on     = Time.now
       @body[:railser] = railser

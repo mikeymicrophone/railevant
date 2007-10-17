@@ -1,21 +1,26 @@
-<h1><%= link_to(@concept.class.name.downcase, collection_path(@concept)) %></h1>
+<h1 id="collection_link"><%= link_to(@concept.class.name.downcase, collection_path(@concept)) %></h1>
 <% if @concept.ambiguous? and @concepts %>
   <% @concepts.each do |c| %>
-    <%= link_to c.class.name.downcase, c, :class => 'disambiguation' %>
+    <%= link_to c.class.name.downcase, c, :class => 'disambiguation', :id => c.dom_id %>
   <% end %>
 <% end %>
-<div>
+<div id='<%= @concept.dom_id('content') %>'>
   <%=h @concept.content %>
 </div>
 
-<div>
-  <%=h @concept.character %>
+<div id='<%= @concept.dom_id('characteristics') %>'>
+  <%= render :partial => 'characteristic', :collection => @concept.character.values, :locals => {:keys => @concept.character.keys} %>
 </div>
 
-<%= links_to_rails @concept %>
-<%= links_to_ties @concept %>
+<div id='<%= @concept.dom_id('rails') %>'>
+	<%= links_to_rails @concept %>
+</div>
 
-<b><%= link_to(@concept.railser.name, @concept.railser) %></b>
+<div id='<%= @concept.dom_id('ties') %>'>
+	<%= links_to_ties @concept %>
+</div>
+
+<b id='<%= @concept.railser.dom_id(@concept.railser.name) %>'><%= link_to(@concept.railser.name, @concept.railser) %></b>
 
 <%= link_to 'improve', send("edit_#{@concept.class.name.downcase}_path", @concept) %> |
 <%= link_to 'catalog', concepts_path %>

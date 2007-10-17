@@ -4,16 +4,56 @@ class Concept < ActiveRecord::Base
   has_many :rails, :through => :railevances, :source => 'rail'
   has_many :railsconcepts, :foreign_key => 'rail_id', :class_name => 'Railevance'
   has_many :ties, :through => :railsconcepts, :source => 'tie'
+  has_many :votes
+  has_many :voters, :through => :votes, :source => :railser
   validates_presence_of :content
-  before_create :cache_uri
+  before_create :cache_uri, :set_empty_character
+  serialize :character
   
-  # marks all entries with identical spellings as ambiguous
+  def characterize characteristics = {}
+    update_attribute :character, character.merge(characteristics)
+  end
+  
+  def characteristic key
+    character[key]
+  end
+  
+  def characteristic_strength key
+    votes.select { |v| v.characteristic_id == key }.average(:rating)
+  end
+  
+  def railavence_strength which
+    which = which.id if which.is_a? ActiveRecord::Base
+    railevances.select { |r| r.rail_id == which || r.tie_id == which }.map(&:votes).flatten.average(:rating)
+  end
+  
+  def designated_votes
+    votes - undesignated_votes
+  end
+  
+  def undesignated_votes
+    votes.select { |v| v.railevance_id == v.characteristic_id == nil}
+  end
+  
+  def average_vote
+    undesignated_votes.average(:rating)
+  end
+  
+  def average_of_all_votes
+    votes.average(:rating)
+  end
+  
+  # marks all entries with identical uris as ambiguous
   def self.disambiguate
-    (c = Concept.all).reject(&:ambiguous?).each do |t|
-      c.each do |s|
-        t.disambiguate_with s if t.effective_uri == s.effective_uri
-      end
-    end
+    unambiguous.each { |u| all.each { |a| u.disambiguate_with a if u.effective_uri == a.effective_uri and u != a } }
+  end
+  
+  def self.ambiguous
+    all.select &:ambiguous?
+  end
+  
+  def self.unambiguous
+    all - ambiguous
   end
   
   def disambiguate_with concept
@@ -25,7 +65,7 @@ class Concept < ActiveRecord::Base
   end
   
   def is_ambiguous_with concept
-    update_attribute :ambiguous, ambiguous.concat "#{concept.id} " unless ambiguity_ids.include? concept.id
+    update_attribute :ambiguous, ambiguous.concat("#{concept.id} ") unless ambiguity_ids.include? concept.id
   end
   
   def ambiguity_ids
@@ -33,7 +73,7 @@ class Concept < ActiveRecord::Base
   end
   
   def ambiguities
-    ambiguous? ? Concept.find(*ambiguity_ids) : []
+    ambiguous? ? Concept.find(*ambiguity_ids).to_a : []
   end
   
   def remove_duplicate_ambiguities # not sure but i think disambiguate_with might make duplicate entries and I don't want to check before every insert
@@ -42,11 +82,11 @@ class Concept < ActiveRecord::Base
   end
   
   def cached_rails
-    rails_ids.blank? ? [] : ((r = Concept.find(*rails_ids.split.map(&:to_i))).is_a?(ActiveRecord::Base) ? [r] : r)
+    rails_ids.blank? ? [] : Concept.find(*rails_ids.split.map(&:to_i)).to_a
   end
   
   def cached_ties
-    ties_ids.blank? ? [] : ((r = Concept.find(*ties_ids.split.map(&:to_i))).is_a?(ActiveRecord::Base) ? [r] : r)
+    ties_ids.blank? ? [] : Concept.find(*ties_ids.split.map(&:to_i)).to_a
   end
   
   def cache_tie tie_id
@@ -63,6 +103,10 @@ class Concept < ActiveRecord::Base
   
   def uri_distinct_from_content?
     content != content[0..75].urlize
+  end
+  
+  def set_empty_character
+    update_attribute :character, {} if character.blank?
   end
   
   def effective_uri
@@ -364,4 +408,6 @@ end
 class Translation < Concept
 end
 class Equivalence < Concept
+end
+class Person < Concept
 end

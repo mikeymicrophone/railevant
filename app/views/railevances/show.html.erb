@@ -1,11 +1,11 @@
 <p>
-  <%= link_to @railevance.rail.content, @railevance.rail %>
-  <%= link_to @railevance.tie.content, @railevance.tie %>
+  <%= link_to @railevance.rail.content, @railevance.rail, :id => @railevance.rail.dom_id %>
+  <%= link_to @railevance.tie.content,  @railevance.tie,  :id => @railevance.tie.dom_id %>
 </p>
 
 <p>
   <b>railser.</b>
-  <%=h Railser.find(@railevance.railser_id).name %>
+  <%=h @railevance.railser.name %>
 </p>
 
 <%= link_to 'edit', edit_railevance_path(@railevance) if current_railser_id == @railevance.railser_id %> 

@@ -2,6 +2,7 @@ class Railevance < ActiveRecord::Base
   belongs_to :rail, :class_name => 'Concept'
   belongs_to :tie, :class_name => 'Concept'
   belongs_to :railser
+  has_many :votes
   
   after_create :cache_in_rail_and_tie
   

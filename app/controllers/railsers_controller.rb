@@ -5,7 +5,7 @@ class RailsersController < ApplicationController
   end
 
   def show
-    @railser = Railser.find params[:id]
+    @railser = Railser.find_by_login params[:id]
   end
 
   def new

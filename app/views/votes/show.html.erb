@@ -1,0 +1,33 @@
+<p>
+  <b>Rating:</b>
+  <%=h @vote.rating %>
+</p>
+
+<p>
+  <b>Concept:</b>
+  <%=h @vote.concept_id %>
+</p>
+
+<p>
+  <b>Railevance:</b>
+  <%=h @vote.railevance_id %>
+</p>
+
+<p>
+  <b>Characteristic:</b>
+  <%=h @vote.characteristic_id %>
+</p>
+
+<p>
+  <b>Railser:</b>
+  <%=h @vote.railser_id %>
+</p>
+
+<p>
+  <b>Deleted at:</b>
+  <%=h @vote.deleted_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_vote_path(@vote) %> |
+<%= link_to 'Back', votes_path %>

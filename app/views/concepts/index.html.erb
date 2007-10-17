@@ -1,11 +1,10 @@
 <h1><%= request.request_uri[1..-1] + ' ' unless request.request_uri == '/concepts' %>relevant to rails</h1>
 
 <table>
-<% for concept in @concepts %>
+<% @concepts.each do |c| %>
   <tr>
     <td><%= link_to concept.class.name.downcase, collection_path(concept) if request.request_uri == '/concepts' %></td>
     <td><%= link_to concept.content, concept %></td>
-    <td><%=h concept.character %></td>
     <td><%= railser_link concept %></td>
     <td><%= link_to 'edit', edit_concept_path(concept) %></td>
   </tr>
@@ -15,4 +14,4 @@
 <br />
 
 <%= link_to 'conceptualize an abstraction', new_concept_path %>
-<%= link_to 'everythang', concepts_path %>
+<%= link_to 'everyconcept', concepts_path %>

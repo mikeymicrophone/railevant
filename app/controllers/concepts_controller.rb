@@ -42,6 +42,13 @@ class ConceptsController < ApplicationController
     redirect_to @concept
   end
   
+  def characterize
+    @concept = Concept.find_by_effective_uri params[:id]
+    key, value = params[:characteristic].split(':')
+    @concept.characterize key => value
+    render :partial => 'characteristic', :object => @concept.characteristic(key), :locals => {:key => key}
+  end
+  
   def edit
     @concept = Concept.find_by_effective_uri params[:id]
     @types = RESOURCES.map { |w| [ w, w.capitalize ] }

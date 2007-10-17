@@ -10,5 +10,5 @@ RESOURCES =  %w[ language tool command recipe methid klass expression line block
   
   reference book topic pattern course   tip thought idea summary extension tesst decision conclusion reason disagreement experiment 
    exercise template abstraction implementation wish preference alternative frustratedattempt 
-   email message listserv forum irc phone call 
+  person email message listserv forum irc phone call 
   visit host traffic metaphor definition translation equivalence ]

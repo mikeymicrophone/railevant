@@ -3,7 +3,7 @@
 <% form_for(@concept) do |f| %>
   <p>
     <b>type</b><br />
-    <%= select :class, :name, @types, :value => @concept.class.name.downcase %>
+    <%= select :class, :name, @types, :value => @concept.class.name, :include_blank => true %>
   </p>
 
   <p>
@@ -12,14 +12,16 @@
   </p>
 
   <p>
-    <b>character</b><br />
-    <%= f.text_area :character, :size => '49x3' %>
-  </p>
-
-  <p>
     <%= f.submit "load" %>
   </p>
 <% end %>
-
+<div id="characteristics">
+  <%= render :partial => 'characteristic', :collection => @concept.character.values, :locals => {:keys => @concept.character.keys} %>
+</div>
 <%= link_to 'display', @concept %> |
 <%= link_to 'back', collection_path(@concept) %>
+<%= link_to_function 'characterize', "$('characterize').toggle()" %>
+<div id="characterize", style="display:none">
+	the <%= text_field_tag :key %> of this concept is <%= text_field_tag :value %>
+	<%= link_to_remote 'yeah', :url => characterize_concept_path(@concept), :with => "'characteristic=' + $F('key') + ':' + $F('value')", :update => 'characteristics', :position => 'top', :loading => "$('key').clear();$('value').clear()" %>
+</div>
