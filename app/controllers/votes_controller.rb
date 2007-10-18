@@ -19,18 +19,19 @@ class VotesController < ApplicationController
 
   def new
     @vote = Vote.new
-
+    @concepts = Concept.all.map { |c| [c.content[0..30], c.id] }
     respond_to do |format|
       format.html
       format.xml  { render :xml => @vote }
     end
   end
 
-  def edit
-    @vote = Vote.find params[:id]
-  end
-
   def create
+    params[:vote] ||= {}
+    params[:vote][:rating] ||= params[:rating]
+    params[:vote][:concept_id] ||= params[:id]
+    params[:vote][:railevance_id] ||= params[:railevance_id]
+    params[:vote][:characteristic_id] ||= params[:characteristic_id]
     @vote = Vote.new params[:vote]
 
     respond_to do |format|
@@ -40,20 +41,6 @@ class VotesController < ApplicationController
         format.xml  { render :xml => @vote, :status => :created, :location => @vote }
       else
         format.html { render :action => 'new' }
-        format.xml  { render :xml => @vote.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  def update
-    @vote = Vote.find params[:id]
-
-    respond_to do |format|
-      if @vote.update_attributes params[:vote]
-        format.html { redirect_to @vote }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => 'edit' }
         format.xml  { render :xml => @vote.errors, :status => :unprocessable_entity }
       end
     end

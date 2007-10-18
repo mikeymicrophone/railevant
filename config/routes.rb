@@ -1,12 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :votes
-
   map.resources :railevances
-
   map.resources :concepts, :member => {:reconceptualize => :post, :characterize => :post}, :collection => {:submit => :post}
-
+  map.verify 'railsers/:id/verify/:code', :controller => 'railsers', :action => 'verify'
   map.resources :railsers
   map.resource :session
+  
   map.signup '/signup', :controller => 'railsers', :action => 'new'
   map.login  '/login', :controller => 'sessions', :action => 'new'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'

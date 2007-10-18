@@ -4,6 +4,7 @@ class Railser < ActiveRecord::Base
   has_many :concepts
   has_many :railevances
   has_many :votes
+  belongs_to :person
   
   def name
     login
@@ -15,7 +16,25 @@ class Railser < ActiveRecord::Base
   
   def is_person which
     which = which.id if which.is_a? ActiveRecord::Base
-    update_attribute :person_id, which
+    (person_id == which) ? update_attribute(:activation_code, nil) : claim(which)
+  end
+  
+  def claim identity
+    codestring = (judges = Railser.random 10).map(&:id).join(',')
+    fortystring = codestring[0..39] # appears to be safe even if one gets truncated
+    judges.reject { |j| j.id.to_s !~ fortystring } if codestring.length > 40
+    update_attributes :person_id => identity, :activation_code => fortystring
+    judges.each { |j| RailserMailer.deliver_identity_verification(Concept.find(identity), email, j, fortystring.wrap_for_code(j.id)) if fortystring[/#{j.id}/] }
+  end
+  
+  def verify code, railser
+    railser = railser.id if railser.is_a? ActiveRecord::Base
+    activation_code.wrap_for_code railser == code
+  end
+  
+  def verified_by railser
+    update_attribute :activation_code, nil if activation_code[/\*/]
+    activation_code.sub /#{railser.id},/, "#{railser.id}*"
   end
   
   attr_accessor :password
@@ -39,7 +58,7 @@ class Railser < ActiveRecord::Base
   end
 
   def activated?
-    activation_code.nil?
+    activated_at
   end
 
   def recently_activated?

@@ -1,41 +1,26 @@
-<h1>New vote</h1>
-
 <%= error_messages_for :vote %>
 
-<% form_for(@vote) do |f| %>
+<% form_for @vote do |f| %>
   <p>
-    <b>Rating</b><br />
-    <%= f.text_field :rating %>
+    <b>Rating</b><br>
+    <%= f.select :rating, 0..500 %>
   </p>
 
   <p>
-    <b>Concept</b><br />
-    <%= f.text_field :concept_id %>
+    <%= f.select :concept_id, @concepts %>
   </p>
 
   <p>
-    <b>Railevance</b><br />
+    <b>Railevance</b><br>
     <%= f.text_field :railevance_id %>
   </p>
 
   <p>
-    <b>Characteristic</b><br />
+    <b>Characteristic</b><br>
     <%= f.text_field :characteristic_id %>
   </p>
 
-  <p>
-    <b>Railser</b><br />
-    <%= f.text_field :railser_id %>
-  </p>
-
-  <p>
-    <b>Deleted at</b><br />
-    <%= f.datetime_select :deleted_at %>
-  </p>
-
-  <p>
-    <%= f.submit "Create" %>
-  </p>
+    <%= f.submit 'go on record' %>
 <% end %>
 
-<%= link_to 'Back', votes_path %>
+<%= link_to 'peep more first', votes_path, :class => 'collection', :id => 'votes' %>

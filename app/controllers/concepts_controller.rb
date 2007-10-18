@@ -1,10 +1,10 @@
 class ConceptsController < ApplicationController
   def index
     Concept
-    @concepts = request.request_uri[1..-1].singularize.capitalize.constantize.send(:all)
+    @concepts = request.request_uri[1..-1].singularize.capitalize.constantize.send(:all, :limit => params[:population])
     rescue NameError
       []
-    @concepts = Concept.all if @concepts.blank?
+    @concepts = Concept.all :limit => params[:population] if @concepts.blank?
   end
   
   def show

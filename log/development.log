@@ -12969,3 +12969,234 @@ Completed in 0.03417 (29 reqs/sec) | Rendering: 0.00734 (21%) | DB: 0.00636 (18%
 ** has_many_polymorphs: rails environment detected
 ** has_many_polymorphs: loaded ok
 ** has_many_polymorphs: autoload hook invoked
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+  [4;36;1mSQL (0.000104)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000127)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mRailser Columns (0.079475)[0m   [0;1mSHOW FIELDS FROM railsers[0m
+  [4;35;1mRailser Load (0.000818)[0m   [0mSELECT * FROM railsers WHERE (railsers.`id` = 2) [0m
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+  [4;36;1mSQL (0.000150)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000311)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mConcept Load (0.000251)[0m   [0;1mSELECT * FROM concepts LIMIT 1[0m
+  [4;35;1mConcept Columns (0.003172)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mLibrary Columns (0.002715)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+  [4;36;1mSQL (0.000153)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000115)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mRailser Load (0.000232)[0m   [0;1mSELECT * FROM railsers LIMIT 1[0m
+  [4;35;1mRailser Columns (0.003167)[0m   [0mSHOW FIELDS FROM railsers[0m
+  [4;36;1mConcept Load (0.000413)[0m   [0;1mSELECT * FROM concepts [0m
+  [4;35;1mConcept Columns (0.003420)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mLibrary Columns (0.002996)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mFeature Columns (0.002084)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mDirectory Columns (0.001919)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mTool Columns (0.002676)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mLanguage Columns (0.002553)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mBlog Columns (0.002581)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mMojule Columns (0.002684)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mConcept Load (0.000427)[0m   [0mSELECT * FROM concepts WHERE (concepts.`type` = 'Library' AND concepts.`content` = 'ActiveRecord') LIMIT 1[0m
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2007-10-18 01:42:20) [GET]
+  Session ID: 626d0dc791131a6e40599dba9e96f5a6
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/projects/36-single_handed/step2" with {:method=>:get}):
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1411:in `recognize_path'
+    /vendor/rails/actionpack/lib/action_controller/routing.rb:1394:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:169:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:114:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    script/server:3:in `require'
+    script/server:3
+
+Rendering /Users/mschwab/projects/railevant/trunk/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing VotesController#new (for 127.0.0.1 at 2007-10-18 01:42:27) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--48f68eae8f289973c463ce90296518e57cce7693
+  Parameters: {"action"=>"new", "controller"=>"votes"}
+  [4;36;1mSQL (0.000136)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000124)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mVote Columns (0.000000)[0m   [0;1mMysql::Error: Table 'railevant_development.votes' doesn't exist: SHOW FIELDS FROM votes[0m
+
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'railevant_development.votes' doesn't exist: SHOW FIELDS FROM votes):
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb:137:in `log'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/mysql_adapter.rb:265:in `execute'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/mysql_adapter.rb:391:in `columns'
+    /vendor/rails/activerecord/lib/active_record/base.rb:857:in `columns'
+    /vendor/rails/activerecord/lib/active_record/base.rb:2109:in `attributes_from_column_definition_without_lock'
+    /vendor/rails/activerecord/lib/active_record/locking/optimistic.rb:55:in `attributes_from_column_definition'
+    /vendor/rails/activerecord/lib/active_record/base.rb:1681:in `initialize'
+    /app/controllers/votes_controller.rb:21:in `new'
+    /app/controllers/votes_controller.rb:21:in `new'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1124:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1124:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:697:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:175:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching.rb:670:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching.rb:669:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:517:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:517:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:377:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:114:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    script/server:3:in `require'
+    script/server:3
+
+Rendering /Users/mschwab/projects/railevant/trunk/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+  [4;36;1mSQL (0.000129)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000094)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.015895)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000339)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000261)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000245)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000243)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000241)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000242)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000241)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateVotes (8)
+  [4;36;1mSQL (0.033131)[0m   [0;1mCREATE TABLE votes (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `rating` int(11) DEFAULT NULL, `concept_id` int(11) DEFAULT NULL, `railevance_id` int(11) DEFAULT NULL, `characteristic_id` varchar(255) DEFAULT NULL, `railser_id` int(11) DEFAULT NULL, `deleted_at` datetime DEFAULT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000506)[0m   [0mUPDATE schema_info SET version = 8[0m
+  [4;36;1mSQL (0.000237)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to PersonhoodOfRailsers (9)
+  [4;35;1mSQL (0.142932)[0m   [0mALTER TABLE railsers ADD `person_id` int(11)[0m
+  [4;36;1mSQL (0.000401)[0m   [0;1mUPDATE schema_info SET version = 9[0m
+  [4;35;1mSQL (0.000308)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000523)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.002631)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mSQL (0.001615)[0m   [0;1mSHOW KEYS FROM concepts[0m
+  [4;35;1mSQL (0.001749)[0m   [0mSHOW FIELDS FROM open_id_authentication_associations[0m
+  [4;36;1mSQL (0.001326)[0m   [0;1mSHOW KEYS FROM open_id_authentication_associations[0m
+  [4;35;1mSQL (0.001480)[0m   [0mSHOW FIELDS FROM open_id_authentication_nonces[0m
+  [4;36;1mSQL (0.000746)[0m   [0;1mSHOW KEYS FROM open_id_authentication_nonces[0m
+  [4;35;1mSQL (0.001611)[0m   [0mSHOW FIELDS FROM open_id_authentication_settings[0m
+  [4;36;1mSQL (0.000672)[0m   [0;1mSHOW KEYS FROM open_id_authentication_settings[0m
+  [4;35;1mSQL (0.001740)[0m   [0mSHOW FIELDS FROM railevances[0m
+  [4;36;1mSQL (0.000795)[0m   [0;1mSHOW KEYS FROM railevances[0m
+  [4;35;1mSQL (0.002367)[0m   [0mSHOW FIELDS FROM railsers[0m
+  [4;36;1mSQL (0.000317)[0m   [0;1mSHOW KEYS FROM railsers[0m
+  [4;35;1mSQL (0.002124)[0m   [0mSHOW FIELDS FROM votes[0m
+  [4;36;1mSQL (0.000677)[0m   [0;1mSHOW KEYS FROM votes[0m
+
+
+Processing VotesController#new (for 127.0.0.1 at 2007-10-18 01:43:02) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--48f68eae8f289973c463ce90296518e57cce7693
+  Parameters: {"action"=>"new", "controller"=>"votes"}
+  [4;35;1mVote Columns (0.003017)[0m   [0mSHOW FIELDS FROM votes[0m
+  [4;36;1mConcept Load (0.000414)[0m   [0;1mSELECT * FROM concepts [0m
+  [4;35;1mConcept Columns (0.002888)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mLibrary Columns (0.002225)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mFeature Columns (0.001949)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mDirectory Columns (0.002565)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mTool Columns (0.002739)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mLanguage Columns (0.002001)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+  [4;35;1mBlog Columns (0.002697)[0m   [0mSHOW FIELDS FROM concepts[0m
+  [4;36;1mMojule Columns (0.002630)[0m   [0;1mSHOW FIELDS FROM concepts[0m
+Rendering template within layouts/application
+Rendering votes/new
+Completed in 0.08380 (11 reqs/sec) | Rendering: 0.01110 (13%) | DB: 0.02338 (27%) | 200 OK [http://localhost/votes/new]
+
+
+Processing VotesController#index (for 127.0.0.1 at 2007-10-18 01:43:20) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDhhNmZkYzc3NGM2OThkMWM5ZjBjMmIxY2E5ZTli%0AODkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--86a0fcd0388b4da6fbb6189a49694eeb58a1d6ef
+  Parameters: {"action"=>"index", "controller"=>"votes"}
+  [4;35;1mVote Load (0.000283)[0m   [0mSELECT * FROM votes [0m
+Rendering template within layouts/application
+Rendering votes/index
+Completed in 0.01322 (75 reqs/sec) | Rendering: 0.00238 (17%) | DB: 0.00028 (2%) | 200 OK [http://localhost/votes]

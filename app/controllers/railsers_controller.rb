@@ -7,6 +7,11 @@ class RailsersController < ApplicationController
   def show
     @railser = Railser.find_by_login params[:id]
   end
+  
+  def verify
+    @railser = Railser.find_by_login params[:id]
+    @railser.verified_by current_railser if @railser.verify params[:code], current_railser
+  end
 
   def new
   end

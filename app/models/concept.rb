@@ -32,7 +32,7 @@ class Concept < ActiveRecord::Base
   end
   
   def undesignated_votes
-    votes.select { |v| v.railevance_id == v.characteristic_id == nil}
+    votes.select { |v| v.railevance_id == nil && v.characteristic_id == nil}
   end
   
   def average_vote

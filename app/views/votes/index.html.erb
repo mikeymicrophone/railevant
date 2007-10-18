@@ -1,30 +1,13 @@
-<h1>Listing votes</h1>
+<h1 id="pith">opinions, what are they really worth anyway</h1>
 
-<table>
-  <tr>
-    <th>Rating</th>
-    <th>Concept</th>
-    <th>Railevance</th>
-    <th>Characteristic</th>
-    <th>Railser</th>
-    <th>Deleted at</th>
-  </tr>
-
-<% for vote in @votes %>
-  <tr>
-    <td><%=h vote.rating %></td>
-    <td><%=h vote.concept_id %></td>
-    <td><%=h vote.railevance_id %></td>
-    <td><%=h vote.characteristic_id %></td>
-    <td><%=h vote.railser_id %></td>
-    <td><%=h vote.deleted_at %></td>
-    <td><%= link_to 'Show', vote %></td>
-    <td><%= link_to 'Edit', edit_vote_path(vote) %></td>
-    <td><%= link_to 'Destroy', vote, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% @votes.each do |vote| %>
+    <%= content_tag :span, vote.rating, :class => 'vote', :id => vote.dom_id('rating') %>
+    <%= link_to(vote.concept.content[0..35], vote.concept, :class => vote.concept.class.name.downcase, :id => vote.concept.dom_id('scrutinize') if vote.concept_id %>
+    <%= link_to vote.railevance_id, vote.railevance, :class => 'railevance', :id => vote.railevance.dom_id('scrutinize') if vote.railevance_id %>
+    <%=h vote.characteristic_id %>
+    <%= railser_link vote %>
+    <%= link_to 'show', vote, :id => vote.dom_id('scrutinize') %>
 <% end %>
-</table>
+<br>
 
-<br />
-
-<%= link_to 'New vote', new_vote_path %>
+<%= link_to 'add numbers to the machine', new_vote_path, :id => 'weigh_in' %>

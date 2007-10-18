@@ -1,9 +1,11 @@
 class RailserMailer < ActionMailer::Base
-  def verify_identity identity, address, railser, code
+  def identity_verification identity, address, railser, code
     @recipients = railser.email
     @from       = 'identitfier@railevant.com'
     @subject    = "identity of #{identity.content}"
     @sent_on    = Time.now
+    @body[:railser] = railser
+    @body[:identity] = identity
     @body[:code] = code
     @body[:address] = address
   end

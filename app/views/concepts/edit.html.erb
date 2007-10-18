@@ -1,27 +1,18 @@
 <%= error_messages_for :concept %>
-
-<% form_for(@concept) do |f| %>
-  <p>
-    <b>type</b><br />
-    <%= select :class, :name, @types, :value => @concept.class.name, :include_blank => true %>
-  </p>
-
-  <p>
-    <b>content</b><br />
-    <%= f.text_area :content, :size => '49x3' %>
-  </p>
-
-  <p>
-    <%= f.submit "load" %>
-  </p>
+<% form_for @concept do |f| %>
+  <b>type</b><br>
+  <%= select :class, :name, @types, :value => @concept.class.name, :include_blank => true %>
+  <b>content</b><br>
+  <%= f.text_area :content, :size => '49x3' %>
+  <%= f.submit 'load' %>
 <% end %>
-<div id="characteristics">
+<div id="<%= @concept.dom_id('characteristics') %>">
   <%= render :partial => 'characteristic', :collection => @concept.character.values, :locals => {:keys => @concept.character.keys} %>
 </div>
-<%= link_to 'display', @concept %> |
-<%= link_to 'back', collection_path(@concept) %>
-<%= link_to_function 'characterize', "$('characterize').toggle()" %>
-<div id="characterize", style="display:none">
+<%= link_to 'display', @concept, :id => @concept.dom_id('scrutinize') %> |
+<%= link_to 'up', collection_path(@concept), :class => 'collection', :id => @concept.class.name.downcase.pluralize + ' gathered' %>
+<%= link_to_function 'characterize', "$(#{@concept.dom_id('add_characteristic_to')}).toggle()", :id => @concept.dom_id('characterize') %>
+<div id="<%= @concept.dom_id('add_characteristic_to') %>", style="display:none">
 	the <%= text_field_tag :key %> of this concept is <%= text_field_tag :value %>
-	<%= link_to_remote 'yeah', :url => characterize_concept_path(@concept), :with => "'characteristic=' + $F('key') + ':' + $F('value')", :update => 'characteristics', :position => 'top', :loading => "$('key').clear();$('value').clear()" %>
+	<%= link_to_remote 'yeah', :url => characterize_concept_path(@concept), :with => "'characteristic=' + $F('key') + ':' + $F('value')", :update => 'characteristics', :position => 'top', :loading => "$('key').clear();$('value').clear()", :id => @concept.dom_id('dispatch_characteristic_to') %>
 </div>

@@ -1,33 +1,16 @@
+<h1 id="<%= @vote.dom_id('rating') %>">
+  <%= @vote.rating %>
+</h1>
+
+  <%= link_to @vote.concept.content, @vote.concept, :id => @vote.concept.dom_id('scrutinize') if @vote.concept_id %>
+  <%= link_to @vote.railevance_id, @vote.railevance, :id => @vote.railevance.dom_id('scrutinize') if @vote.railevance_id %>
+
 <p>
-  <b>Rating:</b>
-  <%=h @vote.rating %>
+  <%=h @vote.characteristic_id if @vote.characteristic_id %>
 </p>
 
 <p>
-  <b>Concept:</b>
-  <%=h @vote.concept_id %>
+  <%= railser_link @vote %>
 </p>
 
-<p>
-  <b>Railevance:</b>
-  <%=h @vote.railevance_id %>
-</p>
-
-<p>
-  <b>Characteristic:</b>
-  <%=h @vote.characteristic_id %>
-</p>
-
-<p>
-  <b>Railser:</b>
-  <%=h @vote.railser_id %>
-</p>
-
-<p>
-  <b>Deleted at:</b>
-  <%=h @vote.deleted_at %>
-</p>
-
-
-<%= link_to 'Edit', edit_vote_path(@vote) %> |
-<%= link_to 'Back', votes_path %>
+<%= link_to 'poll', votes_path, :id => 'votes' %>
