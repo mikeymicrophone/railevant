@@ -34,6 +34,6 @@ production:
   adapter: mysql
   encoding: utf8
   database: railevant_production
-  username: root
-  password: 
-  socket: /tmp/mysql.sock
+  username: railevant_data
+  password: munichsburg
+  host:     data.oogi.org
