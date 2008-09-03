@@ -3,7 +3,6 @@ module Spec
     # rspec adds #should and #should_not to every Object (and,
     # implicitly, every Class).
     module ObjectExpectations
-
       # :call-seq:
       #   should(matcher)
       #   should == expected
@@ -29,8 +28,7 @@ module Spec
       # NOTE that this does NOT support receiver.should != expected.
       # Instead, use receiver.should_not == expected
       def should(matcher=nil, &block)
-        return ExpectationMatcherHandler.handle_matcher(self, matcher, &block) if matcher
-        Spec::Matchers::PositiveOperatorMatcher.new(self)
+        ExpectationMatcherHandler.handle_matcher(self, matcher, &block)
       end
 
       # :call-seq:
@@ -53,8 +51,7 @@ module Spec
       #
       # See Spec::Matchers for more information about matchers
       def should_not(matcher=nil, &block)
-        return NegativeExpectationMatcherHandler.handle_matcher(self, matcher, &block) if matcher
-        Spec::Matchers::NegativeOperatorMatcher.new(self)
+        NegativeExpectationMatcherHandler.handle_matcher(self, matcher, &block)
       end
 
     end

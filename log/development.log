@@ -13200,3 +13200,10 @@ Processing VotesController#index (for 127.0.0.1 at 2007-10-18 01:43:20) [GET]
 Rendering template within layouts/application
 Rendering votes/index
 Completed in 0.01322 (75 reqs/sec) | Rendering: 0.00238 (17%) | DB: 0.00028 (2%) | 200 OK [http://localhost/votes]
+DEPRECATION WARNING: config.action_view.cache_template_extensions option has been deprecated and has no affect. Please remove it from your config files.  See http://www.rubyonrails.org/deprecation for details. (called from send at /Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/initializer.rb:455)
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+DEPRECATION WARNING: config.action_view.cache_template_extensions option has been deprecated and has no affect. Please remove it from your config files.  See http://www.rubyonrails.org/deprecation for details. (called from send at /Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/initializer.rb:455)
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked

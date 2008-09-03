@@ -8,10 +8,10 @@ require 'rake/tasklib'
 module Spec
   module Rake
 
-    # A Rake task that runs a set of RSpec contexts.
+    # A Rake task that runs a set of specs.
     #
     # Example:
-    #  
+    #
     #   Spec::Rake::SpecTask.new do |t|
     #     t.warning = true
     #     t.rcov = true
@@ -44,6 +44,17 @@ module Spec
     # Each attribute of this task may be a proc. This allows for lazy evaluation,
     # which is sometimes handy if you want to defer the evaluation of an attribute value
     # until the task is run (as opposed to when it is defined).
+    #
+    # This task can also be used to run existing Test::Unit tests and get RSpec
+    # output, for example like this:
+    #
+    #   require 'rubygems'
+    #   require 'spec/rake/spectask'
+    #   Spec::Rake::SpecTask.new do |t|
+    #     t.ruby_opts = ['-rtest/unit']
+    #     t.spec_files = FileList['test/**/*_test.rb']
+    #   end
+    #
     class SpecTask < ::Rake::TaskLib
       class << self
         def attr_accessor(*names)
@@ -76,7 +87,7 @@ module Spec
       # Whether or not to use RCov (default is false)
       # See http://eigenclass.org/hiki.rb?rcov
       attr_accessor :rcov
-      
+
       # Array of commandline options to pass to RCov. Defaults to ['--exclude', 'lib\/spec,bin\/spec'].
       # Ignored if rcov=false
       # Setting the RCOV_OPTS environment variable overrides this.
@@ -106,6 +117,10 @@ module Spec
       # used, then the list of spec files is the union of the two.
       # Setting the SPEC environment variable overrides this.
       attr_accessor :spec_files
+
+      # Use verbose output. If this is set to true, the task will print
+      # the executed spec command to stdout. Defaults to false.
+      attr_accessor :verbose
 
       # Defines a new task, using the name +name+.
       def initialize(name=:spec)
@@ -140,27 +155,23 @@ module Spec
               # ruby [ruby_opts] -Ilib -S rcov [rcov_opts] bin/spec -- examples [spec_opts]
               # or
               # ruby [ruby_opts] -Ilib bin/spec examples [spec_opts]
-              cmd = "ruby "
-
-              rb_opts = ruby_opts.clone
-              rb_opts << "-I\"#{lib_path}\""
-              rb_opts << "-S rcov" if rcov
-              rb_opts << "-w" if warning
-              cmd << rb_opts.join(" ")
-              cmd << " "
-              cmd << rcov_option_list
-              cmd << %[ -o "#{rcov_dir}" ] if rcov
-              cmd << %Q|"#{spec_script}"|
-              cmd << " "
-              cmd << "-- " if rcov
-              cmd << spec_file_list.collect { |fn| %["#{fn}"] }.join(' ')
-              cmd << " "
-              cmd << spec_option_list
+              cmd_parts = [RUBY]
+              cmd_parts += ruby_opts
+              cmd_parts << %[-I"#{lib_path}"]
+              cmd_parts << "-S rcov" if rcov
+              cmd_parts << "-w" if warning
+              cmd_parts << rcov_option_list
+              cmd_parts << %[-o "#{rcov_dir}"] if rcov
+              cmd_parts << %["#{spec_script}"]
+              cmd_parts << "--" if rcov
+              cmd_parts += spec_file_list.collect { |fn| %["#{fn}"] }
+              cmd_parts << spec_option_list
               if out
-                cmd << " "
-                cmd << %Q| > "#{out}"|
+                cmd_parts << %[> "#{out}"]
                 STDERR.puts "The Spec::Rake::SpecTask#out attribute is DEPRECATED and will be removed in a future version. Use --format FORMAT:WHERE instead."
               end
+              cmd = cmd_parts.join(" ")
+              puts cmd if verbose
               unless system(cmd)
                 STDERR.puts failure_message if failure_message
                 raise("Command #{cmd} failed") if fail_on_error
@@ -192,7 +203,7 @@ module Spec
         STDERR.puts "RSPECOPTS is DEPRECATED and will be removed in a future version. Use SPEC_OPTS instead." if ENV['RSPECOPTS']
         ENV['SPEC_OPTS'] || ENV['RSPECOPTS'] || spec_opts.join(" ") || ""
       end
-      
+
       def evaluate(o) # :nodoc:
         case o
           when Proc then o.call
@@ -214,4 +225,3 @@ module Spec
     end
   end
 end
-

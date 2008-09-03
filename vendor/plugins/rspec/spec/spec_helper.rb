@@ -1,5 +1,4 @@
 require 'stringio'
-require 'rbconfig'
 
 dir = File.dirname(__FILE__)
 lib_path = File.expand_path("#{dir}/../lib")
@@ -8,11 +7,16 @@ $_spec_spec = true # Prevents Kernel.exit in various places
 
 require 'spec'
 require 'spec/mocks'
-require 'hpricot' # Needed to compare generated with wanted HTML
+require 'spec/story'
 spec_classes_path = File.expand_path("#{dir}/../spec/spec/spec_classes")
 require spec_classes_path unless $LOAD_PATH.include?(spec_classes_path)
+require File.dirname(__FILE__) + '/../lib/spec/expectations/differs/default'
 
-module Spec
+module Spec  
+  module Example
+    class NonStandardError < Exception; end
+  end
+
   module Matchers
     def fail
       raise_error(Spec::Expectations::ExpectationNotMetError)
@@ -22,25 +26,31 @@ module Spec
       raise_error(Spec::Expectations::ExpectationNotMetError, message)
     end
 
-    class Pass
-      def matches?(proc, &block)
-        begin
-          proc.call
-          true
-        rescue Exception => @error
-          false
-        end
+    def exception_from(&block)
+      exception = nil
+      begin
+        yield
+      rescue StandardError => e
+        exception = e
       end
-
-      def failure_message
-        @error.message + "\n" + @error.backtrace.join("\n")
-      end
-    end
-
-    def pass
-      Pass.new
+      exception
     end
   end
 end
 
-class NonStandardError < Exception; end
+share_as :SandboxedOptions do
+  attr_reader :options
+
+  before(:each) do
+    @original_rspec_options = ::Spec::Runner.options
+    ::Spec::Runner.use(@options = ::Spec::Runner::Options.new(StringIO.new, StringIO.new))
+  end
+
+  after(:each) do
+    ::Spec::Runner.use(@original_rspec_options)
+  end
+
+  def run_with(options)
+    ::Spec::Runner::CommandLine.run(options)
+  end
+end unless Object.const_defined?(:SandboxedOptions)
