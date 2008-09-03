@@ -1632,3 +1632,17 @@ Cookie set: auth_token=1f5d4065a50d9a16e6c2eae97f9a3f401a972977; path=/; expires
 Redirected to http://test.host/
 Completed in 0.00319 (313 reqs/sec) | DB: 0.00107 (33%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=1]
   [4;35;1mSQL (0.000788)[0m   [0mROLLBACK[0m
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+WARNING: You're using the Ruby-based MySQL library that ships with Rails. This library is not suited for production. Please install the C-based MySQL library instead (gem install mysql).
+  [4;36;1mSQL (0.000213)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000134)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000127)[0m   [0;1mBEGIN[0m
+  [4;35;1mConcept Load (0.001156)[0m   [0mSELECT * FROM `concepts` LIMIT 1[0m
+  [4;36;1mRailser Load (0.000921)[0m   [0;1mSELECT * FROM `railsers` LIMIT 1[0m
+  [4;35;1mRailser Columns (0.004403)[0m   [0mSHOW FIELDS FROM `railsers`[0m
+  [4;36;1mSQL (0.001982)[0m   [0;1mSELECT `login` FROM `railsers` WHERE (LOWER(`railsers`.login) = 'schwabsauce') [0m
+  [4;35;1mSQL (0.000621)[0m   [0mSELECT `email` FROM `railsers` WHERE (LOWER(`railsers`.email) = 'mike.schwab@gmail.com') [0m
+  [4;36;1mConcept Columns (0.004040)[0m   [0;1mSHOW FIELDS FROM `concepts`[0m
+WARNING: Can't mass-assign these protected attributes: type

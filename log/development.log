@@ -13207,3 +13207,69 @@ DEPRECATION WARNING: config.action_view.cache_template_extensions option has bee
 ** has_many_polymorphs: rails environment detected
 ** has_many_polymorphs: loaded ok
 ** has_many_polymorphs: autoload hook invoked
+DEPRECATION WARNING: config.action_view.cache_template_extensions option has been deprecated and has no affect. Please remove it from your config files.  See http://www.rubyonrails.org/deprecation for details. (called from send at /Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/initializer.rb:455)
+** has_many_polymorphs: rails environment detected
+** has_many_polymorphs: loaded ok
+** has_many_polymorphs: autoload hook invoked
+WARNING: You're using the Ruby-based MySQL library that ships with Rails. This library is not suited for production. Please install the C-based MySQL library instead (gem install mysql).
+  [4;36;1mSQL (0.084747)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.002116)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.011904)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.127279)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000571)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000609)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.083796)[0m   [0;1mSHOW FIELDS FROM `concepts`[0m
+  [4;35;1mSQL (0.004310)[0m   [0mdescribe `concepts`[0m
+  [4;36;1mSQL (0.001617)[0m   [0;1mSHOW KEYS FROM `concepts`[0m
+  [4;35;1mSQL (0.020825)[0m   [0mSHOW FIELDS FROM `open_id_authentication_associations`[0m
+  [4;36;1mSQL (0.003509)[0m   [0;1mdescribe `open_id_authentication_associations`[0m
+  [4;35;1mSQL (0.001130)[0m   [0mSHOW KEYS FROM `open_id_authentication_associations`[0m
+  [4;36;1mSQL (0.005037)[0m   [0;1mSHOW FIELDS FROM `open_id_authentication_nonces`[0m
+  [4;35;1mSQL (0.003022)[0m   [0mdescribe `open_id_authentication_nonces`[0m
+  [4;36;1mSQL (0.001574)[0m   [0;1mSHOW KEYS FROM `open_id_authentication_nonces`[0m
+  [4;35;1mSQL (0.005437)[0m   [0mSHOW FIELDS FROM `open_id_authentication_settings`[0m
+  [4;36;1mSQL (0.002546)[0m   [0;1mdescribe `open_id_authentication_settings`[0m
+  [4;35;1mSQL (0.001751)[0m   [0mSHOW KEYS FROM `open_id_authentication_settings`[0m
+  [4;36;1mSQL (0.006121)[0m   [0;1mSHOW FIELDS FROM `railevances`[0m
+  [4;35;1mSQL (0.002898)[0m   [0mdescribe `railevances`[0m
+  [4;36;1mSQL (0.001570)[0m   [0;1mSHOW KEYS FROM `railevances`[0m
+  [4;35;1mSQL (0.018806)[0m   [0mSHOW FIELDS FROM `railsers`[0m
+  [4;36;1mSQL (0.003914)[0m   [0;1mdescribe `railsers`[0m
+  [4;35;1mSQL (0.001341)[0m   [0mSHOW KEYS FROM `railsers`[0m
+  [4;36;1mSQL (0.014826)[0m   [0;1mSHOW FIELDS FROM `votes`[0m
+  [4;35;1mSQL (0.002955)[0m   [0mdescribe `votes`[0m
+  [4;36;1mSQL (0.001529)[0m   [0;1mSHOW KEYS FROM `votes`[0m
+  [4;35;1mSQL (0.000225)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.000198)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.109276)[0m   [0mDROP DATABASE IF EXISTS `railevant_test`[0m
+  [4;36;1mSQL (0.009559)[0m   [0;1mCREATE DATABASE `railevant_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;35;1mSQL (0.000172)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.000135)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000424)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.071663)[0m   [0;1mCREATE TABLE `concepts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `type` varchar(255) DEFAULT NULL NULL, `content` text DEFAULT NULL NULL, `character` text DEFAULT NULL NULL, `bits` bigint(11) DEFAULT NULL NULL, `railser_id` bigint(11) DEFAULT NULL NULL, `deleted_at` datetime DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL, `rails_ids` text DEFAULT NULL NULL, `ties_ids` text DEFAULT NULL NULL, `ambiguous` text DEFAULT NULL NULL, `uri` varchar(255) DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000779)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.003677)[0m   [0;1mCREATE TABLE `open_id_authentication_associations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `server_url` blob DEFAULT NULL NULL, `handle` varchar(255) DEFAULT NULL NULL, `secret` blob DEFAULT NULL NULL, `issued` bigint(11) DEFAULT NULL NULL, `lifetime` bigint(11) DEFAULT NULL NULL, `assoc_type` varchar(255) DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000736)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.002884)[0m   [0;1mCREATE TABLE `open_id_authentication_nonces` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nonce` varchar(255) DEFAULT NULL NULL, `created` bigint(11) DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001343)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.002757)[0m   [0;1mCREATE TABLE `open_id_authentication_settings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `setting` varchar(255) DEFAULT NULL NULL, `value` blob DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000795)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.003817)[0m   [0;1mCREATE TABLE `railevances` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `rail_id` bigint(11) DEFAULT NULL NULL, `tie_id` bigint(11) DEFAULT NULL NULL, `railser_id` bigint(11) DEFAULT NULL NULL, `deleted_at` datetime DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001017)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.003807)[0m   [0;1mCREATE TABLE `railsers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login` varchar(255) DEFAULT NULL NULL, `email` varchar(255) DEFAULT NULL NULL, `crypted_password` varchar(40) DEFAULT NULL NULL, `salt` varchar(40) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL, `remember_token` varchar(255) DEFAULT NULL NULL, `remember_token_expires_at` datetime DEFAULT NULL NULL, `activation_code` varchar(40) DEFAULT NULL NULL, `activated_at` datetime DEFAULT NULL NULL, `person_id` bigint(11) DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000870)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.003698)[0m   [0;1mCREATE TABLE `votes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `rating` bigint(11) DEFAULT NULL NULL, `concept_id` bigint(11) DEFAULT NULL NULL, `railevance_id` bigint(11) DEFAULT NULL NULL, `characteristic_id` varchar(255) DEFAULT NULL NULL, `railser_id` bigint(11) DEFAULT NULL NULL, `deleted_at` datetime DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001191)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.005056)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.005213)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.000776)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000454)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.001134)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('9')[0m
+  [4;35;1mSQL (0.002519)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('1')[0m
+  [4;36;1mSQL (0.000601)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('2')[0m
+  [4;35;1mSQL (0.000496)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('3')[0m
+  [4;36;1mSQL (0.000511)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('4')[0m
+  [4;35;1mSQL (0.000398)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('5')[0m
+  [4;36;1mSQL (0.000652)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('6')[0m
+  [4;35;1mSQL (0.000547)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('7')[0m
+  [4;36;1mSQL (0.000511)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('8')[0m

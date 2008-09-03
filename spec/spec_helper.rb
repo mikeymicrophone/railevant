@@ -45,3 +45,43 @@ Spec::Runner.configure do |config|
   # 
   # For more information take a look at Spec::Example::Configuration and Spec::Runner
 end
+
+def valid_concept(opts = {})
+  Concept.first || Concept.create(valid_concept_params(opts))
+end
+
+def valid_concept_params(opts = {})
+  {:type => 'Library', :content => 'memcached', :railser_id => valid_railser.id}.merge(opts)
+end
+
+def second_valid_concept(opts = {})
+  Concept.find_by_type('Release') || Concept.create(second_valid_concept_params(opts))
+end
+
+def second_valid_concept_params(opts = {})
+  {:type => 'Release', :content => '1.0', :railser_id => valid_railser.id}.merge(opts)
+end
+
+def valid_railser(opts = {})
+  Railser.first || Railser.create(valid_railser_params(opts))
+end
+
+def valid_railser_params(opts = {})
+  {:login => 'schwabsauce', :email => 'mike.schwab@gmail.com'}.merge(opts)
+end
+
+def valid_railevance(opts = {})
+  Railevance.first || Railevance.create(valid_railevance_params(opts))
+end
+
+def valid_railevance_params(opts = {})
+  {:rail_id => valid_concept.id, :tie_id => second_valid_concept.id, :railser_id => valid_railser.id}
+end
+
+def valid_vote(opts = {})
+  Vote.first || Vote.create(valid_vote_params(opts))
+end
+
+def valid_vote_params(opts = {})
+  {:rating => 10, :concept_id => valid_concept.id, :railser_id => valid_railser.id}.merge(opts)
+end
