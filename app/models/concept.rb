@@ -106,7 +106,7 @@ class Concept < ActiveRecord::Base
   end
   
   def set_empty_character
-    update_attribute :character, {} if character.blank?
+    update_attribute :character, {} if character.blank? && character != {}
   end
   
   def effective_uri

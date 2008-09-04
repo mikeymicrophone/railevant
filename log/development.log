@@ -13273,3 +13273,53 @@ WARNING: You're using the Ruby-based MySQL library that ships with Rails. This l
   [4;36;1mSQL (0.000652)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('6')[0m
   [4;35;1mSQL (0.000547)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('7')[0m
   [4;36;1mSQL (0.000511)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('8')[0m
+DEPRECATION WARNING: config.action_view.cache_template_extensions option has beendeprecated and has no effect. Please remove it from your config files.  See http://www.rubyonrails.org/deprecation for details. (called from send at /Users/michaelschwab/projects/railevant/config/../vendor/rails/railties/lib/initializer.rb:511)
+** has_many_polymorphs: rails environment detected
+DEPRECATION WARNING: config.action_view.cache_template_extensions option has beendeprecated and has no effect. Please remove it from your config files.  See http://www.rubyonrails.org/deprecation for details. (called from send at /Users/michaelschwab/projects/railevant/config/../vendor/rails/railties/lib/initializer.rb:511)
+** has_many_polymorphs: rails environment detected
+DEPRECATION WARNING: config.action_view.cache_template_extensions option has beendeprecated and has no effect. Please remove it from your config files.  See http://www.rubyonrails.org/deprecation for details. (called from send at /Users/michaelschwab/projects/railevant/config/../vendor/rails/railties/lib/initializer.rb:511)
+DEPRECATION WARNING: config.action_view.cache_template_extensions option has beendeprecated and has no effect. Please remove it from your config files.  See http://www.rubyonrails.org/deprecation for details. (called from send at /Users/michaelschwab/projects/railevant/config/../vendor/rails/railties/lib/initializer.rb:511)
+  [4;36;1mSQL (0.139753)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.030861)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000176)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000160)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.077662)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.143861)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000146)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000144)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000063)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000089)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.392400)[0m   [0;1mDROP DATABASE IF EXISTS `railevant_test`[0m
+  [4;35;1mSQL (0.042931)[0m   [0mCREATE DATABASE `railevant_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.000158)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000161)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000147)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000468)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.093298)[0m   [0mCREATE TABLE `concepts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `type` varchar(255), `content` text, `character` text, `bits` int(11), `railser_id` int(11), `deleted_at` datetime, `created_at` datetime, `updated_at` datetime, `rails_ids` text, `ties_ids` text, `ambiguous` text, `uri` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000552)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.003162)[0m   [0mCREATE TABLE `open_id_authentication_associations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `server_url` blob, `handle` varchar(255), `secret` blob, `issued` int(11), `lifetime` int(11), `assoc_type` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000465)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.003702)[0m   [0mCREATE TABLE `open_id_authentication_nonces` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nonce` varchar(255), `created` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000787)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.003290)[0m   [0mCREATE TABLE `open_id_authentication_settings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `setting` varchar(255), `value` blob) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000596)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.004071)[0m   [0mCREATE TABLE `railevances` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `rail_id` int(11), `tie_id` int(11), `railser_id` int(11), `deleted_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000595)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.003390)[0m   [0mCREATE TABLE `railsers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login` varchar(255), `email` varchar(255), `crypted_password` varchar(40), `salt` varchar(40), `created_at` datetime, `updated_at` datetime, `remember_token` varchar(255), `remember_token_expires_at` datetime, `activation_code` varchar(40), `activated_at` datetime, `person_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000512)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.023173)[0m   [0mCREATE TABLE `votes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `rating` int(11), `concept_id` int(11), `railevance_id` int(11), `characteristic_id` varchar(255), `railser_id` int(11), `deleted_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000872)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.002802)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.046953)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.000666)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000448)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (0.001276)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('9')[0m
+  [4;36;1mSQL (0.000575)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('1')[0m
+  [4;35;1mSQL (0.000705)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('2')[0m
+  [4;36;1mSQL (0.000502)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('3')[0m
+  [4;35;1mSQL (0.000473)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('4')[0m
+  [4;36;1mSQL (0.000426)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('5')[0m
+  [4;35;1mSQL (0.000469)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('6')[0m
+  [4;36;1mSQL (0.000526)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('7')[0m
+  [4;35;1mSQL (0.000431)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('8')[0m
