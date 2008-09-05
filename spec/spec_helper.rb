@@ -51,7 +51,7 @@ def valid_concept(opts = {})
 end
 
 def valid_concept_params(opts = {})
-  {:type => 'Library', :content => 'memcached', :railser_id => valid_railser.id}.merge(opts)
+  {:type => 'Library', :content => 'memcached', :railser_id => valid_railser.id}.reverse_merge(opts)
 end
 
 def second_valid_concept(opts = {})
@@ -59,7 +59,7 @@ def second_valid_concept(opts = {})
 end
 
 def second_valid_concept_params(opts = {})
-  {:type => 'Release', :content => '1.0', :railser_id => valid_railser.id}.merge(opts)
+  {:type => 'Release', :content => '1.0', :railser_id => valid_railser.id}.reverse_merge(opts)
 end
 
 def valid_railser(opts = {})
@@ -67,7 +67,7 @@ def valid_railser(opts = {})
 end
 
 def valid_railser_params(opts = {})
-  {:login => 'schwabsauce', :email => 'mike.schwab@gmail.com'}.merge(opts)
+  {:login => 'schwabsauce', :email => 'mike.schwab@gmail.com'}.reverse_merge(opts)
 end
 
 def valid_railevance(opts = {})
@@ -75,7 +75,7 @@ def valid_railevance(opts = {})
 end
 
 def valid_railevance_params(opts = {})
-  {:rail_id => valid_concept.id, :tie_id => second_valid_concept.id, :railser_id => valid_railser.id}
+  {:rail_id => valid_concept.id, :tie_id => second_valid_concept.id, :railser_id => valid_railser.id}.reverse_merge(opts)
 end
 
 def valid_vote(opts = {})
@@ -83,5 +83,5 @@ def valid_vote(opts = {})
 end
 
 def valid_vote_params(opts = {})
-  {:rating => 10, :concept_id => valid_concept.id, :railser_id => valid_railser.id}.merge(opts)
+  {:rating => 10, :concept_id => valid_concept.id, :railser_id => valid_railser.id}.reverse_merge(opts)
 end
