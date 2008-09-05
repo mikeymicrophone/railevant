@@ -1,6 +1,6 @@
 class ConceptsController < ApplicationController
   def index
-    Concept
+    Concept # this loads the names of all the subclasses defined in the file concept.rb
     @concepts = request.request_uri[1..-1].singularize.capitalize.constantize.send(:all, :limit => params[:population])
     rescue NameError
       []
@@ -26,11 +26,20 @@ class ConceptsController < ApplicationController
   def create
     @concept = Concept.find_by_content_and_type params[:concept][:content], params[:class][:name]
     unless @concept
+      # debugger
       @concept = Concept.new params[:concept]
       @concept.type = params[:class][:name]
-      @concept.save
+      respond_to do |format|
+        if @concept.save
+          flash[:notice] = 'concept was created. very successfully indeed.'
+          format.html { redirect_to @concept }
+          format.xml  { render :xml => @concept, :status => :created, :location => @concept }
+        else
+          format.html { render :action => 'new' }
+          format.xml  { render :xml => @concept.errors, :status => :unprocessable_entity }
+        end
+      end
     end
-    redirect_to @concept
   end
   
   def reconceptualize
