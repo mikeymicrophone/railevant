@@ -1,6 +1,6 @@
 <div id="<%= concept.dom_id('block') %>">
 <%= link_to concept.class.name.downcase, collection_path(concept), :id => concept.dom_id(concept.class.name.downcase) if request.request_uri == '/concepts' %>
 <%= link_to concept.content, concept, :id => concept.dom_id %>
-<%= railser_link concept, :class => 'railser', :id => railser.dom_id(railser.login) %>
-<%= link_to 'improve', edit_concept_path(concept), :class => :improvement, :id => concept.dom_id(concept.railser.login) if concept.railser_id == current_railser_id %>
+<%= railser_link concept, :class => 'railser', :id => concept.railser.dom_id(concept.railser.login) if concept.railser %>
+<%= link_to 'improve', edit_concept_path(concept), :class => :improvement, :id => concept.dom_id(concept.railser.login) if !concept.railser_id.blank? && logged_in? && concept.railser_id == current_railser_id %>
 </div>

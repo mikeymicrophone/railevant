@@ -20,7 +20,7 @@
 	<%= links_to_ties @concept %>
 </div>
 
-<b id='<%= @concept.railser.dom_id(@concept.railser.name) %>'><%= link_to(@concept.railser.name, @concept.railser) %></b>
+<%= content_tag :b, :id => @concept.railser.dom_id(@concept.railser.name) { link_to(@concept.railser.name, @concept.railser) } if @concept.railser %>
 
 <%= link_to 'improve', send("edit_#{@concept.class.name.downcase}_path", @concept) %> |
 <%= link_to 'catalog', concepts_path %>

@@ -1,6 +1,5 @@
 <h1><%= request.request_uri[1..-1] + ' ' unless request.request_uri == '/concepts' %>relevant to rails</h1>
-
-<% render :partial => 'concept', :collection => @concepts %><br>
+<%= render :partial => 'concept', :collection => @concepts %><br>
 
 <%= link_to 'conceptualize an abstraction', new_concept_path %>
 <%= link_to 'everyconcept', concepts_path %>
