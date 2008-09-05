@@ -10,6 +10,10 @@ class ConceptsController < ApplicationController
   def show
     @concept = Concept.find_by_effective_uri params[:id]
     @concepts = @concept.ambiguities
+    # generate link to mark the last concept seen as railevant to this one
+    Rails.cache.write('last_seen', Rails.cache.read('current_concept'))
+    Rails.cache.write('current_concept', @concept.id)
+    @last_seen = Concept.find(Rails.cache.read('last_seen')) if Rails.cache.read('last_seen')
   end
   
   def submit

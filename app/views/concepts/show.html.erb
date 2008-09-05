@@ -14,6 +14,7 @@
 
 <div id='<%= @concept.dom_id('railevance') %>'>
 	<%= link_to 'connect', new_railevance_path(:rail_id => @concept.id) %>
+	<%= link_to "to #{@last_seen.effective_uri}", new_railevance_path(:rail_id => @concept.id, :tie_id => @last_seen.id) if @last_seen %>
 </div>
 
 <div id='<%= @concept.dom_id('rails') %>'>
