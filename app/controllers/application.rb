@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging 'password'
   include AuthenticatedSystem
   protect_from_forgery
+  helper_method :current_railser_id
 
   before_filter :load_railser_id_into_ar
   def load_railser_id_into_ar; ActiveRecord::Base.instance_variable_set('@railser_id', current_railser_id) ;end
@@ -15,7 +16,7 @@ class ActiveRecord::Base
   def self.random amount = 1; find :all, :limit => amount, :order => 'rand()' ;end
   def age; Time.now - created_at ;end  
   before_create :credit_creator
-  def credit_creator; self.railser_id ||= current_railser_id || 1 ;end
+  def credit_creator; self.railser_id ||= current_railser_id || 1 if respond_to?(:railser_id) ;end
   def current_railser_id; @railser_id ;end
 end
 class Array
