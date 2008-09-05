@@ -12,6 +12,10 @@
   <%= render :partial => 'characteristic', :collection => @concept.character.values, :locals => {:keys => @concept.character.keys} %>
 </div>
 
+<div id='<%= @concept.dom_id('railevance') %>'>
+	<%= link_to 'connect', new_railevance_path(:rail_id => @concept.id) %>
+</div>
+
 <div id='<%= @concept.dom_id('rails') %>'>
 	<%= links_to_rails @concept %>
 </div>
@@ -20,7 +24,9 @@
 	<%= links_to_ties @concept %>
 </div>
 
-<%= content_tag :b, :id => @concept.railser.dom_id(@concept.railser.name) { link_to(@concept.railser.name, @concept.railser) } if @concept.railser %>
+<% content_tag :b, :id => @concept.railser.dom_id(@concept.railser.name) do %>
+  <%= railser_link @concept if @concept.railser %>
+<% end %>
 
 <%= link_to 'improve', send("edit_#{@concept.class.name.downcase}_path", @concept) %> |
 <%= link_to 'catalog', concepts_path %>

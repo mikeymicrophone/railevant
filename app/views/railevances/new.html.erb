@@ -5,12 +5,12 @@
 <% form_for(@railevance) do |f| %>
   <p>
     <b>Rail</b><br />
-    <%= f.select :rail_id, @rails %>
+    <%= f.select :rail_id, @rails, :include_blank => true %>
   </p>
 
   <p>
     <b>Tie</b><br />
-    <%= f.select :tie_id, @ties %>
+    <%= f.select :tie_id, @ties, :include_blank => true %>
   </p>
 
   <p>

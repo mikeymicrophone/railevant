@@ -18,9 +18,8 @@ class RailevancesController < ApplicationController
   end
 
   def new
-    @railevance = Railevance.new
-    @railsers = Railser.all.map { |r| [r.name, r.id] }
-    @rails = @ties = Concept.all.map { |c| [c.content, c.id] }
+    @railevance = Railevance.new :rail_id => params[:rail_id], :tie_id => params[:tie_id]
+    @rails = @ties = Concept.all.map { |c| [c.content[0..55], c.id] }
 
     respond_to do |format|
       format.html

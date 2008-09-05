@@ -2,7 +2,7 @@
 
 <%= error_messages_for :concept %>
 
-<% form_for(@concept) do |f| %>
+<% form_for @concept do |f| %>
   <p>
     <b>type</b><br />
     <%= select :class, :name, @types %>
