@@ -18,4 +18,11 @@ describe Concept do
     valid_concept.character.should have_key(:updatable)
     valid_concept.character.should have_key(:persistent)
   end
+
+  it 'should initialize character to empty hash' do
+    valid_concept.character.should == {}
+  end
+
+  
+
 end
