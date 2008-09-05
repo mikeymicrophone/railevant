@@ -10,10 +10,14 @@ class ConceptsController < ApplicationController
   def show
     @concept = Concept.find_by_effective_uri params[:id]
     @concepts = @concept.ambiguities
-    # generate link to mark the last concept seen as railevant to this one
-    Rails.cache.write('last_seen', Rails.cache.read('current_concept'))
-    Rails.cache.write('current_concept', @concept.id)
-    @last_seen = Concept.find(Rails.cache.read('last_seen')) if Rails.cache.read('last_seen')
+    # generate link to mark the last concepts seen as railevant to this one
+    @last_few = Concept.find(*Rails.cache.read('last_few')) || []
+    last_few = Rails.cache.read('last_few').dup || []
+    unless last_few.include? @concept.id
+      last_few.shift if last_few.length >= 5
+      last_few.push @concept.id
+    end
+    Rails.cache.write('last_few', last_few)
   end
   
   def submit
