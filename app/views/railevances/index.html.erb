@@ -1,26 +1,22 @@
-<h1>Listing railevances</h1>
+<h1>railevances</h1>
 
 <table>
   <tr>
-    <th>Rail</th>
-    <th>Tie</th>
-    <th>Railser</th>
-    <th>Deleted at</th>
+    <th>rail</th>
+    <th>tie</th>
+    <th>railser</th>
   </tr>
 
-<% for railevance in @railevances %>
+<% @railevances.each do |railevance| %>
   <tr>
-    <td><%=h railevance.rail_id %></td>
-    <td><%=h railevance.tie_id %></td>
-    <td><%=h railevance.railser_id %></td>
-    <td><%=h railevance.deleted_at %></td>
-    <td><%= link_to 'Show', railevance %></td>
-    <td><%= link_to 'Edit', edit_railevance_path(railevance) %></td>
-    <td><%= link_to 'Destroy', railevance, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to_concept railevance.rail %></td>
+    <td><%= link_to_concept railevance.tie %></td>
+    <td><%= railser_link railevance %></td>
+    <td><%= link_to 'show', railevance %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New railevance', new_railevance_path %>
+<%= link_to 'new railevance', new_railevance_path %>
