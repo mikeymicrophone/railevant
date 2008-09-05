@@ -91,10 +91,12 @@ class Concept < ActiveRecord::Base
   
   def cache_tie tie_id
     self.ties_ids = (ties_ids.nil? ? tie_id.to_s : ties_ids + " #{tie_id}")
+    save
   end
   
   def cache_rail rail_id
     self.rails_ids = (rails_ids.nil? ? rail_id.to_s : rails_ids + " #{rail_id}")
+    save
   end
   
   def cache_uri
