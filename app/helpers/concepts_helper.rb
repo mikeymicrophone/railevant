@@ -5,7 +5,7 @@ module ConceptsHelper
   end
   
   def collection_path concept = Concept.new
-    controller.send(concept.class.name.downcase.pluralize + '_path', :class => 'collection', :id => concept.class.name.downcase.pluralize + ' gathered')
+    controller.send concept.class.name.downcase.pluralize + '_path'
   end
   
   def links_to_rails concept
