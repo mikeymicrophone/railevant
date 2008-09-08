@@ -1,9 +1,11 @@
 <h1><%= request.request_uri[1..-1] + ' ' unless request.request_uri == '/concepts' %>relevant to rails</h1>
-<%= render :partial => 'concept', :collection => @concepts %><br>
+<div id="concepts">
+  <%= render :partial => 'concept', :collection => @concepts %>
+</div>
 
 <%= link_to 'conceptualize an abstraction', new_concept_path %>
 <%= link_to 'everyconcept', concepts_path %>
-<% form_remote_for @category.new do |f| %>
+<% form_remote_for @category.new, :update => 'concepts', :position => 'bottom' do |f| %>
 	<%= select :class, :name, @types, :selected => @category.name %>
 	<%= f.text_area :content, :size => '49x3' %>
 	<%= f.submit :add %>

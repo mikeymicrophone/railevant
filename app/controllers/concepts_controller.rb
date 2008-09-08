@@ -49,7 +49,7 @@ class ConceptsController < ApplicationController
         if @concept.save
           flash[:notice] = 'concept was created. very successfully indeed.'
           format.html { redirect_to @concept }
-          format.js
+          format.js   { render :partial => @concept }
           format.xml  { render :xml => @concept, :status => :created, :location => @concept }
         else
           format.html { render :action => 'new' }
