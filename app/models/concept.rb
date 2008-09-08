@@ -106,7 +106,7 @@ class Concept < ActiveRecord::Base
   end
   
   def cache_uri
-    update_attribute :uri, content[0..75].urlize if uri_distinct_from_content?
+    self.uri = content[0..75].urlize if uri_distinct_from_content?
   end
   
   def uri_distinct_from_content?
@@ -114,6 +114,7 @@ class Concept < ActiveRecord::Base
   end
   
   def set_empty_character
+    debugger
     self.character = {} if character.blank? && character != {}
   end
   
