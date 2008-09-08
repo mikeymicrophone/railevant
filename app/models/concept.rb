@@ -114,7 +114,6 @@ class Concept < ActiveRecord::Base
   end
   
   def set_empty_character
-    debugger
     self.character = {} if character.blank? && character != {}
   end
   
