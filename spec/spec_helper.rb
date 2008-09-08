@@ -47,11 +47,14 @@ Spec::Runner.configure do |config|
 end
 
 def valid_concept(opts = {})
-  Concept.first || Concept.create(valid_concept_params(opts))
+  type = opts[:type] || 'Library'
+  @c = Concept.first || Concept.create(valid_concept_params(opts))
+  @c.update_attribute(:type, type)
+  @c
 end
 
 def valid_concept_params(opts = {})
-  {:type => 'Library', :content => 'memcached', :railser_id => valid_railser.id}.reverse_merge(opts)
+  {:content => 'memcached', :railser_id => valid_railser.id}.reverse_merge(opts)
 end
 
 def second_valid_concept(opts = {})

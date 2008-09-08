@@ -89,6 +89,12 @@ class Concept < ActiveRecord::Base
     ties_ids.blank? ? [] : Concept.find(*ties_ids.split.map(&:to_i)).to_a
   end
   
+  def cached_railevance_ids
+    t_i = ties_ids.blank? ? [] : ties_ids.split.map(&:to_i)
+    r_i = rails_ids.blank? ? [] : rails_ids.split.map(&:to_i)
+    t_i + r_i
+  end
+  
   def cache_tie tie_id
     self.ties_ids = (ties_ids.nil? ? tie_id.to_s : ties_ids + " #{tie_id}")
     save

@@ -41,7 +41,7 @@ describe Concept do
 
   it 'should be able to list unambiguous concepts' do
     c = valid_concept
-    Concept.ambiguous.first.should == c
+    Concept.unambiguous.first.should == c
   end
   
   it 'should consider a new concept unambiguous' do

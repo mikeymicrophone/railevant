@@ -1,18 +1,26 @@
 class ConceptsController < ApplicationController
   def index
     Concept # this loads the names of all the subclasses defined in the file concept.rb
-    @concepts = request.request_uri[1..-1].singularize.capitalize.constantize.send(:all, :limit => params[:population])
+    @category = request.request_uri[1..-1].singularize.capitalize.constantize
+    @concepts = @category.send(:all, :limit => params[:population])
+    @types = RESOURCES.map { |w| [ w, w.capitalize ] }
     rescue NameError
       []
     @concepts = Concept.all :limit => params[:population] if @concepts.blank?
+    @category ||= Concept
   end
   
   def show
     @concept = Concept.find_by_effective_uri params[:id]
     @concepts = @concept.ambiguities
     # generate link to mark the last concepts seen as railevant to this one
-    @last_few = Concept.find(*Rails.cache.read('last_few')) || []
-    last_few = Rails.cache.read('last_few').dup || []
+    if last_few = Rails.cache.read('last_few')
+      last_few = last_few.dup
+      @last_few = Concept.find(*last_few).to_a
+    else
+      @last_few = []
+      last_few = []
+    end
     unless last_few.include? @concept.id
       last_few.shift if last_few.length >= 5
       last_few.push @concept.id
@@ -34,13 +42,14 @@ class ConceptsController < ApplicationController
   def create
     @concept = Concept.find_by_content_and_type params[:concept][:content], params[:class][:name]
     unless @concept
-      # debugger
+      params[:concept] ||= params[params[:class][:name].downcase.to_sym]
       @concept = Concept.new params[:concept]
       @concept.type = params[:class][:name]
       respond_to do |format|
         if @concept.save
           flash[:notice] = 'concept was created. very successfully indeed.'
           format.html { redirect_to @concept }
+          format.js
           format.xml  { render :xml => @concept, :status => :created, :location => @concept }
         else
           format.html { render :action => 'new' }

@@ -3,3 +3,8 @@
 
 <%= link_to 'conceptualize an abstraction', new_concept_path %>
 <%= link_to 'everyconcept', concepts_path %>
+<% form_remote_for @category.new do |f| %>
+	<%= select :class, :name, @types, :selected => @category.name %>
+	<%= f.text_area :content, :size => '49x3' %>
+	<%= f.submit :add %>
+<% end %>
