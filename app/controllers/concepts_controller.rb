@@ -40,14 +40,13 @@ class ConceptsController < ApplicationController
   end
   
   def create
+    params[:concept] ||= params[params[:class][:name].downcase.to_sym]
     @concept = Concept.find_by_content_and_type params[:concept][:content], params[:class][:name]
     unless @concept
-      params[:concept] ||= params[params[:class][:name].downcase.to_sym]
       @concept = Concept.new params[:concept]
       @concept.type = params[:class][:name]
       respond_to do |format|
         if @concept.save
-          flash[:notice] = 'concept was created. very successfully indeed.'
           format.html { redirect_to @concept }
           format.js   { render :partial => @concept }
           format.xml  { render :xml => @concept, :status => :created, :location => @concept }
