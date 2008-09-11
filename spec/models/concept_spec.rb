@@ -1,6 +1,10 @@
 require File.join( File.dirname(__FILE__), "..", "spec_helper" )
 
 describe Concept do
+  before do
+    Concept.destroy_all
+  end
+  
   it 'should store characteristics' do
     valid_concept.characterize :updatable => 'yes'
     valid_concept.characteristic(:updatable).should == 'yes'
@@ -22,25 +26,7 @@ describe Concept do
   it 'should initialize character to empty hash' do
     valid_concept.character.should == {}
   end
-
-  it 'should notice ambiguity when another concept has same name' do
-    c1 = valid_concept
-    c1.should be_valid
-    c2 = Concept.create valid_concept_params(:type => 'Tool')
-    c2.should be_valid
-    c1.effective_uri.should == c2.effective_uri
-    Concept.disambiguate
-    c1.should be_ambiguous
-  end
-  
-  it 'should call disambiguate on item in unambiguous array' do
-    @concept = flexmock(valid_concept)
-    flexmock Concept
-    Concept.should_receive(:unambiguous).and_return([@concept])
-    @concept.should_receive(:disambiguate)
-    Concept.disambiguate
-  end
-  
+    
   it 'should find ambiguities using find_by_effective_uri' do
     flexmock Concept
     Concept.should_receive(:find_by_effective_uri)
@@ -52,6 +38,13 @@ describe Concept do
     @concept.should_receive(:disambiguate)
     @concept.should_receive(:disambiguate_with)
     @concept.disambiguate
+  end
+  
+  it 'should call disambiguate_with with the right concepts' do
+    c1 = valid_concept
+    c2 = Concept.create valid_concept_params(:type => 'Tool')
+    c1.disambiguate
+    c2.should be_ambiguous
   end
   
   it 'should be graceful if disambiguate_with is called with nil argument' do
@@ -70,6 +63,14 @@ describe Concept do
     c2 = Concept.create valid_concept_params(:type => 'Tool')
     c1.disambiguate_with c2
     c1.should be_ambiguous
+    c2.should be_ambiguous
+  end
+  
+  it 'should save id in ambiguous array when disambiguated' do
+    c1 = valid_concept
+    c2 = Concept.create valid_concept_params(:type => 'Tool')
+    c1.is_ambiguous_with c2
+    c1.ambiguous.should == [c2.id]
   end
 
   it 'should be able to list unambiguous concepts' do
@@ -78,7 +79,7 @@ describe Concept do
   end
   
   it 'should consider a new concept unambiguous' do
-    valid_concept.should_not be_ambiguous
+    Concept.create(:content => 'ambition').should_not be_ambiguous
   end
   
   it 'should leave unambiguous concepts out of the ambiguous array' do
@@ -87,7 +88,12 @@ describe Concept do
   end
 
   it 'should leave unambiguous concepts in unambiguous array' do
+    puts Concept.all.length
     valid_concept
+    puts Concept.all.length
+    puts valid_concept.id
+    puts valid_concept.ambiguous.class.name
+    valid_concept.should_not be_ambiguous
     Concept.unambiguous.should_not be_blank
     Concept.unambiguous.first.should == valid_concept
   end

@@ -8,6 +8,7 @@ class Concept < ActiveRecord::Base
   has_many :voters, :through => :votes, :source => :railser
   validates_presence_of :content
   before_create :cache_uri, :set_empty_character
+  after_save :disambiguate
   serialize :character, Hash
   serialize :ambiguous, Array
   
@@ -44,11 +45,6 @@ class Concept < ActiveRecord::Base
     votes.average(:rating)
   end
   
-  # marks all entries with identical uris as ambiguous
-  def self.disambiguate
-    unambiguous.each { |u| u.disambiguate }
-  end
-  
   def disambiguate
     ambiguous_concept = Concept.find_by_effective_uri(effective_uri)
     disambiguate_with ambiguous_concept
@@ -64,7 +60,6 @@ class Concept < ActiveRecord::Base
   
   def disambiguate_with concept
     return if concept.nil?
-    self.ambiguous ||= []; concept.ambiguous ||= []
     concept.ambiguities.push(concept).each do |c|
       self.is_ambiguous_with c
       c.is_ambiguous_with self
@@ -72,6 +67,8 @@ class Concept < ActiveRecord::Base
   end
   
   def is_ambiguous_with concept
+    return if concept.id == id
+    self.ambiguous ||= []
     update_attribute :ambiguous, ambiguous.push(concept.id) unless ambiguous.include?(concept.id)
   end
   
