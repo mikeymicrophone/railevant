@@ -8,7 +8,8 @@ class Concept < ActiveRecord::Base
   has_many :voters, :through => :votes, :source => :railser
   validates_presence_of :content
   before_create :cache_uri, :set_empty_character
-  serialize :character
+  serialize :character, Hash
+  serialize :ambiguous, Array
   
   def characterize characteristics = {}
     update_attribute :character, character.merge(characteristics)
@@ -45,7 +46,12 @@ class Concept < ActiveRecord::Base
   
   # marks all entries with identical uris as ambiguous
   def self.disambiguate
-    unambiguous.each { |u| all.each { |a| u.disambiguate_with a if u.effective_uri == a.effective_uri and u != a } }
+    unambiguous.each { |u| u.disambiguate }
+  end
+  
+  def disambiguate
+    ambiguous_concept = Concept.find_by_effective_uri(effective_uri)
+    disambiguate_with ambiguous_concept
   end
   
   def self.ambiguous
@@ -57,7 +63,8 @@ class Concept < ActiveRecord::Base
   end
   
   def disambiguate_with concept
-    self.ambiguous = '' if ambiguous.nil?; concept.ambiguous = '' if concept.ambiguous.nil?
+    return if concept.nil?
+    self.ambiguous ||= []; concept.ambiguous ||= []
     concept.ambiguities.push(concept).each do |c|
       self.is_ambiguous_with c
       c.is_ambiguous_with self
@@ -65,15 +72,11 @@ class Concept < ActiveRecord::Base
   end
   
   def is_ambiguous_with concept
-    update_attribute :ambiguous, ambiguous.concat("#{concept.id} ") unless ambiguity_ids.include? concept.id
-  end
-  
-  def ambiguity_ids
-    self.ambiguous.split.map(&:to_i)
+    update_attribute :ambiguous, ambiguous.push(concept.id) unless ambiguous.include?(concept.id)
   end
   
   def ambiguities
-    ambiguous? ? Concept.find(*ambiguity_ids).to_a : []
+    ambiguous.blank? ? [] : Concept.find(*ambiguous).to_a
   end
   
   def remove_duplicate_ambiguities # not sure but i think disambiguate_with might make duplicate entries and I don't want to check before every insert

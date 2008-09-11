@@ -12,9 +12,11 @@
     <b>content</b><br />
     <%= f.text_area :content, :size => '49x3' %>
   </p>
-
-  <%= link_to_function 'characterize', 'alert()' %>
-
+	
+	<div id="character">
+    <%= link_to_remote 'characterize', characteristic_concepts_path, :update => 'character', :position => 'bottom' %>
+	</div>
+	
   <p>
     <%= f.submit "ready" %>
   </p>

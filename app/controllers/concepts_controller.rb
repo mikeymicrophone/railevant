@@ -47,6 +47,11 @@ class ConceptsController < ApplicationController
       @concept.type = params[:class][:name]
       respond_to do |format|
         if @concept.save
+          params[:characteristic].select { |k, v| k =~ /key/ }.each do |k, v|
+            k =~ /key_(\d+)/
+            identifier = $1
+            @concept.characterize params[:characteristic]["key_#{identifier}"] => params[:characteristic]["value_#{identifier}"]
+          end
           format.html { redirect_to @concept }
           format.js   { render :partial => @concept }
           format.xml  { render :xml => @concept, :status => :created, :location => @concept }
@@ -65,6 +70,11 @@ class ConceptsController < ApplicationController
     @concept.save
     @concept.disambiguate_with @c
     redirect_to @concept
+  end
+  
+  def characteristic
+    the_time = Time.now
+    identifier = the_time.hour.to_s + the_time.min.to_s + the_time.sec.to_s
   end
   
   def characterize

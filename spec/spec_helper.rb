@@ -38,7 +38,7 @@ Spec::Runner.configure do |config|
   # use mocha, flexmock or RR, uncomment the appropriate line:
   #
   # config.mock_with :mocha
-  # config.mock_with :flexmock
+  config.mock_with :flexmock
   # config.mock_with :rr
   #
   # == Notes
@@ -46,11 +46,15 @@ Spec::Runner.configure do |config|
   # For more information take a look at Spec::Example::Configuration and Spec::Runner
 end
 
-def valid_concept(opts = {})
+def valid_new_concept(opts = {})
   type = opts[:type] || 'Library'
-  @c = Concept.first || Concept.create(valid_concept_params(opts))
+  @c = Concept.create(valid_concept_params(opts))
   @c.update_attribute(:type, type)
   @c
+end
+
+def valid_concept(opts = {})
+  Concept.first || Concept.find(valid_new_concept(opts).id)
 end
 
 def valid_concept_params(opts = {})
