@@ -8,8 +8,7 @@ module ConceptsHelper
   end
   
   def collection_path concept = Concept.new
-    concept_type = concept.type || 'Concept'
-    controller.send concept_type.to_s.downcase.pluralize + '_path'
+    controller.send concept.class.name.downcase.pluralize + '_path'
   end
   
   def links_to_rails concept

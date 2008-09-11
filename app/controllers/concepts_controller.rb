@@ -1,13 +1,12 @@
 class ConceptsController < ApplicationController
   def index
     Concept # this loads the names of all the subclasses defined in the file concept.rb
-    @category = request.request_uri[1..-1].singularize.capitalize.constantize
+    path = request.request_uri[1..-1]
+    @category = path.blank? ? Concept : path.singularize.capitalize.constantize
     @concepts = @category.send(:all, :limit => params[:population])
     @types = RESOURCES.map { |w| [ w, w.capitalize ] }
     rescue NameError
-      []
     @concepts = Concept.all :limit => params[:population] if @concepts.blank?
-    @category ||= Concept
   end
   
   def show
