@@ -91,16 +91,24 @@ class Concept < ActiveRecord::Base
     ties_ids.blank? ? [] : Concept.find(*ties_ids).to_a
   end
   
+  def cached_rail_rs
+    rail_rs_ids.blank? ? [] : Railevance.find(*rail_rs_ids).to_a
+  end
+  
+  def cached_tie_rs
+    tie_rs_ids.blank? ? [] : Railevance.find(*tie_rs_ids).to_a
+  end
+  
   def cached_railevance_ids
     (ties_ids || []) + (rails_ids || [])
   end
   
-  def cache_tie tie_id
-    update_attribute :ties_ids, ties_ids.push(tie_id) unless ties_ids.include?(tie_id)
+  def cache_connections set, exclude
+    set.delete_if { |k, v| k == exclude }.each { |k, v| send(k).cache_connection((k.to_s + 's_ids').to_sym, v) }
   end
   
-  def cache_rail rail_id
-    update_attribute :rails_ids, rails_ids.push(rail_id) unless rails_ids.include?(rail_id)
+  def cache_connection collection, connected_id
+    update_attribute collection, send(collection).push(connected_id) unless send(collection).include?(connected_id)
   end
   
   def cache_uri
