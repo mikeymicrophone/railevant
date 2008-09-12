@@ -15,7 +15,7 @@
 <div id='<%= @concept.dom_id('railevance') %>'>
 	<%= link_to 'connect', new_railevance_path(:rail_id => @concept.id) %>
 	<% @last_few.each do |concept| %>
-  	<%= link_to "to #{concept.effective_uri}", railevances_path(:railevance => {:rail_id => @concept.id, :tie_id => concept.id}), :method => :post unless concept == @concept || @concept.cached_railevance_ids.include?(concept.id) %>
+  	<%= link_to "to #{concept.effective_uri}", railevances_path(:railevance => {:rail_id => @concept.id, :tie_id => concept.id}), :method => :post unless concept == @concept || @concept.cached_concept_ids.include?(concept.id) %>
   <% end %>
 </div>
 

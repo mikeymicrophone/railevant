@@ -14,6 +14,17 @@ class Concept < ActiveRecord::Base
   serialize :rails_ids, Array
   serialize :ties_ids, Array
   
+  def is_railevant_to t
+    case t.class.name
+    when Railevance
+      Railevance.create(:rail_id => id, :tie_r_id => t.id)
+    when Concept
+      Railevance.create(:rail_id => id, :tie_id => t.id)
+    when Integer
+      Railevance.create(:rail_id => id, :tie_id => t)
+    end
+  end
+  
   def characterize characteristics = {}
     update_attribute :character, character.merge(characteristics)
   end
@@ -99,8 +110,12 @@ class Concept < ActiveRecord::Base
     tie_rs_ids.blank? ? [] : Railevance.find(*tie_rs_ids).to_a
   end
   
-  def cached_railevance_ids
+  def cached_concept_ids
     (ties_ids || []) + (rails_ids || [])
+  end
+  
+  def cached_railevance_ids
+    (tie_rs_ids || []) + (rail_rs_ids || [])
   end
   
   def cache_connections set, exclude

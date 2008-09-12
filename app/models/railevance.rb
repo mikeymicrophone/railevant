@@ -4,11 +4,15 @@ class Railevance < ActiveRecord::Base
   belongs_to :rail_r, :class_name => 'Railevance'
   belongs_to :tie_r, :class_name => 'Railevance'
   belongs_to :railser
+  serialize :rails_ids, Array
+  serialize :ties_ids, Array
+  serialize :rail_rs_ids, Array
+  serialize :tie_rs_ids, Array
   has_many :votes
   
-  after_create :cache_in_rail_and_tie
+  after_create :cache_in_components
   
-  def cache_in_rail_and_tie
+  def cache_in_components
     extant_connections.each do |name, number|
       send(name).cache_connections extant_connections, name
     end
