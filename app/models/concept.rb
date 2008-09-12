@@ -11,6 +11,8 @@ class Concept < ActiveRecord::Base
   after_save :disambiguate
   serialize :character, Hash
   serialize :ambiguous, Array
+  serialize :rails_ids, Array
+  serialize :ties_ids, Array
   
   def characterize characteristics = {}
     update_attribute :character, character.merge(characteristics)
@@ -82,27 +84,23 @@ class Concept < ActiveRecord::Base
   end
   
   def cached_rails
-    rails_ids.blank? ? [] : Concept.find(*rails_ids.split.map(&:to_i)).to_a
+    rails_ids.blank? ? [] : Concept.find(*rails_ids).to_a
   end
   
   def cached_ties
-    ties_ids.blank? ? [] : Concept.find(*ties_ids.split.map(&:to_i)).to_a
+    ties_ids.blank? ? [] : Concept.find(*ties_ids).to_a
   end
   
   def cached_railevance_ids
-    t_i = ties_ids.blank? ? [] : ties_ids.split.map(&:to_i)
-    r_i = rails_ids.blank? ? [] : rails_ids.split.map(&:to_i)
-    t_i + r_i
+    (ties_ids || []) + (rails_ids || [])
   end
   
   def cache_tie tie_id
-    self.ties_ids = (ties_ids.nil? ? tie_id.to_s : ties_ids + " #{tie_id}")
-    save
+    update_attribute :ties_ids, ties_ids.push(tie_id) unless ties_ids.include?(tie_id)
   end
   
   def cache_rail rail_id
-    self.rails_ids = (rails_ids.nil? ? rail_id.to_s : rails_ids + " #{rail_id}")
-    save
+    update_attribute :rails_ids, rails_ids.push(rail_id) unless rails_ids.include?(rail_id)
   end
   
   def cache_uri
