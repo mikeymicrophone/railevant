@@ -5,6 +5,11 @@ describe Concept do
     Concept.destroy_all
   end
   
+  it 'should create a railevance when is_railevant_to is called' do
+    r = valid_concept.is_railevant_to(Concept.create(valid_concept_params(:type => 'Site')))
+    r.class.name.should == 'Railevance'
+  end
+  
   it 'should store characteristics' do
     valid_concept.characterize :updatable => 'yes'
     valid_concept.characteristic(:updatable).should == 'yes'
@@ -29,14 +34,13 @@ describe Concept do
     
   it 'should find ambiguities using find_by_effective_uri' do
     flexmock Concept
-    Concept.should_receive(:find_by_effective_uri)
+    Concept.should_receive(:find_by_effective_uri).once
     Concept.new.disambiguate
   end
   
   it 'should receive disambiguate_with regardless of whether another concept shares that effective uri' do
     @concept = flexmock(valid_concept)
-    @concept.should_receive(:disambiguate)
-    @concept.should_receive(:disambiguate_with)
+    @concept.should_receive(:disambiguate_with).once
     @concept.disambiguate
   end
   

@@ -13,6 +13,9 @@
     <%= f.select :tie_id, @ties, :include_blank => true %>
   </p>
 
+  <%= f.hidden_field :rail_r_id %>
+  <%= f.hidden_field :tie_r_id %>
+
   <p>
     <%= f.submit "odelay" %>
   </p>

@@ -14,16 +14,17 @@ class Railevance < ActiveRecord::Base
   
   def cache_in_components
     extant_connections.each do |name, number|
-      send(name).cache_connections extant_connections, name
+      send(name).cache_connections extant_connections.delete_if { |k, v| k == name }
     end
   end
   
-  def cache_connections set, exclude
-    set.delete_if { |k, v| k == exclude }.each { |k, v| send(k).cache_connection((k.to_s + 's_ids').to_sym, v) }
+  def cache_connections set
+    set.each { |k, v| cache_connection((k.to_s + 's_ids').to_sym, v) }
   end
   
   def cache_connection collection, connected_id
-    update_attribute collection, send(collection).push(connected_id) unless send(collection).include?(connected_id)
+    existing = send(collection) || []
+    update_attribute collection, existing.push(connected_id) unless existing.include?(connected_id)
   end
   
   def extant_connections

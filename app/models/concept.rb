@@ -13,14 +13,16 @@ class Concept < ActiveRecord::Base
   serialize :ambiguous, Array
   serialize :rails_ids, Array
   serialize :ties_ids, Array
+  serialize :rail_rs_ids, Array
+  serialize :tie_rs_ids, Array
   
   def is_railevant_to t
     case t.class.name
-    when Railevance
+    when 'Railevance'
       Railevance.create(:rail_id => id, :tie_r_id => t.id)
-    when Concept
+    when 'Concept'
       Railevance.create(:rail_id => id, :tie_id => t.id)
-    when Integer
+    when 'Integer'
       Railevance.create(:rail_id => id, :tie_id => t)
     end
   end
@@ -118,12 +120,13 @@ class Concept < ActiveRecord::Base
     (tie_rs_ids || []) + (rail_rs_ids || [])
   end
   
-  def cache_connections set, exclude
-    set.delete_if { |k, v| k == exclude }.each { |k, v| send(k).cache_connection((k.to_s + 's_ids').to_sym, v) }
+  def cache_connections set
+    set.each { |k, v| cache_connection((k.to_s + 's_ids').to_sym, v) }
   end
   
   def cache_connection collection, connected_id
-    update_attribute collection, send(collection).push(connected_id) unless send(collection).include?(connected_id)
+    existing = send(collection) || []
+    update_attribute collection, existing.push(connected_id) unless existing.include?(connected_id)
   end
   
   def cache_uri

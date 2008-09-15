@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 9) do
+ActiveRecord::Schema.define(:version => 20080912052145) do
 
   create_table "concepts", :force => true do |t|
     t.string   "type"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(:version => 9) do
     t.text     "ties_ids"
     t.text     "ambiguous"
     t.string   "uri"
+    t.string   "rail_rs_ids"
+    t.string   "tie_rs_ids"
   end
 
   create_table "open_id_authentication_associations", :force => true do |t|
@@ -52,6 +54,12 @@ ActiveRecord::Schema.define(:version => 9) do
     t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "rail_r_id"
+    t.integer  "tie_r_id"
+    t.string   "rail_rs_ids"
+    t.string   "tie_rs_ids"
+    t.string   "rails_ids"
+    t.string   "ties_ids"
   end
 
   create_table "railsers", :force => true do |t|
