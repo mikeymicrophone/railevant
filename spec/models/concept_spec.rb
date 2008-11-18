@@ -92,11 +92,6 @@ describe Concept do
   end
 
   it 'should leave unambiguous concepts in unambiguous array' do
-    puts Concept.all.length
-    valid_concept
-    puts Concept.all.length
-    puts valid_concept.id
-    puts valid_concept.ambiguous.class.name
     valid_concept.should_not be_ambiguous
     Concept.unambiguous.should_not be_blank
     Concept.unambiguous.first.should == valid_concept

@@ -5,6 +5,9 @@ class Railser < ActiveRecord::Base
   has_many :railevances
   has_many :votes
   belongs_to :person
+  validates_uniqueness_of :email
+  validates_uniqueness_of :login
+  validates_uniqueness_of :person_id
   
   def name
     login

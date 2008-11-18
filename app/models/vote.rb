@@ -2,9 +2,10 @@ class Vote < ActiveRecord::Base
   belongs_to :railser
   belongs_to :concept
   belongs_to :railevance
+  validates_presence_of :rating
   
   def characteristic
-    concept.characteristic characteristic_id if concept_id && characteristic_id
+    concept.characteristic characteristic_id if concept && characteristic
   end
   
   def other_votes_by_railser
@@ -12,11 +13,11 @@ class Vote < ActiveRecord::Base
   end
   
   def other_votes_on_concept
-    concept.votes if concept_id
+    concept.votes if concept
   end
   
   def other_votes_on_railevance
-    railevance.votes if railevance_id
+    railevance.votes if railevance
   end
   
   # deletes an earlier vote on the same stuff by the same person
