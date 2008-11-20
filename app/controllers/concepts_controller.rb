@@ -40,6 +40,7 @@ class ConceptsController < ApplicationController
   
   def create
     params[:concept] ||= params[params[:class][:name].downcase.to_sym]
+    params[:characteristic] ||= {}
     @concept = Concept.find_by_content_and_type params[:concept][:content], params[:class][:name]
     unless @concept
       @concept = Concept.new params[:concept]
