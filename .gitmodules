@@ -1,0 +1,3 @@
+[submodule "vendor/plugins/babygitter"]
+	path = vendor/plugins/babygitter
+	url = git://github.com/schwabsauce/babygitter
