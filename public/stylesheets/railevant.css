@@ -5,3 +5,37 @@
 .login a {
 	padding: 8px;
 }
+
+#schpeal, #schpeal p {
+	background-color: #992D32;
+	padding: 10px;
+}
+
+#schpeal p{
+	font-size: 2.2em;
+}
+
+#positive {
+	color: #D4D235;
+}
+
+#negative {
+	color: #3E3599;
+	font-weight: bold;
+}
+
+#theory {
+	color: #394;
+}
+
+#strategy {
+	color: #239995;
+}
+
+#thanks {
+	color: #FDFDFD;
+}
+
+#recognition {
+	color: #070499;
+}

@@ -1,4 +1,7 @@
 class RailsersController < ApplicationController
+  
+  def info
+  end
 
   def index
     @railsers = Railser.find :all

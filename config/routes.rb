@@ -13,7 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources *RESOURCES.map(&:pluralize).push({:controller => 'concepts'})
   
-  map.root :controller => 'concepts', :action => 'index'
+  map.root :controller => 'railsers', :action => 'intro'
   
   # The priority is based upon order of creation: first created -> highest priority.
 

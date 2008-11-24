@@ -1,0 +1,13 @@
+<div id="schpeal">
+	<p id="positive">rails is great. it does a lot for you.</p>
+	<p id="negative">but it can be complex to decipher. there are a lot of pieces that interact.</p>
+	<p id="theory">whatever your question, there is someone out there that knows the answer. hopefully they have already explained it somewhere.</p>
+	<p id="strategy">I believe that in order to effectively document rails, we need to draw on a multitude of sources and document a huge variety of tools.</p>
+	<p id="thanks">thanks so much for your participation!</p>
+	<% if logged_in? %>
+		<p id="recognition">you're logged in. continue on to the <%= link_to 'catalog', concepts_path %>?</p>
+	<% else %>
+		<%= link_to 'log in', login_path %>
+		<%= link_to 'sign up', signup_path %>
+	<% end %>
+</div>
