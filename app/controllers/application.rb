@@ -23,7 +23,16 @@ class Array
   def randomize; sort_by { rand } ;end
   def not_blank?; not blank? ;end
 end
-class String; def urlize; gsub(/\s+/, '_').gsub(/\.\?,\//, '~') unless blank? ;end
+class String; 
+  UNSAFE_CHARS = /[$+:;?!\[\]^\\\/'*&=#(){}@.><,]/
+  
+  def urlize
+    str = downcase.gsub(' ','-').gsub(UNSAFE_CHARS, '-')
+    str.gsub!('--','-') while str =~ /--/
+    str
+  end
+  
+  # def urlize; gsub(/\s+/, '_').gsub(/\.\?,\//, '~') unless blank? ;end
   def wrap_for_code first
     return self[/#{first.to_s}[*,]\d+[*,]\d+/].gsub(/[*,]/, '') if self[/#{first.to_s}[*,]\d+[*,]\d+/]
     return self[/#{first.to_s}[*,]\d+/].concat(self[/^\d+/]).gsub(/[*,]/, '') if self[/#{first.to_s}[*,]\d+/]
