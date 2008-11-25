@@ -11,6 +11,15 @@
 <body>
 <div class='login'><%= login_stuff %></div>
 
+<div id="ask_a_question">
+	<% Concept %>
+	<% form_for Question.new do |question| %>
+	  <%= question.text_area :content, :size => '38x1' %>
+	  <%= hidden_field :class, :name, :value => 'Question' %>
+	  <%= question.submit 'ask a question' %>
+	<% end %>
+</div>
+
 <p style="color: green"><%= flash[:notice] %></p>
 
 <%= yield  %>
