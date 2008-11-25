@@ -7,7 +7,7 @@ class Railser < ActiveRecord::Base
   belongs_to :person
   validates_uniqueness_of :email
   validates_uniqueness_of :login
-  validates_uniqueness_of :person_id
+  validates_uniqueness_of :person_id, :allow_nil => true
   
   def name
     login
