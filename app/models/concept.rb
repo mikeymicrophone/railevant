@@ -130,7 +130,7 @@ class Concept < ActiveRecord::Base
   end
   
   def cache_uri
-    self.uri = content[0..75].urlize if uri_distinct_from_content?
+    update_attribute(:uri, content[0..75].urlize) if uri_distinct_from_content?
   end
   
   def uri_distinct_from_content?
