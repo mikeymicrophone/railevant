@@ -14,11 +14,19 @@
 <div id="ask_a_question">
 	<% Concept %>
 	<% form_for Question.new do |question| %>
-	  <%= question.text_area :content, :size => '38x1' %>
+	  <%= question.text_field :content, :size => 24 %>
 	  <%= hidden_field :class, :name, :value => 'Question' %>
 	  <%= question.submit 'ask a question' %>
 	<% end %>
 </div>
+<div id="post_a_link">
+	<% form_for Link.new do |link| %>
+	  <%= link.text_field :content, :size => 10 %>
+	  <%= hidden_field :class, :name, :value => 'Link' %>
+	  <%= link.submit 'post a link' %>
+  <% end %>
+</div>
+<div class="clearfix"></div>
 
 <p style="color: green"><%= flash[:notice] %></p>
 

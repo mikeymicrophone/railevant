@@ -1,3 +1,7 @@
+#post_a_link, #ask_a_question {
+	float:left;
+}
+
 .login {
 	float:right;
 }
@@ -38,4 +42,8 @@
 
 #recognition {
 	color: #070499;
+}
+
+.clearfix {
+	clear:both;
 }
