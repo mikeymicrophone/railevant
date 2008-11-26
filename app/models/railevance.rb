@@ -12,6 +12,18 @@ class Railevance < ActiveRecord::Base
   
   after_create :cache_in_components
   
+  def r
+    rail || rail_r
+  end
+  
+  def t
+    tie || tie_r
+  end
+  
+  def content
+    r.content[0..75] + '~' + t.content[0..75]
+  end
+  
   def cache_in_components
     extant_connections.each do |name, number|
       send(name).cache_connections extant_connections.delete_if { |k, v| k == name }
@@ -46,5 +58,9 @@ class Railevance < ActiveRecord::Base
   
   def cached_tie_rs
     tie_rs_ids.blank? ? [] : Railevance.find(*tie_rs_ids).to_a
+  end
+  
+  def effective_uri
+    content
   end
 end

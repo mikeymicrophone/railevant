@@ -9,8 +9,8 @@
 
 <% @railevances.each do |railevance| %>
   <tr>
-    <td><%= link_to_concept railevance.rail %></td>
-    <td><%= link_to_concept railevance.tie %></td>
+    <td><%= link_to_concept railevance.r %></td>
+    <td><%= link_to_concept railevance.t %></td>
     <td><li class="user"><%= railser_link railevance %></li></td>
     <td><%= link_to 'show', railevance %></td>
   </tr>

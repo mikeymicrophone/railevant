@@ -1,12 +1,28 @@
 <p>
-  <%= link_to @railevance.rail.content, @railevance.rail, :id => @railevance.rail.dom_id %>
-  <%= link_to @railevance.tie.content,  @railevance.tie,  :id => @railevance.tie.dom_id %>
+  <%= link_to @railevance.r.content, @railevance.r, :id => @railevance.r.dom_id %>
+  <%= link_to @railevance.t.content, @railevance.t, :id => @railevance.t.dom_id %>
 </p>
+
+<div id='<%= @railevance.dom_id('railevance') %>'>
+	<li class="linkstack"><%= link_to 'connect', new_railevance_path(:rail_r_id => @railevance.id), :class => 'connect' %></li>
+	<% @last_few.each do |concept| %>
+  	<li class="linkstack"><%= link_to "to #{concept.effective_uri}", railevances_path(:railevance => {:rail_r_id => @railevance.id, :tie_id => concept.id}), :method => :post, :class => 'connect' unless concept.cached_railevance_ids.include?(@railevance.id) %></li>
+  <% end %>
+</div>
+
+<div id='<%= @railevance.dom_id('rails') %>'>
+	<%= links_to_rails @railevance %>
+</div>
+
+<div id='<%= @railevance.dom_id('ties') %>'>
+	<%= links_to_ties @railevance %>
+</div>
+
 
 <p>
   <b>railser.</b>
-  <li class="user"><%=h @railevance.railser.name if @railevance.railser %></li>
+  <li class="user"><%= railser_link @railevance %></li>
 </p>
 
-<%= link_to 'edit', edit_railevance_path(@railevance) if logged_in? && current_railser_id == @railevance.railser_id %> 
+<%= link_to 'alter', edit_railevance_path(@railevance), :class => 'improvement' if logged_in? && current_railser_id == @railevance.railser_id %> 
 

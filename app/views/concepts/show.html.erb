@@ -32,5 +32,4 @@
   <li class="user"><%= railser_link @concept if @concept.railser %></li>
 <% end %>
 
-<%= link_to 'improve', send("edit_#{@concept.class.name.downcase}_path", @concept) %> |
-<%= link_to 'catalog', concepts_path %>
+<%= link_to 'alter', send("edit_#{@concept.class.name.downcase}_path", @concept), :class => 'improvement' %>

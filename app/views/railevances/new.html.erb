@@ -5,16 +5,24 @@
 <% form_for(@railevance) do |f| %>
   <p>
     <b>Rail</b><br />
-    <%= f.select :rail_id, @rails, :include_blank => true %>
+		<% unless @railevance.rail_r %>
+	    <%= f.select :rail_id, @rails, :include_blank => true %>
+	  <% else %>
+	    <%= f.select :rail_r_id, @railevances %>
+	  <% end %>
   </p>
 
   <p>
     <b>Tie</b><br />
-    <%= f.select :tie_id, @ties, :include_blank => true %>
+		<% unless @railevance.tie_r %>
+	    <%= f.select :tie_id, @ties, :include_blank => true %>
+	  <% else %>
+	    <%= f.select :tie_r_id, @railevances %>
+	  <% end %>
   </p>
 
-  <%= f.hidden_field :rail_r_id %>
-  <%= f.hidden_field :tie_r_id %>
+
+  <%= f.select :tie_r_id, @railevances, :selected => @railevance.tie_r_id if @railevance.tie_r %>
 
   <p>
     <%= f.submit "odelay" %>

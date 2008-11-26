@@ -11,6 +11,14 @@ class RailevancesController < ApplicationController
   def show
     @railevance = Railevance.find params[:id]
 
+    if last_few = Rails.cache.read('last_few')
+      last_few = last_few.dup
+      @last_few = Concept.find(*last_few).to_a
+    else
+      @last_few = []
+    end
+
+
     respond_to do |format|
       format.html
       format.xml  { render :xml => @railevance }
@@ -18,8 +26,9 @@ class RailevancesController < ApplicationController
   end
 
   def new
-    @railevance = Railevance.new :rail_id => params[:rail_id], :tie_id => params[:tie_id]
+    @railevance = Railevance.new :rail_id => params[:rail_id], :tie_id => params[:tie_id], :rail_r_id => params[:rail_r_id], :tie_r_id => params[:tie_r_id]
     @rails = @ties = Concept.all.map { |c| [c.content[0..55], c.id] }
+    @railevances = Railevance.all.map { |r| [r.content, r.id] } if params[:rail_r_id] || params[:tie_r_id]
 
     respond_to do |format|
       format.html
