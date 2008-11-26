@@ -2,6 +2,54 @@
 	float:left;
 }
 
+#top_level {
+	list-style-type: none;
+}
+
+#top_level li {
+	float:left;
+	margin-left: 5px;
+	height: 29px;
+}
+
+#top_level li a {
+	color: #070936;
+	padding: 3px;
+	margin: 2px;
+}
+
+#top_level li:hover {
+	background-color: #995C96;
+}
+
+#top_level li a:hover {
+	background-color: #565099;
+}
+
+#write {
+	font-size: 2em;
+	color: #EDF420;
+}
+
+.capsule {
+	margin: 1px;
+	margin-color: black;
+}
+
+.rail {
+	font-size: 1.1em;
+}
+
+a.railser {
+	font-size: .8em;
+	color: #650114;
+}
+
+a.improvement {
+	font-size: .8em;
+	color: #5E8A99;
+}
+
 .login {
 	float:right;
 }
