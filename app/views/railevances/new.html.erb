@@ -1,10 +1,10 @@
-<h1>New railevance</h1>
+<h1>new railevance</h1>
 
 <%= error_messages_for :railevance %>
 
 <% form_for(@railevance) do |f| %>
   <p>
-    <b>Rail</b><br />
+    <b>rail</b><br />
 		<% unless @railevance.rail_r %>
 	    <%= f.select :rail_id, @rails, :include_blank => true %>
 	  <% else %>
@@ -13,7 +13,7 @@
   </p>
 
   <p>
-    <b>Tie</b><br />
+    <b>tie</b><br />
 		<% unless @railevance.tie_r %>
 	    <%= f.select :tie_id, @ties, :include_blank => true %>
 	  <% else %>
@@ -21,12 +21,7 @@
 	  <% end %>
   </p>
 
-
-  <%= f.select :tie_r_id, @railevances, :selected => @railevance.tie_r_id if @railevance.tie_r %>
-
   <p>
     <%= f.submit "odelay" %>
   </p>
 <% end %>
-
-<%= link_to 'Back', railevances_path %>
