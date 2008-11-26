@@ -28,17 +28,16 @@
 </div>
 <div class="clearfix"></div>
 <div id="navigation">
-	<ul id="top_level">
-		<li><%= link_to 'concepts', concepts_path %></li>
-		<li><%= link_to 'connections', railevances_path %></li>
-		<li><%= link_to 'railsers', railsers_path %></li>
-	</ul>
+	<li class="top_level"><%= link_to 'concepts', concepts_path %></li>
+	<li class="top_level"><%= link_to 'connections', railevances_path %></li>
+	<li class="top_level"><%= link_to 'railsers', railsers_path %></li>
 </div>
 <div class="clearfix"></div>
 
 <p style="color: green"><%= flash[:notice] %></p>
 
 <%= yield  %>
-<%= link_to 'write', new_concept_path, :id => 'write' %>
+<div class="clearfix"></div>
+<li class="write"><%= link_to 'write', new_concept_path, :id => 'write' %></li>
 </body>
 </html>

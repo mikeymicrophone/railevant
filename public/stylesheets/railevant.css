@@ -2,38 +2,121 @@
 	float:left;
 }
 
-#top_level {
+.top_level {
 	list-style-type: none;
 }
 
-#top_level li {
+li.top_level {
 	float:left;
 	margin-left: 5px;
 	height: 29px;
 }
 
-#top_level li a {
+li.top_level a {
 	color: #070936;
 	padding: 3px;
 	margin: 2px;
 }
 
-#top_level li:hover {
+li.top_level a:active {
+	padding-top: 2px;
+	padding-bottom: 4px;
+}
+
+li.top_level:hover {
 	background-color: #995C96;
 }
 
-#top_level li a:hover {
+li.top_level a:hover {
 	background-color: #565099;
 }
 
 #write {
 	font-size: 2em;
 	color: #EDF420;
+	margin: 0px 4px 5px 4px;
+	padding: 2px;
+}
+
+a#write:hover {
+	background-color: #FFB021;
+}
+
+a#write:active {
+	padding-top: 0px;
+	padding-bottom: 4px;
+}
+
+.write {
+	list-style-type:none;
+}
+
+li.write {
+	height: 38px;
+	float: left;
+}
+
+li.write:hover {
+	background-color: #EA6C26;
 }
 
 .capsule {
-	margin: 1px;
-	margin-color: black;
+	float:left;
+}
+
+.content-link {
+	float:left;
+}
+
+.collection-link {
+	color: #002B81;
+	float:left;
+	padding-left: 5px;
+	font-variant: small-caps;
+}
+
+.content {
+	text-align: center;
+	font-size: 2.1em;
+}
+
+li.linkstack:hover {
+	background-color: #91BCDF;
+}
+
+li.linkstack a {
+	padding: 3px;
+	margin: 2px;
+}
+
+li.linkstack {
+	float: left;
+	height: 25px;
+}
+
+.linkstack, .user {
+	list-style-type: none;
+}
+
+li.user {
+	float: left;
+	height: 25px;
+}
+
+li.user:hover {
+	background-color: #991530;
+}
+
+a.railser:hover {
+	background-color: #E34866;
+}
+
+a.connect {
+	color: #2761E9;
+}
+
+a.connect:hover {
+	background-color: #B6FFFF;
 }
 
 .rail {
@@ -43,6 +126,13 @@
 a.railser {
 	font-size: .8em;
 	color: #650114;
+	margin: 3px;
+	padding: 5px;
+}
+
+a.railser:active {
+	padding-top: 4px;
+	padding-bottom: 6px;
 }
 
 a.improvement {

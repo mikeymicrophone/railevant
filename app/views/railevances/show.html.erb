@@ -5,7 +5,7 @@
 
 <p>
   <b>railser.</b>
-  <%=h @railevance.railser.name if @railevance.railser %>
+  <li class="user"><%=h @railevance.railser.name if @railevance.railser %></li>
 </p>
 
 <%= link_to 'edit', edit_railevance_path(@railevance) if logged_in? && current_railser_id == @railevance.railser_id %> 

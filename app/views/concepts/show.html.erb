@@ -4,7 +4,7 @@
     <%= link_to c.class.name.downcase, c, :class => 'disambiguation', :id => c.dom_id %>
   <% end %>
 <% end %>
-<div id='<%= @concept.dom_id('content') %>'>
+<div id="<%= @concept.dom_id('content') %>" class="content">
   <%=h @concept.content %>
 </div>
 
@@ -13,11 +13,12 @@
 </div>
 
 <div id='<%= @concept.dom_id('railevance') %>'>
-	<%= link_to 'connect', new_railevance_path(:rail_id => @concept.id) %>
+	<li class="linkstack"><%= link_to 'connect', new_railevance_path(:rail_id => @concept.id), :class => 'connect' %></li>
 	<% @last_few.each do |concept| %>
-  	<%= link_to "to #{concept.effective_uri}", railevances_path(:railevance => {:rail_id => @concept.id, :tie_id => concept.id}), :method => :post unless concept == @concept || @concept.cached_concept_ids.include?(concept.id) %>
+  	<li class="linkstack"><%= link_to "to #{concept.effective_uri}", railevances_path(:railevance => {:rail_id => @concept.id, :tie_id => concept.id}), :method => :post, :class => 'connect' unless concept == @concept || @concept.cached_concept_ids.include?(concept.id) %></li>
   <% end %>
 </div>
+<div class="clearfix">
 
 <div id='<%= @concept.dom_id('rails') %>'>
 	<%= links_to_rails @concept %>
@@ -28,7 +29,7 @@
 </div>
 
 <% content_tag :b, :id => @concept.railser.dom_id(@concept.railser.name) do %>
-  <%= railser_link @concept if @concept.railser %>
+  <li class="user"><%= railser_link @concept if @concept.railser %></li>
 <% end %>
 
 <%= link_to 'improve', send("edit_#{@concept.class.name.downcase}_path", @concept) %> |
