@@ -20,6 +20,7 @@ class VotesController < ApplicationController
   def new
     @vote = Vote.new
     @concepts = Concept.all.map { |c| [c.content[0..30], c.id] }
+    @railevances = Railevance.all.map { |r| [r.content, r.id] }
     respond_to do |format|
       format.html
       format.xml  { render :xml => @vote }

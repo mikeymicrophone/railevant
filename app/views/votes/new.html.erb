@@ -7,12 +7,12 @@
   </p>
 
   <p>
-    <%= f.select :concept_id, @concepts %>
+    <%= f.select :concept_id, @concepts, :include_blank => true %>
   </p>
 
   <p>
     <b>Railevance</b><br>
-    <%= f.text_field :railevance_id %>
+    <%= f.select :railevance_id, @railevances, :include_blank => true %>
   </p>
 
   <p>

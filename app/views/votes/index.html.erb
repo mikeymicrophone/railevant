@@ -2,8 +2,8 @@
 
 <% @votes.each do |vote| %>
     <%= content_tag :span, vote.rating, :class => 'vote', :id => vote.dom_id('rating') %>
-    <%= link_to(vote.concept.content[0..35], vote.concept, :class => vote.concept.class.name.downcase, :id => vote.concept.dom_id('scrutinize') if vote.concept_id %>
-    <%= link_to vote.railevance_id, vote.railevance, :class => 'railevance', :id => vote.railevance.dom_id('scrutinize') if vote.railevance_id %>
+    <%= link_to(vote.concept.content[0..35], vote.concept, :class => vote.concept.class.name.downcase, :id => vote.concept.dom_id('scrutinize')) if vote.concept %>
+    <%= link_to vote.railevance_id, vote.railevance, :class => 'railevance', :id => vote.railevance.dom_id('scrutinize') if vote.railevance %>
     <%=h vote.characteristic_id %>
     <%= railser_link vote %>
     <%= link_to 'show', vote, :id => vote.dom_id('scrutinize') %>
