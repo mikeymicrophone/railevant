@@ -1,5 +1,6 @@
 <div id="<%= concept.dom_id('block') %>" class="capsule">
 	<%= link_to concept.content, concept, :id => concept.dom_id, :class => 'content-link' %>
+	<%= link_to concept.average_vote, concept_votes_path(concept) unless concept.votes.empty? %>
 	<%= link_to concept.class.name.downcase, collection_path(concept), :id => concept.dom_id(concept.class.name.downcase), :class => 'collection-link' if request.request_uri == '/concepts' %>
 	<li class="user"><%= railser_link concept, :class => 'railser', :id => concept.railser.dom_id(concept.railser.login) if concept.railser %></li>
 	<%= link_to 'alter', edit_concept_path(concept), :class => :improvement, :id => concept.dom_id(concept.railser.login) if !concept.railser_id.blank? && logged_in? && concept.railser_id == current_railser_id %>

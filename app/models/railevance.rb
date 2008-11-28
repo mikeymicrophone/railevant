@@ -9,6 +9,7 @@ class Railevance < ActiveRecord::Base
   serialize :rail_rs_ids, Array
   serialize :tie_rs_ids, Array
   has_many :votes
+  acts_as_paranoid
   
   after_create :cache_in_components
   

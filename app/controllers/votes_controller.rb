@@ -1,6 +1,10 @@
 class VotesController < ApplicationController
   def index
-    @votes = Vote.all
+    @votes = if params[:concept_id]
+      Concept.find_by_effective_uri(params[:concept_id]).votes
+    else
+      Vote.all
+    end
 
     respond_to do |format|
       format.html
@@ -30,7 +34,7 @@ class VotesController < ApplicationController
   def create
     params[:vote] ||= {}
     params[:vote][:rating] ||= params[:rating]
-    params[:vote][:concept_id] ||= params[:id]
+    params[:vote][:concept_id] ||= params[:concept_id] || params[:id]
     params[:vote][:railevance_id] ||= params[:railevance_id]
     params[:vote][:characteristic_id] ||= params[:characteristic_id]
     @vote = Vote.new params[:vote]

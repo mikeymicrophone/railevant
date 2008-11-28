@@ -1,7 +1,15 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :votes
-  map.resources :railevances
-  map.resources :concepts, :member => {:reconceptualize => :post, :characterize => :post}, :collection => {:submit => :post, :characteristic => :post}
+  map.resources :votes do |vote|
+    vote.resources :railevances
+    vote.resources :concepts
+  end
+  map.resources :railevances do |railevance|
+    railevance.resources :votes
+    railevance.resources :concepts
+  end
+  map.resources :concepts, :member => {:reconceptualize => :post, :characterize => :post}, :collection => {:submit => :post, :characteristic => :post} do |concept|
+    concept.resources :votes
+  end
   map.verify 'railsers/:id/verify/:code', :controller => 'railsers', :action => 'verify'
   map.resources :railsers
   map.resource :session

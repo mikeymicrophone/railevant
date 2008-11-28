@@ -15,6 +15,7 @@ class Concept < ActiveRecord::Base
   serialize :ties_ids, Array
   serialize :rail_rs_ids, Array
   serialize :tie_rs_ids, Array
+  acts_as_paranoid
   
   def is_railevant_to t
     case t.class.name
@@ -43,17 +44,9 @@ class Concept < ActiveRecord::Base
     which = which.id if which.is_a? ActiveRecord::Base
     railevances.select { |r| r.rail_id == which || r.tie_id == which }.map(&:votes).flatten.average(:rating)
   end
-  
-  def designated_votes
-    votes - undesignated_votes
-  end
-  
-  def undesignated_votes
-    votes.select { |v| v.railevance_id == nil && v.characteristic_id == nil}
-  end
-  
+    
   def average_vote
-    undesignated_votes.average(:rating)
+    votes.undesignated.average(:rating)
   end
   
   def average_of_all_votes
