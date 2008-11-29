@@ -1,4 +1,4 @@
-<h1>Editing railevance</h1>
+<h1>editing railevance</h1>
 
 <%= error_messages_for :railevance %>
 
@@ -19,14 +19,8 @@
   </p>
 
   <p>
-    <b>Deleted at</b><br />
-    <%= f.datetime_select :deleted_at %>
-  </p>
-
-  <p>
-    <%= f.submit "Update" %>
+    <%= f.submit "update" %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @railevance %> |
-<%= link_to 'Back', railevances_path %>
+<%= link_to 'show', @railevance %>

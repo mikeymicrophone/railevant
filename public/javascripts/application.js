@@ -10,3 +10,6 @@ function vote_slider(type, id, vote) {
 	  onChange:function(value){ new Ajax.Request('/votes?id=' + id + '&rating=' + value) }
 	})
 }
+
+
+jQuery.noConflict();

@@ -1,4 +1,6 @@
 class VotesController < ApplicationController
+  skip_before_filter :verify_authenticity_token, :only => :create
+  
   def index
     @votes = if params[:concept_id]
       Concept.find_by_effective_uri(params[:concept_id]).votes
@@ -23,8 +25,8 @@ class VotesController < ApplicationController
 
   def new
     @vote = Vote.new
-    @concepts = Concept.all.map { |c| [c.content[0..30], c.id] }
-    @railevances = Railevance.all.map { |r| [r.content, r.id] }
+    @concepts = Concept.all.map { |c| [c.content[0..30], c.id] } unless params[:concept_id]
+    @railevances = (params[:concept_id] ? Concept.find_by_effective_uri(params[:concept_id]).railevances : Railevance.all).map { |r| [r.content, r.id] }
     respond_to do |format|
       format.html
       format.xml  { render :xml => @vote }
@@ -37,6 +39,7 @@ class VotesController < ApplicationController
     params[:vote][:concept_id] ||= params[:concept_id] || params[:id]
     params[:vote][:railevance_id] ||= params[:railevance_id]
     params[:vote][:characteristic_id] ||= params[:characteristic_id]
+    params[:vote][:characteristic_id] = nil if params[:vote][:characteristic_id] == ''
     @vote = Vote.new params[:vote]
 
     respond_to do |format|

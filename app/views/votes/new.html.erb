@@ -6,14 +6,22 @@
     <%= f.select :rating, 0..500 %>
   </p>
 
+	<% unless @vote.concept %>
   <p>
     <%= f.select :concept_id, @concepts, :include_blank => true %>
   </p>
+	<% else %>
+		<%= @vote.concept.content %>
+	<% end %>
 
+	<% unless @vote.railevance %>
   <p>
     <b>Railevance</b><br>
     <%= f.select :railevance_id, @railevances, :include_blank => true %>
   </p>
+	<% else %>
+		<%= @vote.railevance.content%>
+	<% end %>
 
   <p>
     <b>Characteristic</b><br>

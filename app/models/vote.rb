@@ -5,8 +5,8 @@ class Vote < ActiveRecord::Base
   validates_presence_of :rating
   acts_as_paranoid
   
-  named_scope :undesignated, :conditions => {:railevance_id => nil, :characteristic_id => ''}
-  named_scope :designated, :conditions => ["railevance_id is not null or characteristic_id != ''"]
+  named_scope :undesignated, :conditions => {:railevance_id => nil, :characteristic_id => nil}
+  named_scope :designated, :conditions => ["railevance_id is not null or characteristic_id is not null"]
   
   def characteristic
     concept.characteristic characteristic_id if concept && characteristic

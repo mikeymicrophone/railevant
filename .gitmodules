@@ -1,3 +1,6 @@
 [submodule "vendor/plugins/babygitter"]
 	path = vendor/plugins/babygitter
 	url = git://github.com/schwabsauce/babygitter
+[submodule "public/javascripts/jquery/jquery.ui"]
+	path = public/javascripts/jquery/jquery.ui
+	url = git://github.com/veged/jquery.ui.git

@@ -62,10 +62,18 @@ li.write:hover {
 
 .capsule {
 	float:left;
+	padding-top: 8px;
 }
 
 .content-link {
 	float:left;
+}
+
+.average-vote {
+	padding-left: 3px;
+	text-decoration: none;
+	font-size: .79em;
+	float: left;
 }
 
 .collection-link {
@@ -138,6 +146,7 @@ a.railser:active {
 a.improvement {
 	font-size: .8em;
 	color: #5E8A99;
+	float: left;
 }
 
 .login {
@@ -180,6 +189,19 @@ a.improvement {
 
 #recognition {
 	color: #070499;
+}
+
+.handle {
+	width: 5px;
+	height: 11px;
+	background-color: #990E5F;
+}
+
+.track {
+	float:left;
+	width: 500px;
+	height: 2px;
+	background-color: #999;
 }
 
 .clearfix {
