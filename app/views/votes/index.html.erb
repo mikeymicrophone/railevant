@@ -5,8 +5,9 @@
     <%= link_to(vote.concept.content[0..35], vote.concept, :class => vote.concept.class.name.downcase, :id => vote.concept.dom_id('scrutinize')) if vote.concept %>
     <%= link_to vote.railevance_id, vote.railevance, :class => 'railevance', :id => vote.railevance.dom_id('scrutinize') if vote.railevance %>
     <%=h vote.characteristic_id %>
-    <%= railser_link vote %>
+    <li class="user"><%= railser_link vote %></li>
     <%= link_to 'show', vote, :id => vote.dom_id('scrutinize') %>
+		<div class="clearfix"></div>
 <% end %>
 <br>
 
