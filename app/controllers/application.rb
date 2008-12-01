@@ -17,7 +17,7 @@ class ActiveRecord::Base
   def age; Time.now - created_at ;end  
   before_create :credit_creator
   def credit_creator; self.railser_id ||= current_railser_id || 1 if respond_to?(:railser_id) ;end
-  def current_railser_id; @railser_id ;end
+  def current_railser_id; ActiveRecord::Base.instance_variable_get('@railser_id') ;end
 end
 class Array
   def randomize; sort_by { rand } ;end

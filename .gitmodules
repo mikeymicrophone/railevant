@@ -4,3 +4,6 @@
 [submodule "public/javascripts/jquery/jquery.ui"]
 	path = public/javascripts/jquery/jquery.ui
 	url = git://github.com/veged/jquery.ui.git
+[submodule "vendor/plugins/thinking_sphinx"]
+	path = vendor/plugins/thinking_sphinx
+	url = git://github.com/freelancing-god/thinking-sphinx.git
